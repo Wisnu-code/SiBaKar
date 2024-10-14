@@ -34,9 +34,9 @@
             </div>
         </div>
 
-        <div class="mt-20 w-full h-auto p-4 text-center bg-white border rounded-lg shadow sm:p-8">
+        <div class="mt-20 md:px-20 max-w-full h-auto p-4 text-center bg-white border rounded-lg shadow sm:p-8">
             <div
-                class="mb-2 md:mb-5 text-2xl font-bold flex self-start text-gray-500 sm:text-lg dark:text-gray-400 md:ml-24">
+                class="mb-2 md:mb-5 text-2xl font-bold flex self-start text-gray-500 sm:text-lg dark:text-gray-400 md:ml-20 ml-8">
                 Our Mission</div>
             <div class="flex flex-col md:flex-row items-stretch justify-center md:gap-10">
                 <div class="self-start h-auto w-full">
