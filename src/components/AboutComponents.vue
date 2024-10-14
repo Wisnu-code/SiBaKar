@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div class="mt-20 md:px-20 max-w-full h-auto p-4 text-center bg-white border rounded-lg shadow sm:p-8">
+        <div class="mt-20 md:px-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
             <div
                 class="mb-2 md:mb-5 text-2xl font-bold flex self-start text-gray-500 sm:text-lg dark:text-gray-400 md:ml-20 ml-8">
                 Our Mission</div>
@@ -60,7 +60,7 @@
             </div>
         </div>
 
-        <div class="mt-20 max-w-full h-auto p-4 text-center bg-white border rounded-lg shadow sm:p-8">
+        <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
             <div class="flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-20">
                 <div class="mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
                     500 +
@@ -78,7 +78,7 @@
         </div>
 
         <div
-            class="mt-20 w-full p-4 bg-gray-200 border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            class="mt-20 w-full p-4 bg-gray-200 border border-gray-200 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div class="flex flex-col md:flex-row items-stretch justify-center md:gap-10">
                 <div class="w-full h-auto flex flex-col items-start justify-center md:ml-20">
                     <div class="mb-2 md:mb-3 text-2xl font-bold text-gray-500 sm:text-lg dark:text-gray-400">

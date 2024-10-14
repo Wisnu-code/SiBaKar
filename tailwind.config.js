@@ -11,6 +11,13 @@ export default {
         themes: ["light", "dark", "cupcake"],
       },
     },
+    colors: {
+      // Configure your color palette here
+      'primary' : '#00B7E6',
+      'secondary' : '#FFBE00',
+      'button' : '#FF6F3B',
+      'buHov' : '#C63501'
+    },
   },
   plugins: [
     require('flowbite/plugin'),
