@@ -1,10 +1,12 @@
 <template>
     <div class="">
         <div
-            class="mt-20 w-full p-4 text-center bg-gray-200 border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 break-all">
-            <h5 class="mb-5 text-3xl font-bold text-gray-900 dark:text-white max-w-full md:mx-20">Lorem ipsum dolor sit,
+            class="mt-20 w-full p-4 text-center bg-secondary border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 break-all">
+
+            <!-- Section 1 -->
+            <h5 class="mb-5 text-3xl font-bold text-white dark:text-white max-w-full md:mx-20">Lorem ipsum dolor sit,
                 amet consectetur adipisicing.</h5>
-            <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400 max-w-full md:mx-20">Lorem ipsum dolor
+            <p class="mb-5 text-base text-white sm:text-lg dark:text-gray-400 max-w-full md:mx-20">Lorem ipsum dolor
                 sit amet consectetur adipisicing elit. Similique sapiente itaque aperiam mollitia, magnam amet veniam
                 iste nemo? Autem dicta exercitationem iure maiores quod tempore magni quia sequi porro aliquid rem nobis
                 minima nulla amet quae architecto ratione minus labore culpa accusamus cum odit, quas sunt saepe!
@@ -17,11 +19,11 @@
                 <div class="w-full md:min-h-80 sm:w-autotext-white rounded-lg px-4 py-2.5 basis-1/3 grid content-end">
 
                     <div class="flex gap-1">
-                        <div class="flex-1 bg-gray-400 h-12"></div>
-                        <div class="flex-1 bg-gray-500 h-12"></div>
-                        <div class="flex-1 bg-gray-400 h-12"></div>
-                        <div class="flex-1 bg-gray-500 h-12"></div>
-                        <div class="flex-1 bg-gray-400 h-12"></div>
+                        <div class="flex-1 bg-button h-12"></div>
+                        <div class="flex-1 bg-button h-12"></div>
+                        <div class="flex-1 bg-button h-12"></div>
+                        <div class="flex-1 bg-button h-12"></div>
+                        <div class="flex-1 bg-button h-12"></div>
                     </div>
                 </div>
                 <div
@@ -34,6 +36,7 @@
             </div>
         </div>
 
+        <!-- Section 2 -->
         <div class="mt-20 md:px-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
             <div
                 class="mb-2 md:mb-5 text-2xl font-bold flex self-start text-gray-500 sm:text-lg dark:text-gray-400 md:ml-20 ml-8">
@@ -60,6 +63,7 @@
             </div>
         </div>
 
+        <!-- Section 3 -->
         <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
             <div class="flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-20">
                 <div class="mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
@@ -77,17 +81,18 @@
             </div>
         </div>
 
+        <!-- Section 4 -->
         <div
-            class="mt-20 w-full p-4 bg-gray-200 border border-gray-200 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            class="mt-20 w-full p-4 bg-primary text-white border border-gray-200 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div class="flex flex-col md:flex-row items-stretch justify-center md:gap-10">
                 <div class="w-full h-auto flex flex-col items-start justify-center md:ml-20">
-                    <div class="mb-2 md:mb-3 text-2xl font-bold text-gray-500 sm:text-lg dark:text-gray-400">
+                    <div class="mb-2 md:mb-3 text-2xl font-bold  sm:text-lg dark:text-gray-400">
                         Our Mission
                     </div>
-                    <div class="mb-2 md:mb-5 text-5xl font-bold text-gray-900 dark:text-white max-w-full">
+                    <div class="mb-2 md:mb-5 text-5xl font-bold dark:text-white max-w-full">
                         Our Mission
                     </div>
-                    <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Lorem ipsum dolor sit amet
+                    <p class="mb-5 text-base  sm:text-lg dark:text-gray-400">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit. Itaque dolores dolor maxime earum, sit nisi veniam dignissimos
                         minima totam esse mollitia, optio perferendis pariatur obcaecati aliquam laudantium ratione
                         ipsa. Eveniet!</p>
