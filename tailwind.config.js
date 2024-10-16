@@ -19,7 +19,8 @@ export default {
       'pilar' : '#B4C6D0',
       'form' : '#D28782',
       'button' : '#FF6F3B',
-      'buHov' : '#C63501'
+      'buHov' : '#C63501',
+      'newcolor' : '#E58E00'
     },
   },
   plugins: [
