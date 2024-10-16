@@ -16,9 +16,21 @@
                         class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         autocomplete="off">
                 </div>
+                <div class="mb-4" bg-sky-100>
+                    <label for="username" class="block text-gray-600">Email</label>
+                    <input type="text" id="username" name="username"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        autocomplete="off">
+                </div>
                 <!-- Password Input -->
                 <div class="mb-4">
                     <label for="password" class="block text-gray-800">Password</label>
+                    <input type="password" id="password" name="password"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        autocomplete="off">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-800">Ulangi Password</label>
                     <input type="password" id="password" name="password"
                         class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         autocomplete="off">
@@ -28,18 +40,18 @@
                     <input type="checkbox" id="remember" name="remember" class="text-red-500">
                     <label for="remember" class="text-green-900 ml-2">Remember Me</label>
                 </div>
-                <!-- Forgot Password Link -->
+                <!-- Forgot Password Link
                 <div class="mb-6 text-blue-500">
                     <a href="#" class="hover:underline">Forgot Password?</a>
-                </div>
+                </div> -->
                 <!-- Login Button -->
                 <button type="submit"
-                    class="bg-red-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Login</button>
+                    class="bg-red-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Daftar</button>
             </form>
-            <!-- Sign up  Link -->
+            <!-- Sign up  Link
             <div class="mt-6 text-green-500 text-center">
-                <router-link to="/register" class="hover:underline">Sign up Here</router-link>
-            </div>
+                <a href="#" class="hover:underline">Sign up Here</a>
+            </div> -->
         </div>
     </div>
 </template>

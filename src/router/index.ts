@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginComponents from '@/components/LoginComponents.vue'
+import ServiceView from '../views/ServiceView.vue'
+import RegisterComponents from '@/components/RegisterComponents.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +19,11 @@ const router = createRouter({
       component: AboutView
     },
     {
+      path: '/service',
+      name: 'service',
+      component: ServiceView
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -28,6 +35,11 @@ const router = createRouter({
       path:'/login',
       name: 'login',
       component: LoginComponents
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: RegisterComponents
     }
   ]
 })
