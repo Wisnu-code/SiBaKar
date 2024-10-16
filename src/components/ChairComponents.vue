@@ -11,28 +11,28 @@
                     <div class="bg-primary md:h-full h-8 w-full rounded-lg">3</div>
                 </div>
             </div>
-            <div class="col-start-3 row-start-3 bg-secondary rounded-lg h-8 md:h-20">4</div>
-            <div class="col-start-3 row-start-4 bg-primary rounded-lg h-8">5</div>
-            <div class="col-start-3 row-start-5 bg-primary rounded-lg h-8">6</div>
-            <div class="col-start-3 row-start-6 bg-secondary rounded-lg h-8">7</div>
-            <div class="col-start-4 row-start-3 bg-secondary rounded-lg h-8">8</div>
-            <div class="col-start-4 row-start-4 bg-primary rounded-lg h-8">9</div>
-            <div class="col-start-4 row-start-5 bg-primary rounded-lg h-8">10</div>
-            <div class="col-start-4 row-start-6 bg-secondary rounded-lg h-8">11</div>
-            <div class="col-start-5 row-start-3 bg-secondary rounded-lg h-8">12</div>
+            <div class="col-start-3 row-start-3 bg-secondary rounded-lg h-10 md:h-20">4</div>
+            <div class="col-start-3 row-start-4 bg-primary rounded-lg h-10 md:h-20">5</div>
+            <div class="col-start-3 row-start-5 bg-primary rounded-lg h-10 md:h-20">6</div>
+            <div class="col-start-3 row-start-6 bg-secondary rounded-lg h-10 md:h-20">7</div>
+            <div class="col-start-4 row-start-3 bg-secondary rounded-lg h-10 md:h-20">8</div>
+            <div class="col-start-4 row-start-4 bg-primary rounded-lg h-10 md:h-20">9</div>
+            <div class="col-start-4 row-start-5 bg-primary rounded-lg h-10 md:h-20">10</div>
+            <div class="col-start-4 row-start-6 bg-secondary rounded-lg h-10 md:h-20">11</div>
+            <div class="col-start-5 row-start-3 bg-secondary rounded-lg h-10 md:h-20">12</div>
             <div class="row-span-2 col-start-5 row-start-4 bg-primary rounded-lg h-full"></div>
-            <div class="col-start-5 row-start-6 bg-secondary rounded-lg h-8">13</div>
-            <div class="col-start-6 row-start-3 bg-secondary rounded-lg h-8">14</div>
+            <div class="col-start-5 row-start-6 bg-secondary rounded-lg h-10 md:h-20">13</div>
+            <div class="col-start-6 row-start-3 bg-secondary rounded-lg h-10 md:h-20">14</div>
             <div class="row-span-2 col-start-6 row-start-4 bg-primary rounded-lg h-full"></div>
-            <div class="col-start-6 row-start-6 bg-secondary rounded-lg h-8">15</div>
-            <div class="col-start-7 row-start-3 bg-secondary rounded-lg h-8">16</div>
-            <div class="col-start-7 row-start-4 bg-primary rounded-lg h-8">17</div>
-            <div class="col-start-7 row-start-5 bg-primary rounded-lg h-8">18</div>
-            <div class="col-start-7 row-start-6 bg-secondary rounded-lg h-8">19</div>
-            <div class="col-start-8 row-start-3 bg-secondary rounded-lg h-8">20</div>
-            <div class="col-start-8 row-start-4 bg-primary rounded-lg h-8">21</div>
-            <div class="col-start-8 row-start-5 bg-primary rounded-lg h-8">22</div>
-            <div class="col-start-8 row-start-6 bg-secondary rounded-lg h-8">23</div>
+            <div class="col-start-6 row-start-6 bg-secondary rounded-lg h-10 md:h-20">15</div>
+            <div class="col-start-7 row-start-3 bg-secondary rounded-lg h-10 md:h-20">16</div>
+            <div class="col-start-7 row-start-4 bg-primary rounded-lg h-10 md:h-20">17</div>
+            <div class="col-start-7 row-start-5 bg-primary rounded-lg h-10 md:h-20">18</div>
+            <div class="col-start-7 row-start-6 bg-secondary rounded-lg h-10 md:h-20">19</div>
+            <div class="col-start-8 row-start-3 bg-secondary rounded-lg h-10 md:h-20">20</div>
+            <div class="col-start-8 row-start-4 bg-primary rounded-lg h-10 md:h-20">21</div>
+            <div class="col-start-8 row-start-5 bg-primary rounded-lg h-10 md:h-20">22</div>
+            <div class="col-start-8 row-start-6 bg-secondary rounded-lg h-10 md:h-20">23</div>
         </div>
     </div>
 </template>

@@ -16,7 +16,7 @@
 
             <!-- Form -->
             <div class="flex md:h-auto p-4 leading-normal w-full shadow bg-gray-50 rounded-lg">
-                <form class="w-full md:w-96 md:mr-20 mx-auto">
+                <form class="w-full md:w-96 md:mr-44 mx-auto">
 
                     <div class="grid md:grid-cols-2 md:gap-6">
                         <div class="relative z-0 w-full mb-5 group">
