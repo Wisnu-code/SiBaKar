@@ -3,16 +3,18 @@
         <div class="max-w-screen flex flex-wrap items-center justify-between p-4">
 
             <!-- Logo -->
-            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SiBaKar</span>
             </a>
 
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <RouterLink to="/login">
-                    <button type="button"
+
+                <!-- Login -->
+                <button type="button"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
-                </RouterLink>
+
+                <!-- Mobile burger -->
                 <button data-collapse-toggle="navbar-sticky" @click="toggleMenu" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-sticky" aria-expanded="false">
@@ -25,11 +27,10 @@
                 </button>
             </div>
 
-            <!-- Menu (always visible in desktop, toggled in mobile) -->
-            <div :class="{ 'hidden': !isMenuOpen && !isDesktop, 'block': isMenuOpen || isDesktop, 'md:flex': isDesktop }"
-                class="w-full md:w-auto md:order-1" id="navbar-sticky">
+            <div :class="{ 'hidden': !isMenuOpen, 'block': isMenuOpen }"
+                class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                 <ul
-                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
 
                     <!-- Home -->
                     <li>
@@ -56,32 +57,17 @@
     </nav>
 </template>
 
-<script>
-import { RouterLink } from 'vue-router';
-
+<script lang="ts">
 export default {
     data() {
         return {
-            isMenuOpen: false, // Untuk melacak status apakah menu burger terbuka atau tidak
-            isDesktop: window.innerWidth >= 768 // Untuk melacak apakah tampilan dalam mode desktop
+            isMenuOpen: false // Untuk melacak status apakah menu burger terbuka atau tidak
         };
     },
     methods: {
         toggleMenu() {
             this.isMenuOpen = !this.isMenuOpen; // Toggle status menu
-        },
-        checkWindowSize() {
-            this.isDesktop = window.innerWidth >= 768; // Update status isDesktop berdasarkan lebar layar
-            if (this.isDesktop) {
-                this.isMenuOpen = false; // Menutup menu saat berpindah ke desktop
-            }
         }
-    },
-    mounted() {
-        window.addEventListener('resize', this.checkWindowSize); // Menambahkan event listener resize saat komponen di-mount
-    },
-    beforeUnmount() {
-        window.removeEventListener('resize', this.checkWindowSize); // Membersihkan event listener sebelum komponen dihancurkan
     }
 }
 </script>
@@ -94,20 +80,12 @@ nav {
     backdrop-filter: blur(9.8px);
     -webkit-backdrop-filter: blur(9.8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    width: 100%;
+    width: calc(100% - 158px);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     nav {
-        width: calc(100% - 158px);
+        width: 100%;
     }
-}
-
-.hidden {
-    display: none;
-}
-
-.block {
-    display: block;
 }
 </style>

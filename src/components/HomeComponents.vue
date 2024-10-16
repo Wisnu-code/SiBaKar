@@ -5,11 +5,12 @@
 
             <div class="flex flex-col justify-between items-center md:h-auto p-4 leading-normal w-full">
 
-
                 <div class="max-w-full h-auto flex justify-between flex-col">
+
                     <!-- Text Content -->
                     <h5 class="mb-2 text-5xl font-bold tracking-tight text-white">Lorem ipsum dolor sit
                         amet.</h5>
+
                     <!-- Button -->
                     <div class="bg-button max-w-full w-2/5 rounded-xl pl-15 p-2 mt-14">
                         <button type="button" class="learn-more">
@@ -19,7 +20,9 @@
                             <span class="button-text">Selanjutnya</span>
                         </button>
                     </div>
+
                 </div>
+                
             </div>
 
             <!-- Img -->
@@ -49,9 +52,6 @@
 
     </div>
 </template>
-
-<script setup>
-</script>
 
 <script>
 export default {
