@@ -1,8 +1,9 @@
 <template>
     <div>
-        <div class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-12">
-            <div class="relative max-w-full h-full m-20 mb-0">
-                <div class="relative w-72 h-80 bg-gray-200 rounded-lg overflow-hidden">
+        <div class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-24">
+
+            <div class="relative max-w-full h-full md:m-20 mb-0">
+                <div class="md:ml-36 relative w-full md:w-72 md:h-80  h-64 bg-gray-200 rounded-lg overflow-hidden">
                     <!-- Bagian atas dengan sudut tanpa lengkungan -->
                     <div
                         class="absolute top-0 left-0 w-16 h-16 bg-white rounded-br-3xl flex items-center justify-center">
@@ -18,9 +19,9 @@
                     </div>
 
                     <!-- Teks Waktu Video -->
-                    <div class="absolute top-4 left-20">
-                        <span class="text-sm text-gray-700">Lihat Video<br>2:00 Minutes</span>
-                    </div>
+                </div>
+                <div class="absolute top-0 md:left-0 left-20 md:ml-5">
+                    <span class="text-xl font-medium text-gray-700">Lihat Video<br>2:00 Minutes</span>
                 </div>
             </div>
 

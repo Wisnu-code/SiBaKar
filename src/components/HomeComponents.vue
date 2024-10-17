@@ -12,7 +12,7 @@
                         amet.</h5>
 
                     <!-- Button -->
-                    <div class="bg-button max-w-full w-2/5 rounded-xl pl-15 p-2 mt-14">
+                    <div class="bg-button max-w-full md:w-2/5 w-full rounded-xl pl-15 p-2 mt-14">
                         <button type="button" class="learn-more">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
