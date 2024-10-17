@@ -43,7 +43,7 @@
 
         <ChairComponents />
 
-        <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
+        <div class="mt-5 md:mt-16 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
             <div class="flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-20">
                 <div class="mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
                     500 +

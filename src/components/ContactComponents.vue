@@ -1,7 +1,7 @@
 <template>
     <div>
         <div
-            class="md:m-20 mt-20 flex flex-col items-center rounded-lg md:flex-row max-w-full h-full dark:bg-gray-800 dark:hover:bg-gray-700">
+            class="md:m-20 mt-5 flex flex-col items-center rounded-lg md:flex-row max-w-full h-full dark:bg-gray-800 dark:hover:bg-gray-700">
 
             <div class="flex flex-col justify-between p-4 leading-normal w-full break-all">
 
