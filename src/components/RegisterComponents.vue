@@ -2,7 +2,7 @@
     <!-- component -->
     <div class="flex h-screen bg-sky-100">
         <!-- Left: Image -->
-        <div class="w-1/2 h-screen hidden lg:flex justify-center items-center bg-yellow-300">
+        <div class="w-1/2 max-h-screen hidden lg:flex justify-center items-center bg-yellow-300 m-20 rounded-2xl">
             <img src="../assets/relax.png" alt="Placeholder Image" class="object-contain w-1/2 h-auto">
         </div>
         <!-- Right: Login Form -->
