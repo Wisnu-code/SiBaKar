@@ -1,19 +1,27 @@
 <template>
     <div>
-        <div class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-12">
+        <div class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-24">
 
-            <div class="relative max-w-full h-full m-20 mb-0">
-                <img :src='gambarSatu' class="w-auto h-full md:pl-44 md:mt-0 mt-20">
-                <div class="absolute top-0 left-0">
-                    <div class="text-2xl font-medium">Lihat Video <div class="">2:00 Minutes</div>
+            <div class="relative max-w-full h-full md:m-20 mb-0">
+                <div class="md:ml-36 relative w-full md:w-72 md:h-80  h-64 bg-gray-200 rounded-lg overflow-hidden">
+                    <!-- Bagian atas dengan sudut tanpa lengkungan -->
+                    <div
+                        class="absolute top-0 left-0 w-16 h-16 bg-white rounded-br-3xl flex items-center justify-center">
+                        <!-- Tombol Play -->
+                        <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
+                            <!-- Ikon Play -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.752 11.168l-5.197-3.722A1 1 0 008 8.198v7.605a1 1 0 001.555.832l5.197-3.722a1 1 0 000-1.664z" />
+                            </svg>
+                        </div>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-12 absolute top-2 md:ml-40 ml-36">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
-                    </svg>
+
+                    <!-- Teks Waktu Video -->
+                </div>
+                <div class="absolute top-0 md:left-0 left-20 md:ml-5">
+                    <span class="text-xl font-medium text-gray-700">Lihat Video<br>2:00 Minutes</span>
                 </div>
             </div>
 
