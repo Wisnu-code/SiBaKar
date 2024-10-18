@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div
-            class="md:m-20 mt-20 flex flex-col items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96">
+            class="blockT md:m-20 mt-20 flex flex-col items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96">
 
             <div class="flex flex-col justify-between items-center md:h-auto p-4 leading-normal w-full">
 
@@ -33,19 +33,19 @@
         </div>
 
         <!-- Tampilan Jumlah -->
-        <div class="mt-20 max-w-full h-auto p-4 text-center bg-secondary  border rounded-lg shadow sm:p-8 md:mx-20">
+        <div class="zoom mt-20 max-w-full h-auto p-4 text-center bg-secondary  border rounded-lg shadow sm:p-8 md:mx-20">
             <div class="flex items-center justify-evenly md:gap-10 md:flex-row flex-col">
-                <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
+                <div class="zoom mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
                     150
-                    <div class="md:text-3xl text-2xl font-bold text-white ">Seat</div>
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-white ">Seat</div>
                 </div>
-                <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
+                <div class="zoom mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
                     150
-                    <div class="md:text-3xl text-2xl font-bold text-white ">Seat</div>
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-white ">Seat</div>
                 </div>
-                <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
+                <div class="zoom mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
                     150
-                    <div class="md:text-3xl text-2xl font-bold text-white ">Seat</div>
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-white ">Seat</div>
                 </div>
             </div>
         </div>
@@ -58,6 +58,25 @@ export default {
     name: 'HomeComponents'
 }
 </script>
+
+<style>
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.zoom {
+    animation: zoomIn ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+</style>
 
 <style scoped>
 button {

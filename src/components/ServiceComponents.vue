@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-24">
+        <div class="blockT flex flex-col md:flex-row md:mx-0 mx-5 text-justify mt-24">
 
             <div class="relative max-w-full h-full md:m-20 mb-0">
                 <div class="md:ml-36 relative w-full md:w-72 md:h-80  h-64 bg-gray-200 rounded-lg overflow-hidden">
@@ -45,33 +45,33 @@
 
         <div class="mt-5 md:mt-16 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
             <div class="flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-20">
-                <div class="mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                <div class="zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
                     500 +
-                    <div class="md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
                 </div>
-                <div class="mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                <div class="zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
                     500 +
-                    <div class="md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
                 </div>
-                <div class="mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                <div class="zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
                     500 +
-                    <div class="md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
                 </div>
             </div>
         </div>
 
-        <div class="my-10 text-4xl md:text-5xl font-bold text-center text-gray-800">
+        <div class="zoom my-10 text-4xl md:text-5xl font-bold text-center text-gray-800">
             Cara Kerja
         </div>
 
-        <div class="bg-white dark:bg-gray-800 flex justify-center items-center w-full h-full p-5">
+        <div class="zoom bg-white dark:bg-gray-800 flex justify-center items-center w-full h-full p-5">
             <div class="border shadow-lg max-w-2xl p-6 rounded-lg dark:bg-gray-700 dark:text-gray-300">
                 <div class="w-full max-w-screen-xl px-10 mx-auto">
                     <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 text-2xl font-bold">
 
                         <li>
                             <a href="#"
-                                class="text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
+                                class="zoom zoomS text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
                                 @click.prevent="toggleMain">
                                 Utama
                             </a>
@@ -79,7 +79,7 @@
 
                         <li>
                             <a href="#"
-                                class="text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
+                                class="zoom zoomS text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
                                 @click.prevent="toggleEvent">
                                 Event
                             </a>
@@ -94,18 +94,18 @@
 
             <!-- saat link utama ditekan akan muncul, namun akan hilang saat link event ditekan -->
             <div v-if="showMain" class="grid md:grid-cols-3 grid-rows-1 gap-14">
-                <div class="bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
-                    <div class="text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                <div class="zoom zoomS bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
                         elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
                         recusandae?</div>
                 </div>
-                <div class="bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
-                    <div class="text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                <div class="zoom zoomS bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
                         elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
                         recusandae?</div>
                 </div>
-                <div class="bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
-                    <div class="text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                <div class="zoom zoomS bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
                         elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
                         recusandae?</div>
                 </div>
@@ -113,18 +113,18 @@
 
             <!-- saat link event ditekan akan muncul, namun akan hilang saat link utama ditekan -->
             <div v-if="showEvent" class="grid md:grid-cols-3 grid-rows-1 gap-14">
-                <div class="bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
-                    <div class="text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                <div class="zoom bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
                         elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
                         recusandae?</div>
                 </div>
-                <div class="bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
-                    <div class="text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                <div class="zoom bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
                         elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
                         recusandae?</div>
                 </div>
-                <div class="bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
-                    <div class="text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                <div class="zoom bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
                         elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
                         recusandae?</div>
                 </div>

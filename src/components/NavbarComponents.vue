@@ -1,5 +1,5 @@
 <template>
-    <nav class="mt-0 dark:bg-gray-900 md:mx-20 fixed z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <nav class="blockT mt-0 dark:bg-gray-900 md:mx-20 fixed z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
         <div class="max-w-screen flex flex-wrap items-center justify-between p-4">
 
             <!-- Logo -->
@@ -34,7 +34,7 @@
                     <!-- Home -->
                     <li>
                         <a href="/"
-                            class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                            class="block py-2 px-3 rounded md:bg-transparent hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 text-gray-900 md:p-0 md:dark:text-blue-500 md:dark:hover:text-blue-500 active:text-blue-500"
                             aria-current="page">Home</a>
                     </li>
 
@@ -110,5 +110,20 @@ nav {
 
 .block {
     display: block;
+}
+</style>
+
+<style>
+@keyframes opacit {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.blockT {
+    animation: opacit .5s ease-in-out;
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
     <!-- component -->
-    <div class="flex h-screen bg-sky-100">
+    <div class="blockT flex h-screen bg-sky-100">
         <!-- Left: Image -->
         <div class="w-1/2 h-screen hidden lg:flex justify-center items-center bg-yellow-300">
             <img src="../assets/relax.png" alt="Placeholder Image" class="object-contain w-1/2 h-auto">
         </div>
         <!-- Right: Login Form -->
         <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2 bg-white">
-            <h1 class="text-2xl font-semibold mb-4">Login</h1>
+            <h1 class="text-2xl font-semibold mb-4">Register</h1>
             <form action="#" method="POST">
                 <!-- Username Input -->
                 <div class="mb-4" bg-sky-100>

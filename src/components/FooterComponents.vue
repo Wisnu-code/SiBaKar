@@ -1,6 +1,6 @@
 <template>
     <!-- Foooter -->
-<section class="bg-white">
+<section class="zoom bg-white">
     <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <nav class="flex flex-wrap justify-center -mx-5 -my-2">
             <div class="px-5 py-2">
@@ -72,3 +72,22 @@
     </div>
 </section>
 </template>
+
+<style scoped>
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.zoom {
+    animation : zoomIn ease-in-out;
+    animation-timeline : view();
+    animation-range : entry 10% cover 10%;
+}
+</style>
