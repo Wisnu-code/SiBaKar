@@ -1,5 +1,5 @@
 <template>
-    <nav class="mt-0 dark:bg-gray-900 md:mx-20 fixed z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <nav class="blockT mt-0 dark:bg-gray-900 md:mx-20 fixed z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
         <div class="max-w-screen flex flex-wrap items-center justify-between p-4">
 
             <!-- Logo -->
@@ -33,21 +33,21 @@
 
                     <!-- Home -->
                     <li>
-                        <a href="/"
-                            class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                            aria-current="page">Home</a>
+                        <RouterLink to="/" exact active-class="active"
+                            class="block py-2 px-3 rounded md:bg-transparent hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 text-gray-900 md:p-0 md:dark:text-blue-500 md:dark:hover:text-blue-500 md:focus:text-blue-400"
+                            aria-current="page">Home</RouterLink>
                     </li>
 
                     <!-- About -->
                     <li>
-                        <a href="/about"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                        <RouterLink to="/about" active-class="active"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 md:focus:text-blue-400">About</RouterLink>
                     </li>
 
                     <!-- Services -->
                     <li>
-                        <a href="/service"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                        <RouterLink to="/service" active-class="active"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 md:focus:text-blue-400">Services</RouterLink>
                     </li>
 
                 </ul>
@@ -63,26 +63,26 @@ import logo from '../assets/logo.jpg'
 export default {
     data() {
         return {
-            isMenuOpen: false, // Untuk melacak status apakah menu burger terbuka atau tidak
-            isDesktop: window.innerWidth >= 768 // Untuk melacak apakah tampilan dalam mode desktop
+            isMenuOpen: false, 
+            isDesktop: window.innerWidth >= 768 
         };
     },
     methods: {
         toggleMenu() {
-            this.isMenuOpen = !this.isMenuOpen; // Toggle status menu
+            this.isMenuOpen = !this.isMenuOpen;
         },
         checkWindowSize() {
-            this.isDesktop = window.innerWidth >= 768; // Update status isDesktop berdasarkan lebar layar
+            this.isDesktop = window.innerWidth >= 768;
             if (this.isDesktop) {
-                this.isMenuOpen = false; // Menutup menu saat berpindah ke desktop
+                this.isMenuOpen = false;
             }
         }
     },
     mounted() {
-        window.addEventListener('resize', this.checkWindowSize); // Menambahkan event listener resize saat komponen di-mount
+        window.addEventListener('resize', this.checkWindowSize);
     },
     beforeUnmount() {
-        window.removeEventListener('resize', this.checkWindowSize); // Membersihkan event listener sebelum komponen dihancurkan
+        window.removeEventListener('resize', this.checkWindowSize);
     }
 }
 </script>
@@ -110,5 +110,29 @@ nav {
 
 .block {
     display: block;
+}
+
+/* Highlight class with transition */
+.active {
+    color: blue;
+    font-weight: bold;
+    border-bottom: 1px solid blue;
+    transition: color 0.8s ease-in-out, font-weight 0.3s ease-in-out;
+    transition-delay: 0.8s; /* Delay for the transition */
+}
+</style>
+
+<style>
+@keyframes opacit {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.blockT {
+    animation: opacit .5s ease-in-out;
 }
 </style>

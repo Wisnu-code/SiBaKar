@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div
-            class="mt-20 w-full p-4 text-center bg-secondary border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 break-all">
+            class="blockT mt-20 w-full p-4 text-center bg-secondary border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 break-all">
 
             <!-- Section 1 -->
             <h5 class="mb-5 text-3xl font-bold text-white dark:text-white max-w-full md:mx-20">Lorem ipsum dolor sit,
@@ -39,23 +39,23 @@
         <!-- Section 2 -->
         <div class="mt-20 md:px-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
             <div
-                class="mb-2 md:mb-5 text-2xl font-bold flex self-start text-gray-500 sm:text-lg dark:text-gray-400 md:ml-20 ml-8">
+                class="zoom zoomS mb-2 md:mb-5 text-2xl font-bold flex self-start text-gray-500 sm:text-lg dark:text-gray-400 md:ml-20 ml-8">
                 Our Mission</div>
-            <div class="flex flex-col md:flex-row items-stretch justify-center md:gap-10">
+            <div class="zoom zoomS flex flex-col md:flex-row items-stretch justify-center md:gap-10">
                 <div class="self-start h-auto w-full">
                     <h1 class="mb-5 text-3xl font-bold text-gray-900 dark:text-white">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit.</h1>
                 </div>
-                <div class="h-auto w-full">
-                    <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Lorem ipsum dolor sit amet
+                <div class="zoom zoomS h-auto w-full">
+                    <p class="zoom zoomS mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit. Itaque dolores dolor maxime earum, sit nisi veniam dignissimos
                         minima totam esse mollitia, optio perferendis pariatur obcaecati aliquam laudantium ratione
                         ipsa. Eveniet!</p>
-                    <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Lorem ipsum dolor sit amet
+                    <p class="zoom zoomS mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit. Itaque dolores dolor maxime earum, sit nisi veniam dignissimos
                         minima totam esse mollitia, optio perferendis pariatur obcaecati aliquam laudantium ratione
                         ipsa. Eveniet!</p>
-                    <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Lorem ipsum dolor sit amet
+                    <p class="zoom zoomS mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit. Itaque dolores dolor maxime earum, sit nisi veniam dignissimos
                         minima totam esse mollitia, optio perferendis pariatur obcaecati aliquam laudantium ratione
                         ipsa. Eveniet!</p>
@@ -66,17 +66,17 @@
         <!-- Section 3 -->
         <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
             <div class="flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-20">
-                <div class="mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                <div class="zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
                     500 +
-                    <div class="md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
                 </div>
-                <div class="mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                <div class="zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
                     500 +
-                    <div class="md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
                 </div>
-                <div class="mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                <div class="zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
                     500 +
-                    <div class="md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
                 </div>
             </div>
         </div>
@@ -85,28 +85,28 @@
         <div
             class="mt-20 w-full p-4 bg-primary text-white border border-gray-200 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div class="flex flex-col md:flex-row items-stretch justify-center md:gap-10">
-                <div class="w-full h-auto flex flex-col items-start justify-center md:ml-20">
-                    <div class="mb-2 md:mb-3 text-2xl font-bold  sm:text-lg dark:text-gray-400">
+                <div class="zoom w-full h-auto flex flex-col items-start justify-center md:ml-20">
+                    <div class="zoom zoomS mb-2 md:mb-3 text-2xl font-bold  sm:text-lg dark:text-gray-400">
                         Our Mission
                     </div>
-                    <div class="mb-2 md:mb-5 text-5xl font-bold dark:text-white max-w-full">
+                    <div class="zoom zoomS mb-2 md:mb-5 text-5xl font-bold dark:text-white max-w-full">
                         Our Mission
                     </div>
-                    <p class="mb-5 text-base  sm:text-lg dark:text-gray-400">Lorem ipsum dolor sit amet
+                    <p class="zoom zoomS mb-5 text-base  sm:text-lg dark:text-gray-400">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit. Itaque dolores dolor maxime earum, sit nisi veniam dignissimos
                         minima totam esse mollitia, optio perferendis pariatur obcaecati aliquam laudantium ratione
                         ipsa. Eveniet!</p>
                 </div>
 
-                <div class="w-full h-auto p-4 text-center bg-white border rounded-lg shadow sm:p-8">
+                <div class="zoom zoomS w-full h-auto p-4 text-center bg-white border rounded-lg shadow sm:p-8">
                     <div class="flex justify-center md:gap-10 flex-col">
-                        <div class="flex md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">
+                        <div class="zoom zoomS flex md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">
                             <div class="mr-5">0</div>Lorem, ipsum.
                         </div>
-                        <div class="flex md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">
+                        <div class="zoom zoomS flex md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">
                             <div class="mr-5">0</div>Lorem, ipsum.
                         </div>
-                        <div class="flex md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">
+                        <div class="zoom zoomS flex md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">
                             <div class="mr-5">0</div>Lorem, ipsum.
                         </div>
                     </div>
