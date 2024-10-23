@@ -30,20 +30,49 @@
                     elit. Beatae, repudiandae.</div>
 
                 <div class="bg-button max-w-full md:w-2/5 w-full rounded-xl pl-10 p-2 mt-5 md:mt-14">
-                    <RouterLink to="/formbook">
-                        <button type="button" class="learn-more">
-                            <span class="circle" aria-hidden="true">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="button-text">Mulai Reservasi</span>
-                        </button> 
-                    </RouterLink>
+                    <button @click="showAlert = true" type="button" class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Mulai Reservasi</span>
+                    </button>
                 </div>
             </div>
-
         </div>
 
         <ChairComponents />
+
+        <!-- Alert Form -->
+        <div v-if="showAlert" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+                <div class="bg-white rounded-lg p-8 w-96">
+                    <h2 class="text-xl font-semibold mb-4 text-center">Booking Form</h2>
+                    <form @submit.prevent="handleBooking">
+                        <!-- Nama Lengkap Input -->
+                        <div class="mb-4">
+                            <label for="namalengkap" class="block text-gray-600">Nama Lengkap</label>
+                            <input type="text" id="namalengkap" v-model="namalengkap" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
+                        </div>
+                        <!-- Divisi/Tim Input -->
+                        <div class="mb-4">
+                            <label for="namadivisi" class="block text-gray-600">Divisi/Tim</label>
+                            <input type="text" id="namadivisi" v-model="namadivisi" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
+                        </div>
+                        <!-- Dropdown for Seats Selection -->
+                        <div class="mb-4">
+                            <label for="service" class="block text-gray-600">Silahkan pilih bangku yang tersisa</label>
+                            <select id="service" v-model="selectedSeat" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
+                                <option disabled value="">Silahkan pilih satu</option>
+                                <option v-for="seat in availableSeats" :key="seat.id" :value="seat.name">{{ seat.name }}</option>
+                            </select>
+                        </div>
+                        <!-- Booking Button -->
+                        <div class="text-center">
+                            <button type="submit" class="bg-red-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Submit</button>
+                            <button @click="closeAlert" type="button" class="bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded-md py-2 px-4 mt-2 w-full">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
         <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
             <div class="flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-20">
@@ -140,8 +169,17 @@ export default {
     name: 'ServiceComponents',
     data() {
         return {
-            showMain: true, // awalnya konten main yang muncul
-            showEvent: false
+            showMain: true,
+            showEvent: false,
+            showAlert: false, // State for alert visibility
+            namalengkap: '',
+            namadivisi: '',
+            selectedSeat: '',
+            availableSeats: [
+                { id: 1, name: 'Bangku 1' },
+                { id: 2, name: 'Bangku 2' },
+                { id: 3, name: 'Bangku 3' }
+            ]
         };
     },
     methods: {
@@ -152,6 +190,17 @@ export default {
         toggleEvent() {
             this.showMain = false;
             this.showEvent = true;
+        },
+        handleBooking() {
+            // Logic for handling booking submission
+            alert(`Booking confirmed for ${this.namalengkap} from ${this.namadivisi} for seat ${this.selectedSeat}`);
+            this.closeAlert(); // Close alert after booking
+        },
+        closeAlert() {
+            this.showAlert = false; // Close alert
+            this.namalengkap = ''; // Reset form fields
+            this.namadivisi = '';
+            this.selectedSeat = '';
         }
     }
 }
@@ -171,7 +220,6 @@ button {
     border: 0;
     vertical-align: middle;
     text-decoration: none;
-    background: transparent;
     padding: 0;
     font-size: inherit;
     font-family: inherit;
