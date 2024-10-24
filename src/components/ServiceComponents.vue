@@ -1,16 +1,16 @@
 <template>
     <div>
-        <div class="blockT flex flex-col md:flex-row md:mx-0 mx-5 text-justify mt-24">
+        <div class="flex flex-col md:flex-row md:mx-0 mx-5 text-justify mt-24">
 
             <div class="relative max-w-full h-full md:m-20 mb-0">
                 <div
-                    class="shadow-lg slides md:ml-36 relative w-full md:w-72 md:h-80 h-64 bg-gray-200 rounded-lg overflow-hidden">
+                    class="s-b shadow-lg md:ml-36 relative w-full md:w-72 md:h-80 h-64 bg-gray-200 rounded-lg overflow-hidden">
 
                     <div
-                        class="slides absolute top-0 left-0 w-16 h-16 bg-white rounded-br-3xl flex items-center justify-center">
+                        class="absolute top-0 left-0 w-16 h-16 bg-white rounded-br-3xl flex items-center justify-center">
                         <!-- Jika showVideo false, tampilkan tombol Play -->
                         <div v-if="!showVideo"
-                            class="slides absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white ">
+                            class="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white ">
                             <!-- Tombol Play -->
                             <div @click="playVideo"
                                 class="w-16 h-16 bg-white rounded-full flex items-center justify-center cursor-pointer">
@@ -24,26 +24,26 @@
                     </div>
 
                     <!-- Jika showVideo true, tampilkan iframe YouTube -->
-                    <iframe v-if="showVideo" width="100%" height="100%" class="shadow-lg" :src="videoUrl" title="YouTube Video"
-                        frameborder="0"
+                    <iframe v-if="showVideo" width="100%" height="100%" class="shadow-lg" :src="videoUrl"
+                        title="YouTube Video" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
                 </div>
 
                 <!-- Teks Waktu Video -->
-                <div class="slides absolute top-0 md:left-0 left-20 md:ml-5">
-                    <span class="text-xl font-medium text-gray-700">Lihat Video<br>2:00 Minutes</span>
+                <div class="s-l absolute top-0 md:left-0 left-20 md:ml-5">
+                    <span class="text-xl font-medium text-gray-700">Lihat Video<br></span>
                 </div>
             </div>
 
-            <div class="slides md:mt-20 mt-10 max-w-full md:w-2/4 md:mr-20">
-                <div class="md:text-3xl w-full text-lg font-medium">Kami memahami bahwa setiap perusahaan memiliki
+            <div class="md:mt-20 mt-10 max-w-full md:w-2/4 md:mr-20">
+                <div class="s-t md:text-3xl w-full text-lg font-medium">Kami memahami bahwa setiap perusahaan memiliki
                     kebutuhan unik dalam menciptakan lingkungan kerja yang optimal. Oleh karena itu, kami menyediakan
                     berbagai layanan yang dirancang khusus untuk mendukung efisiensi, fleksibilitas, dan kenyamanan
                     dalam pengelolaan ruang kerja Anda.</div>
 
-                <div class="slides shadow-md bg-button max-w-full md:w-2/5 w-full rounded-xl pl-10 p-2 mt-5 md:mt-14">
+                <div class="s-r shadow-md bg-button max-w-full md:w-2/5 w-full rounded-xl pl-10 p-2 mt-5 md:mt-14">
                     <button type="button" class="learn-more">
                         <span class="circle" aria-hidden="true">
                             <span class="icon arrow"></span>
@@ -61,11 +61,30 @@
 
 <script setup>
 import ChairComponents from './ChairComponents.vue';
+// Import ScrollReveal
+import ScrollReveal from 'scrollreveal';
 </script>
 
 <script>
 export default {
     name: 'ServiceComponents',
+    mounted() {
+        // Inisialisasi ScrollReveal
+        ScrollReveal({
+            duration: 1000, // Durasi animasi dalam milidetik
+            distance: '60px', // Jarak elemen akan muncul
+            delay: 300, // Jeda antara setiap animasi
+            reset: true, // Jika true, animasi akan dijalankan lagi setiap kali elemen terlihat
+        });
+        ScrollReveal().reveal('.s-l', { delay: 100, origin: 'left' });
+        ScrollReveal().reveal('.s-r', { delay: 100, origin: 'right' });
+        ScrollReveal().reveal('.s-t', { delay: 100, origin: 'top' });
+        ScrollReveal().reveal('.s-b', { delay: 100, origin: 'bottom' });
+        ScrollReveal().reveal('.s-b-5', { delay: 500, origin: 'bottom' });
+        ScrollReveal().reveal('.s-b-6', { delay: 600, origin: 'bottom' });
+        ScrollReveal().reveal('.s-b-7', { delay: 700, origin: 'bottom' });
+        ScrollReveal().reveal('.intern .ox, .intern a, .inter a, .intern p, .intern .sla, .sla .slb', { delay: 50, origin: 'bottom', interval: 50 });
+    },
     data() {
         return {
             showMain: true, // awalnya konten main yang muncul
