@@ -8,25 +8,24 @@
                 <div class="max-w-full h-auto flex justify-between flex-col">
 
                     <!-- Text Content -->
-                    <h5 class="mb-2 text-5xl font-bold tracking-tight text-white">Lorem ipsum dolor sit
-                        amet.</h5>
+                    <h5 class="slides mb-2 text-4xl md:text-6xl text-justify font-extrabold tracking-tight text-white">Atur dan pesan tempat kerja anda dengan mudah.</h5>
 
                     <!-- Button -->
-                    <div class="bg-button max-w-full md:w-2/5 w-full rounded-xl pl-15 p-2 mt-14">
+                    <router-link to="/service" class="slides shadow-md bg-button max-w-full md:w-2/5 w-full rounded-xl pl-15 p-2 mt-14">
                         <button type="button" class="learn-more">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
                             </span>
                             <span class="button-text">Selanjutnya</span>
                         </button>
-                    </div>
+                    </router-link>
 
                 </div>
                 
             </div>
 
             <!-- Img -->
-            <div class="flex max-h-full pr-10 mt-10">
+            <div class="slides flex max-h-full pr-10 mt-10">
                 <img class="object-cover w-full h-auto rounded-t-lg md:mr-10 md:w-fit md:rounded-none md:rounded-s-lg"
                     src="../assets/undraw_favourite_item_pcyo1.png" alt="">
             </div>
@@ -41,11 +40,11 @@
                 </div>
                 <div class="zoom mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
                     150
-                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-white ">Seat</div>
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-white ">Floor</div>
                 </div>
                 <div class="zoom mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
                     150
-                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-white ">Seat</div>
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-white ">Person</div>
                 </div>
             </div>
         </div>

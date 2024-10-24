@@ -2,7 +2,7 @@
     <div>
         <!-- Modal Trigger -->
         <div class="zoom flex justify-center items-center">
-            <button @click="showModal = true" class="md:hidden mt-10 bg-blue-500 text-white p-2 rounded">Mulai Pesan</button>
+            <button @click="showModal = true" class="md:hidden mt-12 bg-blue-500 text-white p-2 rounded text-lg">Mulai Pesan</button>
         </div>
 
         <!-- Desktop layout -->
@@ -48,11 +48,11 @@
             <div class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-5 gap-3 mb-10 justify-around">
                 <div class="flex zoom flex-row w-full gap-3">
                     <h1 class="bg-primary zoom zoomS shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                    <h1 class="w-full h-full zoom zoomS">ini adalah kode warna yang bangkunya masih kosong</h1>
+                    <h1 class="w-full h-full zoom zoomS text-xl">ini adalah kode warna yang bangkunya masih kosong</h1>
                 </div>
                 <div class="flex flex-row w-full gap-3 zoom">
                     <h1 class="bg-secondary zoom zoomS shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                    <h1 class="w-full h-full zoom zoomS">ini adalah kode warna yang bangkunya masih kosong</h1>
+                    <h1 class="w-full h-full zoom zoomS text-xl">ini adalah kode warna yang bangkunya masih kosong</h1>
                 </div>
             </div>
         </div>
@@ -107,11 +107,11 @@
                             <div class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-5 gap-3 mb-10 justify-around">
                                 <div class="flex flex-row w-full gap-3">
                                     <h1 class="bg-primary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                                    <h1 class="w-full h-full">ini adalah kode warna yang bangkunya masih kosong</h1>
+                                    <h1 class="w-full h-full text-lg">ini adalah kode warna yang bangkunya masih kosong</h1>
                                 </div>
                                 <div class="flex flex-row w-full gap-3">
                                     <h1 class="bg-secondary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                                    <h1 class="w-full h-full">ini adalah kode warna yang bangkunya masih kosong</h1>
+                                    <h1 class="w-full h-full text-lg">ini adalah kode warna yang bangkunya masih kosong</h1>
                                 </div>
                             </div>
                         </div>
