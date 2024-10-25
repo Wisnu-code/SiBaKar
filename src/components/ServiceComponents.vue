@@ -44,7 +44,7 @@
                     dalam pengelolaan ruang kerja Anda.</div>
 
                 <div class="s-r shadow-md bg-button max-w-full md:w-2/5 w-full rounded-xl pl-10 p-2 mt-5 md:mt-14">
-                    <button type="button" class="learn-more">
+                    <button @click="showAlert = true" type="button" class="learn-more">
                         <span class="circle" aria-hidden="true">
                             <span class="icon arrow"></span>
                         </span>
@@ -52,10 +52,129 @@
                     </button>
                 </div>
             </div>
-
         </div>
 
         <ChairComponents />
+
+        <!-- Alert Form -->
+        <div v-if="showAlert" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+                <div class="bg-white rounded-lg p-8 w-96">
+                    <h2 class="text-xl font-semibold mb-4 text-center">Booking Form</h2>
+                    <form @submit.prevent="handleBooking">
+                        <!-- Nama Lengkap Input -->
+                        <div class="mb-4">
+                            <label for="namalengkap" class="block text-gray-600">Nama Lengkap</label>
+                            <input type="text" id="namalengkap" v-model="namalengkap" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
+                        </div>
+                        <!-- Divisi/Tim Input -->
+                        <div class="mb-4">
+                            <label for="namadivisi" class="block text-gray-600">Divisi/Tim</label>
+                            <input type="text" id="namadivisi" v-model="namadivisi" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
+                        </div>
+                        <!-- Dropdown for Seats Selection -->
+                        <div class="mb-4">
+                            <label for="service" class="block text-gray-600">Silahkan pilih bangku yang tersisa</label>
+                            <select id="service" v-model="selectedSeat" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
+                                <option disabled value="">Silahkan pilih satu</option>
+                                <option v-for="seat in availableSeats" :key="seat.id" :value="seat.name">{{ seat.name }}</option>
+                            </select>
+                        </div>
+                        <!-- Booking Button -->
+                        <div class="text-center">
+                            <button type="submit" class="bg-red-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Submit</button>
+                            <button @click="closeAlert" type="button" class="bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded-md py-2 px-4 mt-2 w-full">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
+            <div class="flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-20">
+                <div class="zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                    500 +
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
+                </div>
+                <div class="zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                    500 +
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
+                </div>
+                <div class="zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                    500 +
+                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="zoom my-10 text-4xl md:text-5xl font-bold text-center text-gray-800">
+            Cara Kerja
+        </div>
+
+        <div class="zoom bg-white dark:bg-gray-800 flex justify-center items-center w-full h-full p-5">
+            <div class="border shadow-lg max-w-2xl p-6 rounded-lg dark:bg-gray-700 dark:text-gray-300">
+                <div class="w-full max-w-screen-xl px-10 mx-auto">
+                    <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 text-2xl font-bold">
+
+                        <li>
+                            <a href="#"
+                                class="zoom zoomS text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
+                                @click.prevent="toggleMain">
+                                Utama
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="zoom zoomS text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
+                                @click.prevent="toggleEvent">
+                                Event
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full md:px-20 mt-10 text-center">
+
+            <!-- saat link utama ditekan akan muncul, namun akan hilang saat link event ditekan -->
+            <div v-if="showMain" class="grid md:grid-cols-3 grid-rows-1 gap-14">
+                <div class="zoom zoomS bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+                <div class="zoom zoomS bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+                <div class="zoom zoomS bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+            </div>
+
+            <!-- saat link event ditekan akan muncul, namun akan hilang saat link utama ditekan -->
+            <div v-if="showEvent" class="grid md:grid-cols-3 grid-rows-1 gap-14">
+                <div class="zoom bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+                <div class="zoom bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+                <div class="zoom bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="zoom text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -87,10 +206,19 @@ export default {
     },
     data() {
         return {
-            showMain: true, // awalnya konten main yang muncul
+            showMain: true,
             showEvent: false,
-            showVideo: false, // Status untuk menampilkan video
-            videoUrl: '' // URL YouTube dengan autoplay
+            showVideo: false,
+            videoUrl: '',
+            showAlert: false, // State for alert visibility
+            namalengkap: '',
+            namadivisi: '',
+            selectedSeat: '',
+            availableSeats: [
+                { id: 1, name: 'Bangku 1' },
+                { id: 2, name: 'Bangku 2' },
+                { id: 3, name: 'Bangku 3' }
+            ]
         };
     },
     methods: {
@@ -99,15 +227,48 @@ export default {
             this.videoUrl = 'https://www.youtube.com/embed/_DKnmKFSxS8?autoplay=1&si=yHeMhPejXI4QndwD';
             this.showVideo = true;
         },
-        toggleMain() {
-            this.showMain = true;
-            this.showEvent = false;
-        },
-        toggleEvent() {
-            this.showMain = false;
-            this.showEvent = true;
+    toggleMain() {
+        this.showMain = true;
+        this.showEvent = false;
+    },
+    toggleEvent() {
+        this.showMain = false;
+        this.showEvent = true;
+    },
+    async handleBooking() {
+        try {
+            const response = await fetch('http://localhost:8080/booking', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    namalengkap: this.namalengkap,
+                    namadivisi: this.namadivisi,
+                    selectedSeat: this.selectedSeat,
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            alert(`Booking confirmed for ${data.namalengkap} from ${data.namadivisi} for seat ${data.selectedSeat}`);
+            this.closeAlert(); // Close alert after booking
+        } catch (error) {
+            console.error('Error during booking:', error);
+            alert('Failed to confirm booking. Please try again.');
         }
+    },
+    closeAlert() {
+        this.showAlert = false; // Close alert
+        this.namalengkap = ''; // Reset form fields
+        this.namadivisi = '';
+        this.selectedSeat = '';
     }
+}
+
 }
 </script>
 
@@ -120,7 +281,6 @@ button {
     border: 0;
     vertical-align: middle;
     text-decoration: none;
-    background: transparent;
     padding: 0;
     font-size: inherit;
     font-family: inherit;
