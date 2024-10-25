@@ -152,6 +152,7 @@ export default {
         ScrollReveal().reveal('.s-b-6', { delay: 600, origin: 'bottom' });
         ScrollReveal().reveal('.s-b-7', { delay: 700, origin: 'bottom' });
         ScrollReveal().reveal('.intern .ox, .intern a, .inter a, .intern p, .intern .sla, .sla .slb', { delay: 50, origin: 'bottom', interval: 50 });
+        ScrollReveal().reveal('.r .r-delay', { delay: 300, origin: 'right', interval: 100 });
     }
 }
 </script>

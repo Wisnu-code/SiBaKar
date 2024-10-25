@@ -14,11 +14,11 @@
             </div>
 
             <!-- Form -->
-            <div class="s-r flex md:h-auto p-4 leading-normal w-full shadow bg-gray-50 rounded-lg">
+            <div class="s-r r flex md:h-auto p-4 leading-normal w-full shadow bg-gray-50 rounded-lg">
                 <form class="w-full md:w-96 md:mr-44 mx-auto">
 
                     <div class="grid md:grid-cols-2 md:gap-6">
-                        <div class="relative z-0 w-full mb-5 group">
+                        <div class="r-delay relative z-0 w-full mb-5 group">
                             <input type="text" name="floating_first_name" id="floating_first_name"
                                 class="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                 placeholder=" " required />
@@ -27,7 +27,7 @@
                                 Pertama</label>
                         </div>
 
-                        <div class="relative z-0 w-full mb-5 group">
+                        <div class="r-delay relative z-0 w-full mb-5 group">
                             <input type="text" name="floating_last_name" id="floating_last_name"
                                 class="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                 placeholder=" " required />
@@ -37,7 +37,7 @@
                         </div>
                     </div>
 
-                    <div class="relative z-0 w-full mb-5 group">
+                    <div class="r-delay relative z-0 w-full mb-5 group">
                         <input type="email" name="floating_email" id="floating_email"
                             class="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                             placeholder=" " required />
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="grid grid-cols-3 md:gap-6">
-                        <div class="relative z-0 w-full mb-5 group">
+                        <div class="r-delay relative z-0 w-full mb-5 group">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-lg font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg"
                                     type="button">
@@ -56,7 +56,7 @@
                             </div>
                         </div>
 
-                        <div class="relative z-0 w-full mb-5 group col-span-2">
+                        <div class="r-delay relative z-0 w-full mb-5 group col-span-2">
                             <input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" name="floating_phone"
                                 id="floating_phone"
                                 class="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -67,7 +67,7 @@
                         </div>
                     </div>
 
-                    <div class="relative z-0 w-full mb-5 group">
+                    <div class="r-delay relative z-0 w-full mb-5 group">
 
                         <label for="message" class="block mb-2 text-lg font-medium text-gray-400 dark:text-white">Pesan
                             Kamu</label>
