@@ -81,7 +81,3 @@ export default {
     }
 };
 </script>
-
-<style scoped>
-/* Tambahkan gaya tambahan di sini jika perlu */
-</style>

@@ -183,26 +183,48 @@ export default {
         };
     },
     methods: {
-        toggleMain() {
-            this.showMain = true;
-            this.showEvent = false;
-        },
-        toggleEvent() {
-            this.showMain = false;
-            this.showEvent = true;
-        },
-        handleBooking() {
-            // Logic for handling booking submission
-            alert(`Booking confirmed for ${this.namalengkap} from ${this.namadivisi} for seat ${this.selectedSeat}`);
+    toggleMain() {
+        this.showMain = true;
+        this.showEvent = false;
+    },
+    toggleEvent() {
+        this.showMain = false;
+        this.showEvent = true;
+    },
+    async handleBooking() {
+        try {
+            const response = await fetch('http://localhost:8080/booking', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    namalengkap: this.namalengkap,
+                    namadivisi: this.namadivisi,
+                    selectedSeat: this.selectedSeat,
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            alert(`Booking confirmed for ${data.namalengkap} from ${data.namadivisi} for seat ${data.selectedSeat}`);
             this.closeAlert(); // Close alert after booking
-        },
-        closeAlert() {
-            this.showAlert = false; // Close alert
-            this.namalengkap = ''; // Reset form fields
-            this.namadivisi = '';
-            this.selectedSeat = '';
+        } catch (error) {
+            console.error('Error during booking:', error);
+            alert('Failed to confirm booking. Please try again.');
         }
+    },
+    closeAlert() {
+        this.showAlert = false; // Close alert
+        this.namalengkap = ''; // Reset form fields
+        this.namadivisi = '';
+        this.selectedSeat = '';
     }
+}
+
 }
 </script>
 
