@@ -1,58 +1,60 @@
 <template>
     <div>
         <!-- Modal Trigger -->
-        <div class="zoom flex justify-center items-center">
-            <button @click="showModal = true" class="md:hidden mt-10 bg-blue-500 text-white p-2 rounded">Mulai Pesan</button>
+        <div class="s-b flex justify-center items-center">
+            <button @click="showModal = true" class="md:hidden mt-12 bg-blue-500 text-white p-2 rounded text-lg">Mulai
+                Pesan</button>
         </div>
 
         <!-- Desktop layout -->
         <div v-if="!isMobileView"
-            class="zoom mt-20 max-w-full h-auto p-4 bg-newcolor text-center text-white shadow rounded-lg sm:p-8 md:mx-20">
+            class="s-b-5 mt-20 md:mt-24 max-w-full h-auto p-4 bg-newcolor text-center text-white shadow rounded-lg sm:p-8 md:mx-20">
             <!-- Content layout here (unchanged) -->
             <!-- Your grid layout code -->
             <div class="grid justify-items-stretch grid-cols-9 grid-rows-6 md:gap-5 gap-3 pb-5">
-                <div class="zoom zoomS shadow-xl col-span-7 col-start-2 bg-pilar rounded-lg h-7"></div>
-                <div class="zoom shadow-xl row-span-6 row-start-2 bg-pilar rounded-lg justify-self-start w-7"></div>
-                <div class="zoom shadow-xl row-span-6 col-start-9 row-start-2 bg-pilar rounded-lg justify-self-end w-7"></div>
+                <div class="s-b-7 shadow-xl col-span-7 col-start-2 bg-pilar rounded-lg h-7"></div>
+                <div class="s-l-5 shadow-xl row-span-6 row-start-2 bg-pilar rounded-lg justify-self-start w-7"></div>
+                <div class="s-r-5 shadow-xl row-span-6 col-start-9 row-start-2 bg-pilar rounded-lg justify-self-end w-7">
+                </div>
                 <div class="col-start-2 row-start-3 rounded-lg row-span-4">
                     <div class="w-full h-full flex flex-col justify-evenly items-center gap-5 py-10">
-                        <div class="zoom  shadow-xl bg-primary md:h-full h-8 w-full rounded-lg">1</div>
-                        <div class="zoom  shadow-xl bg-secondary md:h-full h-8 w-full rounded-lg">2</div>
-                        <div class="zoom  shadow-xl bg-primary md:h-full h-8 w-full rounded-lg">3</div>
+                        <div class=" s-b-7 shadow-xl bg-primary md:h-full h-8 w-full rounded-lg">1</div>
+                        <div class=" s-b-7 shadow-xl bg-secondary md:h-full h-8 w-full rounded-lg">2</div>
+                        <div class=" s-b-7 shadow-xl bg-primary md:h-full h-8 w-full rounded-lg">3</div>
                     </div>
                 </div>
-                <div class="zoom  shadow-xl col-start-3 row-start-3 bg-secondary rounded-lg h-10 md:h-20">4</div>
-                <div class="zoom  shadow-xl col-start-3 row-start-4 bg-primary rounded-lg h-10 md:h-20">5</div>
-                <div class="zoom  shadow-xl col-start-3 row-start-5 bg-primary rounded-lg h-10 md:h-20">6</div>
-                <div class="zoom  shadow-xl col-start-3 row-start-6 bg-secondary rounded-lg h-10 md:h-20">7</div>
-                <div class="col-start-4 row-start-3 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">8</div>
-                <div class="col-start-4 row-start-4 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">9</div>
-                <div class="col-start-4 row-start-5 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">10</div>
-                <div class="col-start-4 row-start-6 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">11</div>
-                <div class="col-start-5 row-start-3 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">12</div>
-                <div class="row-span-2 col-start-5 row-start-4 bg-primary rounded-lg h-full zoom  shadow-xl"></div>
-                <div class="col-start-5 row-start-6 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">13</div>
-                <div class="col-start-6 row-start-3 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">14</div>
-                <div class="row-span-2 col-start-6 row-start-4 bg-primary rounded-lg h-full zoom  shadow-xl"></div>
-                <div class="col-start-6 row-start-6 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">15</div>
-                <div class="col-start-7 row-start-3 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">16</div>
-                <div class="col-start-7 row-start-4 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">17</div>
-                <div class="col-start-7 row-start-5 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">18</div>
-                <div class="col-start-7 row-start-6 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">19</div>
-                <div class="col-start-8 row-start-3 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">20</div>
-                <div class="col-start-8 row-start-4 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">21</div>
-                <div class="col-start-8 row-start-5 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">22</div>
-                <div class="col-start-8 row-start-6 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">23</div>
+                <div class=" s-b-7 shadow-xl col-start-3 row-start-3 bg-secondary rounded-lg h-10 md:h-20">4</div>
+                <div class=" s-b-7 shadow-xl col-start-3 row-start-4 bg-primary rounded-lg h-10 md:h-20">5</div>
+                <div class=" s-b-7 shadow-xl col-start-3 row-start-5 bg-primary rounded-lg h-10 md:h-20">6</div>
+                <div class=" s-b-7 shadow-xl col-start-3 row-start-6 bg-secondary rounded-lg h-10 md:h-20">7</div>
+                <div class="col-start-4 row-start-3 bg-secondary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">8</div>
+                <div class="col-start-4 row-start-4 bg-primary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">9</div>
+                <div class="col-start-4 row-start-5 bg-primary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">10</div>
+                <div class="col-start-4 row-start-6 bg-secondary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">11</div>
+                <div class="col-start-5 row-start-3 bg-secondary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">12</div>
+                <div class="row-span-2 col-start-5 row-start-4 bg-pilar rounded-lg h-full  s-b-7 shadow-xl"></div>
+                <div class="col-start-5 row-start-6 bg-secondary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">13</div>
+                <div class="col-start-6 row-start-3 bg-secondary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">14</div>
+                <div class="row-span-2 col-start-6 row-start-4 bg-pilar rounded-lg h-full  s-b-7 shadow-xl"></div>
+                <div class="col-start-6 row-start-6 bg-secondary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">15</div>
+                <div class="col-start-7 row-start-3 bg-secondary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">16</div>
+                <div class="col-start-7 row-start-4 bg-primary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">17</div>
+                <div class="col-start-7 row-start-5 bg-primary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">18</div>
+                <div class="col-start-7 row-start-6 bg-secondary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">19</div>
+                <div class="col-start-8 row-start-3 bg-secondary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">20</div>
+                <div class="col-start-8 row-start-4 bg-primary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">21</div>
+                <div class="col-start-8 row-start-5 bg-primary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">22</div>
+                <div class="col-start-8 row-start-6 bg-secondary rounded-lg h-10 md:h-20  s-b-7 shadow-xl">23</div>
             </div>
-    
+
             <div class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-5 gap-3 mb-10 justify-around">
-                <div class="flex zoom flex-row w-full gap-3">
-                    <h1 class="bg-primary zoom zoomS shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                    <h1 class="w-full h-full zoom zoomS">ini adalah kode warna yang bangkunya masih kosong</h1>
+                <div class="flex flex-row w-full gap-3">
+                    <h1 class="bg-primary s-b-7 shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
+                    <h1 class="s-b-7 w-full h-full text-xl">ini adalah kode warna yang bangkunya masih kosong</h1>
                 </div>
                 <div class="flex flex-row w-full gap-3 zoom">
-                    <h1 class="bg-secondary zoom zoomS shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                    <h1 class="w-full h-full zoom zoomS">ini adalah kode warna yang bangkunya masih kosong</h1>
+                    <h1 class="bg-secondary s-b-7 shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
+                    <h1 class="s-b-7 w-full h-full text-xl">ini adalah kode warna yang bangkunya masih kosong</h1>
                 </div>
             </div>
         </div>
@@ -66,55 +68,71 @@
 
                 <div class="mt-5 bro">
                     <!-- Content layout that is zoomable and scrollable -->
-                        <!-- Same content as desktop layout here -->
-                        <!-- Your grid layout code -->
-                        <div class="mt-44 max-w-full h-auto p-4 bg-newcolor text-center text-white shadow rounded-lg sm:p-8 md:mx-20">
-                            <div class="grid justify-items-stretch grid-cols-9 grid-rows-6 md:gap-5 gap-3 pb-5">
-                                <div class="zoom zoomS shadow-xl col-span-7 col-start-2 bg-pilar rounded-lg h-7"></div>
-                                <div class="zoom shadow-xl row-span-6 row-start-2 bg-pilar rounded-lg justify-self-start w-7"></div>
-                                <div class="zoom shadow-xl row-span-6 col-start-9 row-start-2 bg-pilar rounded-lg justify-self-end w-7"></div>
-                                <div class="col-start-2 row-start-3 rounded-lg row-span-4">
-                                    <div class="w-full h-full flex flex-col justify-evenly items-center gap-5 py-10">
-                                        <div class="zoom  shadow-xl bg-primary md:h-full h-8 w-full rounded-lg">1</div>
-                                        <div class="zoom  shadow-xl bg-secondary md:h-full h-8 w-full rounded-lg">2</div>
-                                        <div class="zoom  shadow-xl bg-primary md:h-full h-8 w-full rounded-lg">3</div>
-                                    </div>
-                                </div>
-                                <div class="zoom  shadow-xl col-start-3 row-start-3 bg-secondary rounded-lg h-10 md:h-20">4</div>
-                                <div class="zoom  shadow-xl col-start-3 row-start-4 bg-primary rounded-lg h-10 md:h-20">5</div>
-                                <div class="zoom  shadow-xl col-start-3 row-start-5 bg-primary rounded-lg h-10 md:h-20">6</div>
-                                <div class="zoom  shadow-xl col-start-3 row-start-6 bg-secondary rounded-lg h-10 md:h-20">7</div>
-                                <div class="col-start-4 row-start-3 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">8</div>
-                                <div class="col-start-4 row-start-4 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">9</div>
-                                <div class="col-start-4 row-start-5 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">10</div>
-                                <div class="col-start-4 row-start-6 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">11</div>
-                                <div class="col-start-5 row-start-3 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">12</div>
-                                <div class="row-span-2 col-start-5 row-start-4 bg-primary rounded-lg h-full zoom  shadow-xl"></div>
-                                <div class="col-start-5 row-start-6 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">13</div>
-                                <div class="col-start-6 row-start-3 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">14</div>
-                                <div class="row-span-2 col-start-6 row-start-4 bg-primary rounded-lg h-full zoom  shadow-xl"></div>
-                                <div class="col-start-6 row-start-6 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">15</div>
-                                <div class="col-start-7 row-start-3 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">16</div>
-                                <div class="col-start-7 row-start-4 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">17</div>
-                                <div class="col-start-7 row-start-5 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">18</div>
-                                <div class="col-start-7 row-start-6 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">19</div>
-                                <div class="col-start-8 row-start-3 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">20</div>
-                                <div class="col-start-8 row-start-4 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">21</div>
-                                <div class="col-start-8 row-start-5 bg-primary rounded-lg h-10 md:h-20 zoom  shadow-xl">22</div>
-                                <div class="col-start-8 row-start-6 bg-secondary rounded-lg h-10 md:h-20 zoom  shadow-xl">23</div>
+                    <!-- Same content as desktop layout here -->
+                    <!-- Your grid layout code -->
+                    <div
+                        class="mt-44 max-w-full h-auto p-4 bg-newcolor text-center text-white shadow rounded-lg sm:p-8 md:mx-20">
+                        <div class="grid justify-items-stretch grid-cols-9 grid-rows-6 md:gap-5 gap-3 pb-5">
+                            <div class="shadow-xl col-span-7 col-start-2 bg-pilar rounded-lg h-7"></div>
+                            <div class="shadow-xl row-span-6 row-start-2 bg-pilar rounded-lg justify-self-start w-7">
                             </div>
-                    
-                            <div class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-5 gap-3 mb-10 justify-around">
-                                <div class="flex flex-row w-full gap-3">
-                                    <h1 class="bg-primary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                                    <h1 class="w-full h-full">ini adalah kode warna yang bangkunya masih kosong</h1>
+                            <div
+                                class="shadow-xl row-span-6 col-start-9 row-start-2 bg-pilar rounded-lg justify-self-end w-7">
+                            </div>
+                            <div class="col-start-2 row-start-3 rounded-lg row-span-4">
+                                <div class="w-full h-full flex flex-col justify-evenly items-center gap-5 py-10">
+                                    <div class=" shadow-xl bg-primary md:h-full h-8 w-full rounded-lg">1</div>
+                                    <div class=" shadow-xl bg-secondary md:h-full h-8 w-full rounded-lg">2</div>
+                                    <div class=" shadow-xl bg-primary md:h-full h-8 w-full rounded-lg">3</div>
                                 </div>
-                                <div class="flex flex-row w-full gap-3">
-                                    <h1 class="bg-secondary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                                    <h1 class="w-full h-full">ini adalah kode warna yang bangkunya masih kosong</h1>
-                                </div>
+                            </div>
+                            <div class=" shadow-xl col-start-3 row-start-3 bg-secondary rounded-lg h-10 md:h-20">4</div>
+                            <div class=" shadow-xl col-start-3 row-start-4 bg-primary rounded-lg h-10 md:h-20">5</div>
+                            <div class=" shadow-xl col-start-3 row-start-5 bg-primary rounded-lg h-10 md:h-20">6</div>
+                            <div class=" shadow-xl col-start-3 row-start-6 bg-secondary rounded-lg h-10 md:h-20">7</div>
+                            <div class="col-start-4 row-start-3 bg-secondary rounded-lg h-10 md:h-20  shadow-xl">8</div>
+                            <div class="col-start-4 row-start-4 bg-primary rounded-lg h-10 md:h-20  shadow-xl">9</div>
+                            <div class="col-start-4 row-start-5 bg-primary rounded-lg h-10 md:h-20  shadow-xl">10</div>
+                            <div class="col-start-4 row-start-6 bg-secondary rounded-lg h-10 md:h-20  shadow-xl">11
+                            </div>
+                            <div class="col-start-5 row-start-3 bg-secondary rounded-lg h-10 md:h-20  shadow-xl">12
+                            </div>
+                            <div class="row-span-2 col-start-5 row-start-4 bg-pilar rounded-lg h-full  shadow-xl">
+                            </div>
+                            <div class="col-start-5 row-start-6 bg-secondary rounded-lg h-10 md:h-20  shadow-xl">13
+                            </div>
+                            <div class="col-start-6 row-start-3 bg-secondary rounded-lg h-10 md:h-20  shadow-xl">14
+                            </div>
+                            <div class="row-span-2 col-start-6 row-start-4 bg-pilar rounded-lg h-full  shadow-xl">
+                            </div>
+                            <div class="col-start-6 row-start-6 bg-secondary rounded-lg h-10 md:h-20  shadow-xl">15
+                            </div>
+                            <div class="col-start-7 row-start-3 bg-secondary rounded-lg h-10 md:h-20  shadow-xl">16
+                            </div>
+                            <div class="col-start-7 row-start-4 bg-primary rounded-lg h-10 md:h-20  shadow-xl">17</div>
+                            <div class="col-start-7 row-start-5 bg-primary rounded-lg h-10 md:h-20  shadow-xl">18</div>
+                            <div class="col-start-7 row-start-6 bg-secondary rounded-lg h-10 md:h-20  shadow-xl">19
+                            </div>
+                            <div class="col-start-8 row-start-3 bg-secondary rounded-lg h-10 md:h-20  shadow-xl">20
+                            </div>
+                            <div class="col-start-8 row-start-4 bg-primary rounded-lg h-10 md:h-20  shadow-xl">21</div>
+                            <div class="col-start-8 row-start-5 bg-primary rounded-lg h-10 md:h-20  shadow-xl">22</div>
+                            <div class="col-start-8 row-start-6 bg-secondary rounded-lg h-10 md:h-20  shadow-xl">23
                             </div>
                         </div>
+
+                        <div
+                            class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-5 gap-3 mb-10 justify-around">
+                            <div class="flex flex-row w-full gap-3">
+                                <h1 class="bg-primary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
+                                <h1 class="w-full h-full text-lg">ini adalah kode warna yang bangkunya masih kosong</h1>
+                            </div>
+                            <div class="flex flex-row w-full gap-3">
+                                <h1 class="bg-secondary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
+                                <h1 class="w-full h-full text-lg">ini adalah kode warna yang bangkunya masih kosong</h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -158,7 +176,7 @@ export default {
     align-items: center;
 }
 
-/* Zoom and Scroll container */
+/* and Scroll container */
 .zoom-container {
     overflow: auto;
     touch-action: none;
@@ -168,7 +186,7 @@ export default {
     cursor: grab;
 }
 
-/* Optional: Zoom handling for mobile */
+/* Optional: handling for mobile */
 .zoom-container img {
     transition: transform 0.25s ease;
 }
@@ -181,27 +199,9 @@ export default {
         max-height: 80vh;
         overflow-x: scroll;
     }
+
     .bro {
         width: 35rem;
     }
-}
-</style>
-
-<style>
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.zoomS {
-    animation : zoomIn ease-in-out;
-    animation-timeline : view();
-    animation-range : entry 0% cover 40%;
 }
 </style>

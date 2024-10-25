@@ -1,51 +1,51 @@
 <template>
     <div class="">
         <div
-            class="blockT md:m-20 mt-20 flex flex-col items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96">
+            class="md:m-20 mt-20 flex flex-col items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96">
 
             <div class="flex flex-col justify-between items-center md:h-auto p-4 leading-normal w-full">
 
-                <div class="max-w-full h-auto flex justify-between flex-col">
+                <div class="md:ml-12 max-w-full h-auto flex justify-between flex-col">
 
                     <!-- Text Content -->
-                    <h5 class="mb-2 text-5xl font-bold tracking-tight text-white">Lorem ipsum dolor sit
-                        amet.</h5>
+                    <h5 class="s-l mb-2 text-4xl md:text-6xl text-justify font-extrabold tracking-tight text-white">Atur dan pesan tempat kerja anda dengan mudah.</h5>
 
                     <!-- Button -->
-                    <div class="bg-button max-w-full md:w-2/5 w-full rounded-xl pl-15 p-2 mt-14">
+                    <router-link to="/service"
+                        class="s-b shadow-md bg-button max-w-full md:w-2/5 w-full rounded-xl pl-15 p-2 mt-14">
                         <button type="button" class="learn-more">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
                             </span>
                             <span class="button-text">Selanjutnya</span>
                         </button>
-                    </div>
+                    </router-link>
 
                 </div>
-                
+
             </div>
 
             <!-- Img -->
-            <div class="flex max-h-full pr-10 mt-10">
+            <div class="s-r flex max-h-full pr-10 mt-10">
                 <img class="object-cover w-full h-auto rounded-t-lg md:mr-10 md:w-fit md:rounded-none md:rounded-s-lg"
                     src="../assets/undraw_favourite_item_pcyo1.png" alt="">
             </div>
         </div>
 
         <!-- Tampilan Jumlah -->
-        <div class="zoom mt-20 max-w-full h-auto p-4 text-center bg-secondary  border rounded-lg shadow sm:p-8 md:mx-20">
+        <div class="s-b mt-20 md:mt-24 max-w-full h-auto p-4 text-center bg-secondary  border rounded-lg shadow sm:p-8 md:mx-20">
             <div class="flex items-center justify-evenly md:gap-10 md:flex-row flex-col">
-                <div class="zoom mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
+                <div class="s-b-5 mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
                     150
-                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-white ">Seat</div>
+                    <div class=" md:text-3xl text-2xl font-bold text-white ">Seat</div>
                 </div>
-                <div class="zoom mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
+                <div class="s-b-6 mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
                     150
-                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-white ">Seat</div>
+                    <div class=" md:text-3xl text-2xl font-bold text-white ">Floor</div>
                 </div>
-                <div class="zoom mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
+                <div class="s-b-7 mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
                     150
-                    <div class="zoom zoomS md:text-3xl text-2xl font-bold text-white ">Seat</div>
+                    <div class=" md:text-3xl text-2xl font-bold text-white ">Person</div>
                 </div>
             </div>
         </div>
@@ -53,30 +53,33 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'HomeComponents'
-}
+<script setup>
+// Import ScrollReveal
+import ScrollReveal from 'scrollreveal';
 </script>
 
-<style>
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
+<script>
+export default {
+    name: 'HomeComponents',
+    mounted() {
+        // Inisialisasi ScrollReveal
+        ScrollReveal({
+            duration: 1000, // Durasi animasi dalam milidetik
+            distance: '60px', // Jarak elemen akan muncul
+            delay: 300, // Jeda antara setiap animasi
+            reset: true, // Jika true, animasi akan dijalankan lagi setiap kali elemen terlihat
+        });
+        ScrollReveal().reveal('.s-l', { delay: 100, origin: 'left' });
+        ScrollReveal().reveal('.s-r', { delay: 100, origin: 'right' });
+        ScrollReveal().reveal('.s-t', { delay: 100, origin: 'top' });
+        ScrollReveal().reveal('.s-b', { delay: 100, origin: 'bottom' });
+        ScrollReveal().reveal('.s-b-5', { delay: 500, origin: 'bottom' });
+        ScrollReveal().reveal('.s-b-6', { delay: 600, origin: 'bottom' });
+        ScrollReveal().reveal('.s-b-7', { delay: 700, origin: 'bottom' });
+        ScrollReveal().reveal('.intern div, .inter a', { delay: 50, origin: 'bottom', interval: 50 });
     }
 }
-
-.zoom {
-    animation: zoomIn ease-in-out;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-}
-</style>
+</script>
 
 <style scoped>
 button {
