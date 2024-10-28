@@ -61,9 +61,9 @@
 
         <!-- Mobile Modal Layout -->
         <div v-if="isMobileView && showModal"
-            class="blockT fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+            class="fixed w-[80%] inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50">
             <button @click="showModal = false"
-                class="blockT absolute top-2 right-2 bg-red-500 text-white rounded-full p-2">X</button>
+                class="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2">X</button>
             <div class="relative bg-white p-4 h-full overflow-auto zoom-container">
 
                 <div class="mt-5 bro">
@@ -71,7 +71,7 @@
                     <!-- Same content as desktop layout here -->
                     <!-- Your grid layout code -->
                     <div
-                        class="mt-44 max-w-full h-auto p-4 bg-newcolor text-center text-white shadow rounded-lg sm:p-8 md:mx-20">
+                        class="mt-44 h-auto p-4 bg-newcolor text-center text-white shadow rounded-lg sm:p-8 md:mx-20">
                         <div class="grid justify-items-stretch grid-cols-9 grid-rows-6 md:gap-5 gap-3 pb-5">
                             <div class="shadow-xl col-span-7 col-start-2 bg-pilar rounded-lg h-7"></div>
                             <div class="shadow-xl row-span-6 row-start-2 bg-pilar rounded-lg justify-self-start w-7">

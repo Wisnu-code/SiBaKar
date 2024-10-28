@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div
-            class="mt-20 w-full p-4 text-center bg-secondary border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 ">
+            class="mt-20 w-full p-4 text-center bg-secondary border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
 
             <!-- Section 1 -->
             <h5 class="s-l mb-5 md:text-4xl text-2xl font-bold text-white dark:text-white max-w-full md:mx-20">Mulailah sekarang dan
@@ -42,7 +42,7 @@
                 Our Mission</div>
             <div class="flex flex-col md:flex-row items-stretch justify-center md:gap-10">
                 <div class="self-start h-auto w-full">
-                    <h1 class="s-b-5 mb-5 text-3xl font-bold text-gray-900 dark:text-white">Menjadi platform terdepan dalam
+                    <h1 class="s-b-5 mb-5 text-3xl font-bold text-gray-600 dark:text-white">Menjadi platform terdepan dalam
                         menghadirkan solusi ruang kerja fleksibel yang efisien, modern, dan mendukung produktivitas
                         optimal bagi perusahaan dan karyawan di seluruh dunia.</h1>
                 </div>
@@ -70,15 +70,15 @@
         <!-- Section 3 -->
         <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
             <div class="intern flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-20">
-                <div class="sla mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                <div class="sla mb-3 text-5xl md:text-8xl font-bold text-gray-600 dark:text-white">
                     500 +
                     <div class="slb md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
                 </div>
-                <div class="sla mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                <div class="sla mb-3 text-5xl md:text-8xl font-bold text-gray-600 dark:text-white">
                     500 +
                     <div class="slb md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
                 </div>
-                <div class="sla mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                <div class="sla mb-3 text-5xl md:text-8xl font-bold text-gray-600 dark:text-white">
                     500 +
                     <div class="slb md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem, ipsum.</div>
                 </div>

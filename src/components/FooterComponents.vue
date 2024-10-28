@@ -4,13 +4,8 @@
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2 intern">
                 <div class="px-5 py-2">
-                    <a href="#" class="text-xl hover:font-bold leading-6 text-gray-500 hover:text-yellow-300">
+                    <a href="/about" class="text-xl hover:font-bold leading-6 text-gray-500 hover:text-yellow-300">
                         Tentang
-                    </a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-xl hover:font-bold leading-6 text-gray-500 hover:text-yellow-300">
-                        Blog
                     </a>
                 </div>
                 <div class="px-5 py-2">
@@ -19,18 +14,8 @@
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="#" class="text-xl hover:font-bold leading-6 text-gray-500 hover:text-yellow-300">
-                        Harga
-                    </a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-xl hover:font-bold leading-6 text-gray-500 hover:text-yellow-300">
+                    <a href="#contact" class="text-xl hover:font-bold leading-6 text-gray-500 hover:text-yellow-300">
                         Kontak
-                    </a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-xl hover:font-bold leading-6 text-gray-500 hover:text-yellow-300">
-                        Syarat
                     </a>
                 </div>
             </nav>

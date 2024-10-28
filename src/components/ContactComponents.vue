@@ -1,12 +1,14 @@
 <template>
-    <div>
+    <div id="contact">
+        <div class="text-3xl text-center md:text-6xl font-bold mt-20 text-gray-600">Contact</div>
+
         <div
-            class="md:m-20 mt-5 flex flex-col items-center rounded-lg md:flex-row max-w-full h-full dark:bg-gray-800 dark:hover:bg-gray-700">
+        class="md:m-20 mt-20 flex flex-col items-center rounded-lg md:flex-row max-w-full h-full dark:bg-gray-800 dark:hover:bg-gray-700">
 
             <div class="flex flex-col text-justify justify-between p-4 leading-normal w-full ">
 
                 <!-- Text Content -->
-                <h5 class="s-l mb-2 text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">Ada
+                <h5 class="s-l mb-2 text-3xl md:text-5xl font-bold tracking-tight text-gray-600 dark:text-white">Ada
                     pertanyaan atau butuh bantuan? Kami siap membantu Anda!</h5>
                 <p class="s-b mb-3 text-xl md:text-2xl font-normal text-gray-700 dark:text-gray-400">Silakan isi form di
                     bawah ini, dan tim kami akan segera menghubungi Anda. Kami berkomitmen memberikan respon secepat
@@ -14,8 +16,8 @@
             </div>
 
             <!-- Form -->
-            <div class="s-r r flex md:h-auto p-4 leading-normal w-full shadow bg-gray-50 rounded-lg">
-                <form class="w-full md:w-96 md:mr-44 mx-auto">
+            <div class="r flex md:h-auto p-4 leading-normal w-full shadow bg-gray-50 rounded-lg">
+                <form class="w-full md:w-96 md:mr-44 mx-auto overflow-hidden">
 
                     <div class="grid md:grid-cols-2 md:gap-6">
                         <div class="r-delay relative z-0 w-full mb-5 group">

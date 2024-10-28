@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div
-            class="md:m-20 mt-20 flex flex-col items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96">
+            class="md:m-20 mt-20 flex flex-col items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96 overflow-hidden">
 
             <div class="flex flex-col justify-between items-center md:h-auto p-4 leading-normal w-full">
 
@@ -12,7 +12,7 @@
 
                     <!-- Button -->
                     <router-link to="/service"
-                        class="s-b shadow-md bg-button max-w-full md:w-2/5 w-full rounded-xl pl-15 p-2 mt-14">
+                        class="s-b shadow-md bg-button max-w-full md:w-3/12 w-full rounded-xl pl-10 p-2 mt-14">
                         <button type="button" class="learn-more">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
