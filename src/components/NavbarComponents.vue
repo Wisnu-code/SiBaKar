@@ -111,6 +111,7 @@ export default {
 </script>
 
 <style scoped>
+
 nav {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 16px;
