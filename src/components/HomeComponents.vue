@@ -8,16 +8,27 @@
                 <div class="md:ml-12 max-w-full h-auto flex justify-between flex-col">
 
                     <!-- Text Content -->
-                    <h5 class="s-l mb-2 text-4xl md:text-6xl text-justify font-extrabold tracking-tight text-white">Atur dan pesan tempat kerja anda dengan mudah.</h5>
+                    <h5 class="s-l mb-2 text-4xl md:text-6xl text-justify font-extrabold tracking-tight text-white">Atur
+                        dan pesan tempat kerja anda dengan mudah.</h5>
 
                     <!-- Button -->
-                    <router-link to="/service"
+                    <!-- Tombol Berdasarkan Status Login -->
+                    <router-link v-if="isLoggedIn" to="/service"
                         class="s-b shadow-md bg-button max-w-full md:w-3/12 w-full rounded-xl pl-10 p-2 mt-14">
                         <button type="button" class="learn-more">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
                             </span>
-                            <span class="button-text">Selanjutnya</span>
+                            <span class="button-text">Layanan</span>
+                        </button>
+                    </router-link>
+                    <router-link v-else to="/login"
+                        class="s-b shadow-md bg-button max-w-full md:w-3/12 w-full rounded-xl pl-10 p-2 mt-14">
+                        <button type="button" class="learn-more">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Masuk</span>
                         </button>
                     </router-link>
 
@@ -33,7 +44,8 @@
         </div>
 
         <!-- Tampilan Jumlah -->
-        <div class="s-b mt-20 md:mt-24 max-w-full h-auto p-4 text-center bg-secondary  border rounded-lg shadow sm:p-8 md:mx-20">
+        <div
+            class="s-b mt-20 md:mt-24 max-w-full h-auto p-4 text-center bg-secondary  border rounded-lg shadow sm:p-8 md:mx-20">
             <div class="flex items-center justify-evenly md:gap-10 md:flex-row flex-col">
                 <div class="s-b-5 mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
                     150
@@ -61,7 +73,18 @@ import ScrollReveal from 'scrollreveal';
 <script>
 export default {
     name: 'HomeComponents',
+    data() {
+        return {
+            isLoggedIn: !!localStorage.getItem('token'), // Status login
+        }
+    },
+    methods: {
+        checkLoginStatus() {
+            this.isLoggedIn = !!localStorage.getItem('token'); // Update login status
+        },
+    },
     mounted() {
+        window.addEventListener('storage', this.checkLoginStatus); // Pantau perubahan di localStorage
         // Inisialisasi ScrollReveal
         ScrollReveal({
             duration: 1000, // Durasi animasi dalam milidetik
@@ -78,7 +101,10 @@ export default {
         ScrollReveal().reveal('.s-b-7', { delay: 700, origin: 'bottom' });
         ScrollReveal().reveal('.intern div, .inter a', { delay: 50, origin: 'bottom', interval: 50 });
         ScrollReveal().reveal('.r .r-delay', { delay: 300, origin: 'right', interval: 100 });
-    }
+    },
+    beforeUnmount() {
+        window.removeEventListener('storage', this.checkLoginStatus);
+    },
 }
 </script>
 
