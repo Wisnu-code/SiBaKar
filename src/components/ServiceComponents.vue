@@ -218,7 +218,9 @@ export default {
             availableSeats: [
                 { id: 1, name: 'Bangku 1' },
                 { id: 2, name: 'Bangku 2' },
-                { id: 3, name: 'Bangku 3' }
+                { id: 3, name: 'Bangku 3' },
+                { id: 4, name: 'Bangku 4' },
+                { id: 5, name: 'Bangku 5' }
             ]
         };
     },

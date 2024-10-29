@@ -61,12 +61,12 @@ export default {
                 }
 
                 const data = await response.json();
-                alert('Login successful! Token: ' + data.token);
+                alert('Login successful!');
 
                 // Simpan token ke localStorage atau Vuex untuk digunakan di bagian lain aplikasi
                 localStorage.setItem('token', data.token);
                 // Redirect ke halaman lain setelah login
-                this.$router.push('/'); // Ganti '/dashboard' dengan rute yang sesuai
+                this.$router.push('/service'); // Ganti '/dashboard' dengan rute yang sesuai
 
             } catch (error) {
                 alert('Error: ' + error.message);
