@@ -199,8 +199,11 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import ChairComponents from './ChairComponents.vue';
+</script>
+
+<script>
 import ScrollReveal from 'scrollreveal';
 
 export default {

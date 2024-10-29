@@ -4,7 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import LoginComponents from '@/components/LoginComponents.vue'
 import ServiceView from '../views/ServiceView.vue'
 import RegisterComponents from '@/components/RegisterComponents.vue'
-import FormBookComponents from '@/components/FormBookComponents.vue'
+// import FormBookComponents from '@/components/FormBookComponents.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -42,11 +42,11 @@ const router = createRouter({
       name: 'register',
       component: RegisterComponents
     },
-    {
-      path: '/formbook',
-      name: 'formbook',
-      component: FormBookComponents
-    }
+    // {
+    //   path: '/formbook',
+    //   name: 'formbook',
+    //   component: FormBookComponents
+    // }
   ]
   ,scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
