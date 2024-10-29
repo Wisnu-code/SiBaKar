@@ -199,22 +199,18 @@
     </div>
 </template>
 
-<script setup>
-import ChairComponents from './ChairComponents.vue';
-// Import ScrollReveal
-import ScrollReveal from 'scrollreveal';
-</script>
-
 <script>
+import ChairComponents from './ChairComponents.vue';
+import ScrollReveal from 'scrollreveal';
+
 export default {
     name: 'ServiceComponents',
     mounted() {
-        // Inisialisasi ScrollReveal
         ScrollReveal({
-            duration: 1000, // Durasi animasi dalam milidetik
-            distance: '60px', // Jarak elemen akan muncul
-            delay: 300, // Jeda antara setiap animasi
-            reset: true, // Jika true, animasi akan dijalankan lagi setiap kali elemen terlihat
+            duration: 1000,
+            distance: '60px',
+            delay: 300,
+            reset: true,
         });
         ScrollReveal().reveal('.s-l', { delay: 100, origin: 'left' });
         ScrollReveal().reveal('.s-r', { delay: 100, origin: 'right' });
@@ -232,41 +228,19 @@ export default {
             showEvent: false,
             showVideo: false,
             videoUrl: '',
-            showAlert: false, // State for alert visibility
+            showAlert: false,
             namalengkap: '',
             namadivisi: '',
             selectedSeat: '',
-            availableSeats: [
-                { id: 1, name: 'Bangku 1' },
-                { id: 2, name: 'Bangku 2' },
-                { id: 3, name: 'Bangku 3' },
-                { id: 4, name: 'Bangku 4' },
-                { id: 5, name: 'Bangku 5' },
-                { id: 6, name: 'Bangku 6' },
-                { id: 7, name: 'Bangku 7' },
-                { id: 8, name: 'Bangku 8' },
-                { id: 9, name: 'Bangku 9' },
-                { id: 10, name: 'Bangku 10' },
-                { id: 11, name: 'Bangku 11' },
-                { id: 12, name: 'Bangku 12' },
-                { id: 13, name: 'Bangku 13' },
-                { id: 14, name: 'Bangku 14' },
-                { id: 15, name: 'Bangku 15' },
-                { id: 16, name: 'Bangku 16' },
-                { id: 17, name: 'Bangku 17' },
-                { id: 18, name: 'Bangku 18' },
-                { id: 19, name: 'Bangku 19' },
-                { id: 20, name: 'Bangku 20' },
-                { id: 21, name: 'Bangku 21' },
-                { id: 22, name: 'Bangku 22' },
-                { id: 23, name: 'Bangku 23' }
-            ]
+            availableSeats: Array.from({ length: 150 }, (v, i) => ({
+                id: i + 1,
+                name: `Bangku ${i + 1}`
+            })),
         };
     },
     methods: {
         playVideo() {
-            // Saat tombol play ditekan, tampilkan iframe dan autoplay video
-            this.videoUrl = 'https://www.youtube.com/embed/_DKnmKFSxS8?autoplay=1&si=yHeMhPejXI4QndwD';
+            this.videoUrl = 'https://www.youtube.com/embed/_DKnmKFSxS8?autoplay=1';
             this.showVideo = true;
         },
         toggleMain() {
@@ -297,22 +271,22 @@ export default {
 
                 const data = await response.json();
                 alert(`Booking confirmed for ${data.namalengkap} from ${data.namadivisi} for seat ${data.selectedSeat}`);
-                this.closeAlert(); // Close alert after booking
+                this.closeAlert();
             } catch (error) {
                 console.error('Error during booking:', error);
                 alert('Failed to confirm booking. Please try again.');
             }
         },
         closeAlert() {
-            this.showAlert = false; // Close alert
-            this.namalengkap = ''; // Reset form fields
+            this.showAlert = false;
+            this.namalengkap = '';
             this.namadivisi = '';
             this.selectedSeat = '';
         }
     }
-
 }
 </script>
+
 
 <style scoped>
 button {

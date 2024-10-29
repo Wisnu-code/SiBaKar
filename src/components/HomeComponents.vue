@@ -65,12 +65,8 @@
     </div>
 </template>
 
-<script setup>
-// Import ScrollReveal
-import ScrollReveal from 'scrollreveal';
-</script>
-
 <script>
+import ScrollReveal from 'scrollreveal';
 export default {
     name: 'HomeComponents',
     data() {
