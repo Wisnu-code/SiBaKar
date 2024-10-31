@@ -65,6 +65,10 @@
     </div>
 </template>
 
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>
+
 <script>
 import ScrollReveal from 'scrollreveal';
 export default {

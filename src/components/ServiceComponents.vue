@@ -92,9 +92,19 @@
                     <!-- Booking Button -->
                     <div class="text-center text-xl md:text-2xl md:flex md:flex-col md:justify-center md:items-center">
                         <button type="submit"
-                            class="bg-red-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full md:w-[50%]">Submit</button>
+                            class="group relative w-full min-h-[50px] md:w-[50%] rounded-md  overflow-hidden border border-red-500 bg-white text-red-500 shadow-lg transition-all before:absolute before:left-0 before:top-0 before:h-0 before:w-[51%] before:bg-blue-600 before:duration-500 after:absolute after:bottom-0 after:right-0 after:h-0 after:w-[50%] after:bg-blue-600 after:duration-500 hover:text-white hover:before:h-full hover:after:h-full">
+                            <span
+                                class="absolute bottom-0 font-semibold left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-white">Kirim</span>
+                        </button>
                         <button @click="closeAlert" type="button"
-                            class="bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded-md py-2 px-4 mt-2 w-full md:w-[50%]">Cancel</button>
+                            class="group mt-2 relative w-full min-h-[50px] md:w-[50%] rounded-md  overflow-hidden border border-gray-500 bg-white text-gray-500 shadow-lg transition-all before:absolute before:right-0 before:top-0 before:h-0 before:w-[50%] before:bg-gray-600 before:duration-500 after:absolute after:bottom-0 after:left-0 after:h-0 after:w-[51%] after:bg-gray-600 after:duration-500 hover:text-white hover:before:h-full hover:after:h-full">
+                            <span
+                                class="absolute bottom-0 font-semibold left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center group-hover:text-white">Batal</span>
+                        </button>
+                        <!-- <button type="submit"
+                            class="bg-red-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full md:w-[50%]">Submit</button> -->
+                        <!-- <button @click="closeAlert" type="button"
+                            class="bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded-md py-2 px-4 mt-2 w-full md:w-[50%]">Cancel</button> -->
                     </div>
                 </form>
             </div>

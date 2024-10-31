@@ -4,7 +4,6 @@
 
             <!-- Logo -->
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <!-- <img :src='logo' class="h-8"> -->
                 <span class="self-center text-2xl font-bold text-gray-600 whitespace-nowrap dark:text-white">SiBaKar</span>
             </a>
 
@@ -61,9 +60,11 @@
     </nav>
 </template>
 
-<script>
+<script setup>
 import { RouterLink } from 'vue-router';
+</script>
 
+<script>
 export default {
     beforeRouteEnter(to, from, next) {
         // Jika tidak ada token di localStorage, redirect ke halaman login
