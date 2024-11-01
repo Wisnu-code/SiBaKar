@@ -53,7 +53,7 @@
                                 </svg>
                                 <span>User</span>
                             </a>
-                            <RouterLink to="#" class="mt-4 flex items-center space-x-2 text-2xl font-medium">
+                            <RouterLink to="/chair" class="mt-4 flex items-center space-x-2 text-2xl font-medium">
                                 <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <!-- Sandaran kursi -->
@@ -72,7 +72,7 @@
                                         stroke-linecap="round" 
                                         stroke-linejoin="round"/>
                                 </svg>
-                                <span>Bangku</span>
+                                <span>Chair</span>
                             </RouterLink>
                         </nav>
                         <div class="flex-shrink-0 p-4">

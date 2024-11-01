@@ -6,6 +6,7 @@ import ServiceView from '../views/ServiceView.vue'
 import RegisterComponents from '@/components/RegisterComponents.vue'
 import DashboardUsersComponents from '@/components/DashboardUsersComponents.vue'
 import DashboardHomeComponents from '@/components/DashboardHomeComponents.vue'
+import DashboardChairComponents from '@/components/DashboardChairComponents.vue'
 // import FormBookComponents from '@/components/FormBookComponents.vue'
 
 const router = createRouter({
@@ -25,6 +26,11 @@ const router = createRouter({
       path: '/users',
       name: 'users',
       component: DashboardUsersComponents
+    },
+    {
+      path: '/chair',
+      name: 'chair',
+      component: DashboardChairComponents
     },
     {
       path: '/about',

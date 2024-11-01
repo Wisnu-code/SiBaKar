@@ -4,7 +4,7 @@
 
         <div class="flex h-[80vh] justify-center items-center md:text-2xl text-xl">
             <div class="flex flex-col items-center justify-center bg-gray-50 md:rounded-2xl rounded-xl md:w-[70%] md:h-[80%] h-[100%] shadow-lg overflow-hidden md:p-10 s-b">
-                <div class="text-3xl md:text-5xl font-semibold uppercase md:mb-10 mb-5 s-l">user</div>
+                <div class="text-3xl md:text-5xl font-semibold uppercase md:mb-10 mb-5 s-l">Chair</div>
                 
                 <!-- Search Input -->
                 <div class="mb-4 s-r">
@@ -40,6 +40,8 @@
                                     <table class="min-w-full divide-y divide-gray-200">
                                         <thead>
                                             <tr>
+                                                <th scope="col" class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
+                                                    No.</th>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Nama</th>
@@ -56,6 +58,8 @@
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
                                             <tr v-for="person in filteredData" :key="person.email">
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
+                                                    {{ person.number }}</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
                                                     {{ person.name }}</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
@@ -83,8 +87,8 @@
 </template>
 
 <script>
-import ScrollReveal from 'scrollreveal'
-import SidebarComponents from './SidebarComponents.vue'
+import SidebarComponents from './SidebarComponents.vue';
+import ScrollReveal from 'scrollreveal';
 
 export default {
     components: {
@@ -95,16 +99,19 @@ export default {
             searchQuery: '',
             tableData: [
                 {
+                    number: 1,
                     name: 'John Brown',
                     title: 'Regional Paradigm Technician',
                     email: 'john@site.com',
                 },
                 {
+                    number: 2,
                     name: 'Jim Green',
                     title: 'Forward Response Developer',
                     email: 'jim@site.com',
                 },
                 {
+                    number: 3,
                     name: 'Joe Black',
                     title: 'Product Directives Officer',
                     email: 'joe@site.com',
