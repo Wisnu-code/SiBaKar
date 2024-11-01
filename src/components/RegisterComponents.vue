@@ -51,17 +51,14 @@
         </div>
 
         <!-- Right: Image -->
-        <div class="w-1/2 h-[80%] hidden lg:flex justify-center items-center bg-yellow-300 m-20 rounded-2xl">
+        <div class="w-1/2 h-[80%] hidden lg:flex justify-center items-center bg-yellow-300 m-20 rounded-2xl transition duration-300 ease-in-out hover:scale-110 hover:shadow-xl">
             <img src="../assets/relax.png" alt="Placeholder Image" class="object-contain w-1/2 h-auto s-r">
         </div>
     </div>
 </template>
 
-<script setup>
-import { useRouter } from 'vue-router';
-</script>
-
 <script>
+import { useRouter } from 'vue-router';
 import ScrollReveal from 'scrollreveal';
 export default {
     mounted() {

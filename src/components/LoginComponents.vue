@@ -2,7 +2,7 @@
     <div class="flex justify-center items-center h-screen bg-sky-100 overflow-hidden">
         <!-- Left: Image -->
         <div
-            class="w-1/2 h-[80%] max-h-screen hidden lg:flex justify-center items-center bg-yellow-300 m-20 rounded-2xl">
+            class="w-1/2 h-[80%] max-h-screen hidden lg:flex justify-center items-center bg-yellow-300 m-20 rounded-2xl overflow-hidden transition duration-300 ease-in-out hover:scale-110 hover:shadow-xl">
             <img src="../assets/relax.png" alt="Placeholder Image" class="s-l object-contain w-1/2 h-auto">
         </div>
         <!-- Right: Login Form -->
