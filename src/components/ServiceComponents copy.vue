@@ -74,7 +74,7 @@
                     <div class="mb-4">
                         <label for="namadivisi" class="block text-xl md:text-2xl text-gray-600">Divisi/Tim</label>
                         <input type="text" id="namadivisi" v-model="namadivisi"
-                            class="block py-2.5 px-0 w-full text-lg md:text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                             required>
                     </div>
                     <!-- Dropdown for Seats Selection -->
@@ -288,25 +288,6 @@ export default {
             } catch (error) {
                 console.error('Error during booking:', error);
                 alert('Failed to confirm booking. Please try again.');
-            }
-        },
-        async submitBooking() {
-            const bookingData = {
-                namalengkap: this.namalengkap,
-                namadivisi: this.namadivisi,
-                selectedSeat: this.selectedSeat,
-            };
-            try {
-                await fetch("http://localhost:8080/booking", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(bookingData),
-                });
-                this.$emit("bookingSubmitted"); // Emit event jika ingin merefresh data pada DashboardChairComponents
-            } catch (error) {
-                console.error("Failed to submit booking:", error);
             }
         },
         closeAlert() {
