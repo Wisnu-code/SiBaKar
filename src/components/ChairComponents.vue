@@ -8,7 +8,7 @@
 
         <!-- Desktop layout -->
         <div v-if="!isMobileView"
-            class="s-b-5 mt-20 md:mt-24 max-w-full h-screen p-4 bg-newcolor text-center text-white shadow rounded-lg sm:p-8 md:mx-20">
+            class="s-b mt-20 md:mt-24 max-w-full h-screen p-4 bg-newcolor text-center text-white shadow rounded-lg sm:p-8 md:mx-20">
             <!-- Content layout here (unchanged) -->
             <!-- Your grid layout code -->
             <div class="h-[95%] rounded-xl overflow-auto">
@@ -22,12 +22,12 @@
 
             <div class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-5 gap-3 mb-10 justify-around">
                 <div class="flex flex-row w-full gap-3">
-                    <h1 class="bg-primary s-b-5 shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                    <h1 class="s-b-5 w-full h-full text-xl">ini adalah kode warna yang bangkunya masih kosong</h1>
+                    <h1 class="s-l-2 bg-primary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
+                    <h1 class="s-b w-full h-full text-xl">ini adalah kode warna yang bangkunya masih kosong</h1>
                 </div>
                 <div class="flex flex-row w-full gap-3 zoom">
-                    <h1 class="bg-secondary s-b-5 shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                    <h1 class="s-b-5 w-full h-full text-xl">ini adalah kode warna yang bangkunya masih kosong</h1>
+                    <h1 class="s-l-2 bg-secondary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
+                    <h1 class="s-b w-full h-full text-xl">ini adalah kode warna yang bangkunya masih kosong</h1>
                 </div>
             </div>
         </div>
@@ -36,14 +36,14 @@
         <div v-if="isMobileView && showModal"
             class="fixed w-full inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50">
             <button @click="showModal = false"
-                class="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2">X</button>
+                class="s-r absolute top-2 right-2 bg-red-500 text-white rounded-full p-2">X</button>
             <div class="relative bg-white p-4 h-full overflow-auto zoom-container">
 
                 <div class="mt-5 bro">
                     <!-- Content layout that is zoomable and scrollable -->
                     <!-- Same content as desktop layout here -->
                     <!-- Your grid layout code -->
-                    <div class="mt-44 h-auto p-4 bg-newcolor text-center text-white shadow rounded-lg sm:p-8 md:mx-20">
+                    <div class="s-b mt-44 h-auto p-4 bg-newcolor text-center text-white shadow rounded-lg sm:p-8 md:mx-20">
 
 
                         <div class="h-[95%] rounded-xl overflow-auto">
@@ -57,12 +57,12 @@
                         <div
                             class="flex flex-col md:flex-row md:mx-0 mx-10 text-justify mt-5 gap-3 mb-10 justify-around">
                             <div class="flex flex-row w-full gap-3">
-                                <h1 class="bg-primary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                                <h1 class="w-full h-full text-lg">ini adalah kode warna yang bangkunya masih kosong</h1>
+                                <h1 class="s-l-2 bg-primary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
+                                <h1 class="s-b w-full h-full text-lg">ini adalah kode warna yang bangkunya masih kosong</h1>
                             </div>
                             <div class="flex flex-row w-full gap-3">
-                                <h1 class="bg-secondary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
-                                <h1 class="w-full h-full text-lg">ini adalah kode warna yang bangkunya masih kosong</h1>
+                                <h1 class="s-l-2 bg-secondary shadow-xl max-w-full w-10 md:w-14 h-auto rounded-sm"></h1>
+                                <h1 class="s-b w-full h-full text-lg">ini adalah kode warna yang bangkunya masih kosong</h1>
                             </div>
                         </div>
                     </div>

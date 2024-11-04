@@ -6,7 +6,7 @@
         <div v-if="showDeleteModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-lg font-semibold mb-4">Konfirmasi Hapus</h3>
-                <p>Apakah Anda yakin ingin menghapus user ini?</p>
+                <p>Apakah Anda yakin ingin menghapus booking ini?</p>
                 <div class="mt-4 flex justify-end space-x-3">
                     <button @click="cancelDelete" class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">
                         Batal
@@ -29,7 +29,7 @@
         <div class="flex h-[80vh] justify-center items-center md:text-2xl text-xl">
             <div
                 class="flex flex-col items-center justify-center bg-gray-50 md:rounded-2xl rounded-xl md:w-[70%] md:h-[80%] h-[100%] shadow-lg overflow-hidden md:p-10 s-b">
-                <div class="text-3xl md:text-5xl font-semibold uppercase md:mb-10 mb-5 s-l">User Management</div>
+                <div class="text-3xl md:text-5xl font-semibold uppercase md:mb-10 mb-5 s-l">user</div>
 
                 <!-- Search Input -->
                 <div class="mb-4 s-r">
@@ -54,31 +54,32 @@
                                             <tr>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
-                                                    ID</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Nama</th>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
-                                                    Username</th>
+                                                    Divisi</th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
+                                                    Email</th>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-end font-medium text-gray-500 uppercase">
                                                     Action</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
-                                            <tr v-for="(user, index) in filteredData" :key="user.id">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
-                                                    {{ index + 1 }}
-                                                </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
-                                                    {{ user.fullname }}
-                                                </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
-                                                    {{ user.username }}
-                                                </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-end text-sm md:text-lg font-medium">
-                                                    <button type="button" @click="confirmDeleteUser(user.id)"
+                                            <tr v-for="user in filteredData" :key="user.email">
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
+                                                    {{ user.name }}</td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
+                                                    {{ user.divisi }}</td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
+                                                    {{ user.email }}</td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-end text-sm md:text-lg font-medium">
+                                                    <button type="button" @click="deleteUser(user)"
                                                         class="inline-flex items-center gap-x-2 text-sm md:text-lg font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none">
                                                         Delete
                                                     </button>
@@ -97,8 +98,8 @@
 </template>
 
 <script>
-import SidebarComponents from './SidebarComponents.vue';
 import ScrollReveal from 'scrollreveal';
+import SidebarComponents from './SidebarComponents.vue';
 
 export default {
     components: {
@@ -106,137 +107,48 @@ export default {
     },
     data() {
         return {
-            users: [],
+            users: [], // Menyimpan data pengguna dari API
             searchQuery: '',
             alertMessage: '',
             alertType: 'success',
-            showDeleteModal: false,
-            selectedUserId: null
-        }
+        };
     },
-
     computed: {
         filteredData() {
             const query = this.searchQuery.toLowerCase();
             return this.users.filter(user => {
                 return (
-                    user.fullname.toLowerCase().includes(query) ||
-                    user.username.toLowerCase().includes(query)
+                    user.name.toLowerCase().includes(query) ||
+                    user.divisi.toLowerCase().includes(query) ||
+                    user.email.toLowerCase().includes(query)
                 );
             });
         }
     },
-
-    // methods: {
-    //     async fetchUsers() {
-    //         try {
-    //             const response = await fetch("http://localhost:8080/users");
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to fetch users');
-    //             }
-    //             const data = await response.json();
-    //             this.users = data;
-    //         } catch (error) {
-    //             this.showAlert('Gagal mengambil data user', 'error');
-    //             console.error("Failed to fetch users:", error);
-    //         }
-    //     },
-
-    //     async deleteUser(id) {
-    //         if (!confirm('Apakah Anda yakin ingin menghapus user ini?')) {
-    //             return;
-    //         }
-
-    //         try {
-    //             const response = await fetch(`http://localhost:8080/user/delete?id=${id}`, {
-    //                 method: 'DELETE',
-    //                 headers: {
-    //                     'Content-Type': 'application/json',
-    //                 },
-    //             });
-
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to delete user');
-    //             }
-
-    //             await this.fetchUsers(); // Refresh data setelah delete berhasil
-    //             this.showAlert('User berhasil dihapus', 'success');
-    //         } catch (error) {
-    //             this.showAlert('Gagal menghapus user', 'error');
-    //             console.error("Failed to delete user:", error);
-    //         }
-    //     },
-
-    //     showAlert(message, type = 'success') {
-    //         this.alertMessage = message;
-    //         this.alertType = type;
-    //         setTimeout(() => {
-    //             this.alertMessage = '';
-    //         }, 3000);
-    //     }
-    // },
-
     methods: {
         async fetchUsers() {
             try {
-                const response = await fetch("http://localhost:8080/users");
+                const response = await fetch("http://localhost:8080/users"); // Pastikan URL sesuai dengan endpoint API
                 if (!response.ok) {
                     throw new Error('Failed to fetch users');
                 }
                 const data = await response.json();
-                this.users = data;
+                this.users = data; // Simpan data API ke dalam 'users'
             } catch (error) {
-                this.showAlert('Gagal mengambil data user', 'error');
                 console.error("Failed to fetch users:", error);
             }
         },
 
-        confirmDeleteUser(id) {
-            this.selectedUserId = id;
-            this.showDeleteModal = true;
-        },
-
-        async confirmDelete() {
-            try {
-                const response = await fetch(`http://localhost:8080/user/delete?id=${this.selectedUserId}`, {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-
-                if (!response.ok) {
-                    throw new Error('Failed to delete user');
-                }
-
-                this.fetchUsers(); // Refresh data setelah delete berhasil
-                this.showAlert('User berhasil dihapus', 'success');
-            } catch (error) {
-                this.showAlert('Gagal menghapus user', 'error');
-                console.error("Failed to delete user:", error);
-            } finally {
-                this.showDeleteModal = false;
-                this.selectedUserId = null;
+        deleteUser(user) {
+            const index = this.users.indexOf(user);
+            if (index > -1) {
+                this.users.splice(index, 1);
             }
-        },
-
-        cancelDelete() {
-            this.showDeleteModal = false;
-            this.selectedUserId = null;
-        },
-
-        showAlert(message, type = 'success') {
-            this.alertMessage = message;
-            this.alertType = type;
-            setTimeout(() => {
-                this.alertMessage = '';
-            }, 3000);
         }
     },
-
     mounted() {
-        this.fetchUsers();
-        
+        this.fetchUsers(); // Panggil saat komponen dimuat untuk mengambil data dari API
+
         // Inisialisasi ScrollReveal
         ScrollReveal({
             duration: 1000,
@@ -250,16 +162,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-/* Styles for modal and alert */
-.modal-enter-active,
-.modal-leave-active {
-    transition: opacity 0.3s ease;
-}
-
-.modal-enter-from,
-.modal-leave-to {
-    opacity: 0;
-}
-</style>

@@ -3,40 +3,40 @@
     <div class="flex justify-center items-center h-screen bg-sky-100 overflow-hidden">
         <!-- Left: Login Form -->
         <div class="md:ml-10 lg:p-20 p-8 h-full w-full lg:w-1/2 bg-white">
-            <h1 class="text-3xl md:text-5xl md:font-bold font-semibold mb-4 cont">
+            <h1 class="text-3xl md:text-5xl md:font-bold font-semibold mb-4">
                 <span class="capitalize">r </span><span class="capitalize">e </span><span class="capitalize">g </span><span class="capitalize">i </span><span class="capitalize">s t </span><span class="capitalize">e </span><span class="capitalize">r </span>
             </h1>
             <form action="" method="POST">
                 <!-- Username Input -->
                 <div class="mb-4 s-l">
-                    <label for="username" class="block text-lg font-semibold md:text-2xl text-gray-600">Username</label>
+                    <label for="username" class="block text-lg font-semibold md:text-2xl text-gray-600 s-l-2">Username</label>
                     <input type="text" id="username" name="username"
-                        class="block text-lg font-semibold md:text-2xl py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="s-l-3 block text-lg font-semibold md:text-2xl py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         autocomplete="off">
                 </div>
-                <div class="mb-4 s-l">
-                    <label for="fullname" class="block text-lg font-semibold md:text-2xl text-gray-600">Fullname</label>
+                <div class="mb-4 s-r-4">
+                    <label for="fullname" class="s-r-5 block text-lg font-semibold md:text-2xl text-gray-600">Fullname</label>
                     <input type="text" id="fullname" name="fullname"
-                        class="block py-2.5 px-0 w-full text-lg font-semibold md:text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="s-r-6 block py-2.5 px-0 w-full text-lg font-semibold md:text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         autocomplete="off">
                 </div>
                 <!-- Password Input -->
-                <div class="mb-4 relative s-l">
-                    <label for="password" class="block text-lg font-semibold md:text-2xl text-gray-600">Password</label>
+                <div class="mb-4 relative s-t">
+                    <label for="password" class="s-t-2 block text-lg font-semibold md:text-2xl text-gray-600">Password</label>
                     <input type="password" id="password" name="password"
-                        class="block py-2.5 px-0 w-full text-lg font-semibold md:text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="s-t-3 block py-2.5 px-0 w-full text-lg font-semibold md:text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         autocomplete="off">
                 </div>
                 <div class="mb-4 relative s-l">
-                    <label for="password" class="block text-lg font-semibold md:text-2xl text-gray-600">Ulangi Password</label>
+                    <label for="password" class="s-l-2 block text-lg font-semibold md:text-2xl text-gray-600">Ulangi Password</label>
                     <input type="password" id="password" name="password"
-                        class="block py-2.5 px-0 w-full text-lg font-semibold md:text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="s-l-3 block py-2.5 px-0 w-full text-lg font-semibold md:text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         autocomplete="off">
                 </div>
                 <!-- Remember Me Checkbox -->
                 <div class="mb-4 flex items-center text-lg font-semibold md:text-2xl s-b">
-                    <input type="checkbox" id="remember" name="remember" class="text-red-500 md:w-[4%] md:h-5 md:mt-1">
-                    <label for="remember" class="text-green-900 ml-2">Ingat Saya</label>
+                    <input type="checkbox" id="remember" name="remember" class="s-b-2 text-red-500 md:w-[4%] md:h-5 md:mt-1">
+                    <label for="remember" class="s-b-3 text-green-900 ml-2">Ingat Saya</label>
                 </div>
                 <!-- Login Button -->
                 <button type="submit" class="relative text-lg md:text-2xl md:font-bold font-semibold rounded-md h-[50px] w-full overflow-hidden bg-white text-green-900 hover:scale-105 hover:shadow-lg transition-all before:absolute before:left-0 before:right-0 before:top-0 before:h-0 before:w-full before:bg-green-900 before:duration-500 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0 after:w-full after:bg-green-900 after:duration-500 hover:text-white hover:shadow-green-900 hover:before:h-2/4 hover:after:h-2/4"><span class="relative z-10 s-b">Daftar</span></button>
@@ -70,10 +70,19 @@ export default {
             reset: true, // Jika true, animasi akan dijalankan lagi setiap kali elemen terlihat
         });
         ScrollReveal().reveal('.s-l', { delay: 100, origin: 'left' });
+        ScrollReveal().reveal('.s-l-2', { delay: 200, origin: 'left' });
+        ScrollReveal().reveal('.s-l-3', { delay: 300, origin: 'left' });
         ScrollReveal().reveal('.s-r', { delay: 100, origin: 'right' });
+        ScrollReveal().reveal('.s-r-4', { delay: 400, origin: 'right' });
+        ScrollReveal().reveal('.s-r-5', { delay: 500, origin: 'right' });
+        ScrollReveal().reveal('.s-r-6', { delay: 600, origin: 'right' });
         ScrollReveal().reveal('.s-t', { delay: 100, origin: 'top' });
+        ScrollReveal().reveal('.s-t-2', { delay: 200, origin: 'top' });
+        ScrollReveal().reveal('.s-t-3', { delay: 300, origin: 'top' });
         ScrollReveal().reveal('.s-b', { delay: 100, origin: 'bottom' });
-        ScrollReveal().reveal('.cont .capitalize', { delay: 200, origin: 'top', interval: 50 });
+        ScrollReveal().reveal('.s-b-2', { delay: 200, origin: 'bottom' });
+        ScrollReveal().reveal('.s-b-3', { delay: 300, origin: 'bottom' });
+        ScrollReveal().reveal('.capitalize', { delay: 200, origin: 'top', interval: 100 });
     }
 }
 const router = useRouter()

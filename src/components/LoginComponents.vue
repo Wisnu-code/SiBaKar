@@ -7,23 +7,23 @@
         </div>
         <!-- Right: Login Form -->
         <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2 bg-white">
-            <h1 class="text-3xl md:text-5xl md:font-bold font-semibold mb-4 cont">
+            <h1 class="text-3xl md:text-5xl md:font-bold font-semibold mb-4">
                 <span class="capitalize">l </span><span class="capitalize">o </span><span class="capitalize">g </span><span class="capitalize">i </span><span class="capitalize">n </span>
             </h1>
             <form @submit.prevent="handleLogin">
                 <!-- Username Input -->
                 <div class="mb-4 s-r">
-                    <label for="username" class="block text-lg font-semibold md:text-2xl text-gray-600">Username</label>
+                    <label for="username" class="s-r-2 block text-lg font-semibold md:text-2xl text-gray-600">Username</label>
                     <input type="text" v-model="username" id="username" name="username"
-                        class="block py-2.5 px-0 w-full text-lg md:text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="s-r-3 block py-2.5 px-0 w-full text-lg md:text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         autocomplete="off">
                 </div>
                 <!-- Password Input -->
                 <div class="mb-4 relative s-t">
-                    <label for="password" class="block text-gray-600 font-semibold md:text-2xl text-lg">Password</label>
+                    <label for="password" class="s-t-2 block text-gray-600 font-semibold md:text-2xl text-lg">Password</label>
                     <input :type="isPasswordVisible ? 'text' : 'password'" v-model="password" id="password"
                         name="password"
-                        class="block py-2.5 px-0 w-full text-lg md:text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="s-t-3 block py-2.5 px-0 w-full text-lg md:text-2xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         autocomplete="off">
                     <!-- Toggle Eye Icon -->
                     <span @click="togglePasswordVisibility" class="absolute right-2 md:top-12 top-10 text-2xl cursor-pointer text-gray-500">
@@ -102,9 +102,14 @@ export default {
         });
         ScrollReveal().reveal('.s-l', { delay: 100, origin: 'left' });
         ScrollReveal().reveal('.s-r', { delay: 100, origin: 'right' });
-        ScrollReveal().reveal('.s-t', { delay: 100, origin: 'top' });
+        ScrollReveal().reveal('.s-r-2', { delay: 200, origin: 'right' });
+        ScrollReveal().reveal('.s-r-3', { delay: 300, origin: 'right' });
+        ScrollReveal().reveal('.s-t', { delay: 300, origin: 'top' });
+        ScrollReveal().reveal('.s-t-2', { delay: 400, origin: 'top' });
+        ScrollReveal().reveal('.s-t-3', { delay: 500, origin: 'top' });
         ScrollReveal().reveal('.s-b', { delay: 100, origin: 'bottom' });
-        ScrollReveal().reveal('.cont .capitalize', { delay: 200, origin: 'top', interval: 50 });
+        ScrollReveal().reveal('.s-b-4', { delay: 400, origin: 'bottom' });
+        ScrollReveal().reveal('.capitalize', { delay: 300, origin: 'bottom', interval: 100 })
     },
 };
 </script>

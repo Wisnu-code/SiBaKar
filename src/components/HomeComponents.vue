@@ -1,20 +1,20 @@
 <template>
-    <div class="">
+    <div class="0verflow-hidden">
         <div
-            class="md:m-20 mt-20 flex flex-col items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96 overflow-hidden">
+            class="s-t md:m-20 mt-20 flex flex-col items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96 overflow-hidden">
 
             <div class="flex flex-col justify-between items-center md:h-auto p-4 leading-normal w-full">
 
                 <div class="md:ml-12 max-w-full h-auto flex justify-between flex-col">
 
                     <!-- Text Content -->
-                    <h5 class="s-l mb-2 text-4xl md:text-6xl text-justify font-extrabold tracking-tight text-white">Atur
+                    <h5 class="s-l-2 mb-2 text-4xl md:text-6xl text-justify font-extrabold tracking-tight text-white">Atur
                         dan pesan tempat kerja anda dengan mudah.</h5>
 
                     <!-- Button -->
                     <!-- Tombol Berdasarkan Status Login -->
                     <router-link v-if="isLoggedIn" to="/service"
-                        class="s-b shadow-md bg-button max-w-full md:w-3/12 w-full rounded-xl pl-10 p-2 mt-14">
+                        class="s-r-3 shadow-md bg-button max-w-full md:w-3/12 w-full rounded-xl pl-10 p-2 mt-14">
                         <button type="button" class="learn-more">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
@@ -23,7 +23,7 @@
                         </button>
                     </router-link>
                     <router-link v-else to="/login"
-                        class="s-b shadow-md bg-button max-w-full md:w-3/12 w-full rounded-xl pl-10 p-2 mt-14">
+                        class="s-r-3 shadow-md bg-button max-w-full md:w-3/12 w-full rounded-xl pl-10 p-2 mt-14">
                         <button type="button" class="learn-more">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
@@ -37,7 +37,7 @@
             </div>
 
             <!-- Img -->
-            <div class="s-r flex max-h-full pr-10 mt-10">
+            <div class="s-b-4 flex max-h-full pr-10 mt-10">
                 <img class="object-cover w-full h-auto rounded-t-lg md:mr-10 md:w-fit md:rounded-none md:rounded-s-lg"
                     src="../assets/undraw_favourite_item_pcyo1.png" alt="">
             </div>
@@ -45,19 +45,19 @@
 
         <!-- Tampilan Jumlah -->
         <div
-            class="s-b mt-20 md:mt-24 max-w-full h-auto p-4 text-center bg-secondary  border rounded-lg shadow sm:p-8 md:mx-20">
+            class="s-l mt-20 md:mt-24 max-w-full h-auto p-4 text-center bg-secondary  border rounded-lg shadow sm:p-8 md:mx-20 in">
             <div class="flex items-center justify-evenly md:gap-10 md:flex-row flex-col">
-                <div class="s-b-5 mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
+                <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 in-1">
                     150
-                    <div class=" md:text-3xl text-2xl font-bold text-white ">Seat</div>
+                    <div class=" md:text-3xl text-2xl font-bold text-white in-2">Seat</div>
                 </div>
-                <div class="s-b-6 mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
+                <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 in-1">
                     150
-                    <div class=" md:text-3xl text-2xl font-bold text-white ">Floor</div>
+                    <div class=" md:text-3xl text-2xl font-bold text-white in-2">Floor</div>
                 </div>
-                <div class="s-b-7 mb-3 text-4xl md:text-6xl font-bold text-gray-50 ">
+                <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 in-1">
                     150
-                    <div class=" md:text-3xl text-2xl font-bold text-white ">Person</div>
+                    <div class=" md:text-3xl text-2xl font-bold text-white in-2">Person</div>
                 </div>
             </div>
         </div>
@@ -93,14 +93,14 @@ export default {
             reset: true, // Jika true, animasi akan dijalankan lagi setiap kali elemen terlihat
         });
         ScrollReveal().reveal('.s-l', { delay: 100, origin: 'left' });
+        ScrollReveal().reveal('.s-l-2', { delay: 200, origin: 'left' });
         ScrollReveal().reveal('.s-r', { delay: 100, origin: 'right' });
+        ScrollReveal().reveal('.s-r-3', { delay: 300, origin: 'right' });
         ScrollReveal().reveal('.s-t', { delay: 100, origin: 'top' });
         ScrollReveal().reveal('.s-b', { delay: 100, origin: 'bottom' });
-        ScrollReveal().reveal('.s-b-5', { delay: 500, origin: 'bottom' });
-        ScrollReveal().reveal('.s-b-6', { delay: 600, origin: 'bottom' });
-        ScrollReveal().reveal('.s-b-7', { delay: 700, origin: 'bottom' });
-        ScrollReveal().reveal('.intern div, .inter a', { delay: 50, origin: 'bottom', interval: 50 });
-        ScrollReveal().reveal('.r .r-delay', { delay: 300, origin: 'right', interval: 100 });
+        ScrollReveal().reveal('.s-b-4', { delay: 400, origin: 'bottom' });
+        ScrollReveal().reveal('.in .in-1', { delay: 300, origin: 'bottom', interval: 200 })
+        ScrollReveal().reveal('.in .in-2', { delay: 500, origin: 'bottom', interval: 200 })
     },
     beforeUnmount() {
         window.removeEventListener('storage', this.checkLoginStatus);
