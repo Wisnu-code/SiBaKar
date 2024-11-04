@@ -1,6 +1,6 @@
 <template>
     <div id="contact">
-        <div class="text-3xl text-center md:text-6xl font-bold mt-20 text-gray-600">Contact</div>
+        <div class="s-r text-3xl text-center md:text-6xl font-bold mt-20 text-gray-600">Contact</div>
 
         <div
         class="md:m-20 mt-20 flex flex-col items-center rounded-lg md:flex-row max-w-full h-full dark:bg-gray-800 dark:hover:bg-gray-700">

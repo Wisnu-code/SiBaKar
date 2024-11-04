@@ -127,13 +127,10 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import imgSatu from '../assets/undraw_phone_call_re_hx6a 1.png';
 // Import ScrollReveal
 import ScrollReveal from 'scrollreveal';
-</script>
-
-<script>
 export default {
     name: 'AboutComponents',
     mounted() {
