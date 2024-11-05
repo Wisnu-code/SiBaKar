@@ -1,7 +1,7 @@
 <template>
-    <div class="0verflow-hidden">
+    <div class="0verflow-hidden mt-32">
         <div
-            class="s-t md:m-20 mt-20 flex flex-col items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96 overflow-hidden">
+            class="s-t md:m-20 flex flex-col items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96 overflow-hidden">
 
             <div class="flex flex-col justify-between items-center md:h-auto p-4 leading-normal w-full">
 

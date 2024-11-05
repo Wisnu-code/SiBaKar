@@ -70,22 +70,18 @@
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
-                                            <tr v-for="(user, index) in users" :key="user.id">
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
+                                            <tr v-for="(user, index) in filteredData" :key="user.id">
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
                                                     {{ index + 1 }}
                                                 </td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
                                                     {{ user.fullname }}
                                                 </td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
                                                     {{ user.username }}
                                                 </td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-end text-sm md:text-lg font-medium">
-                                                    <button type="button" @click="deleteUser(user.id)"
+                                                <td class="px-6 py-4 whitespace-nowrap text-end text-sm md:text-lg font-medium">
+                                                    <button type="button" @click="confirmDeleteUser(user.id)"
                                                         class="inline-flex items-center gap-x-2 text-sm md:text-lg font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none">
                                                         Delete
                                                     </button>
@@ -183,100 +179,67 @@ export default {
     //     }
     // },
 
-    // methods: {
-    //     async fetchUsers() {
-    //         try {
-    //             const response = await fetch("http://localhost:8080/users");
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to fetch users');
-    //             }
-    //             const data = await response.json();
-    //             this.users = data;
-    //         } catch (error) {
-    //             this.showAlert('Gagal mengambil data user', 'error');
-    //             console.error("Failed to fetch users:", error);
-    //         }
-    //     },
-
-    //     confirmDeleteUser(id) {
-    //         this.selectedUserId = id;
-    //         this.showDeleteModal = true;
-    //     },
-
-    //     async confirmDelete() {
-    //         try {
-    //             const response = await fetch(`http://localhost:8080/user/delete?id=${this.selectedUserId}`, {
-    //                 method: 'DELETE',
-    //                 headers: {
-    //                     'Content-Type': 'application/json',
-    //                 },
-    //             });
-
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to delete user');
-    //             }
-
-    //             this.fetchUsers(); // Refresh data setelah delete berhasil
-    //             this.showAlert('User berhasil dihapus', 'success');
-    //         } catch (error) {
-    //             this.showAlert('Gagal menghapus user', 'error');
-    //             console.error("Failed to delete user:", error);
-    //         } finally {
-    //             this.showDeleteModal = false;
-    //             this.selectedUserId = null;
-    //         }
-    //     },
-
-    //     cancelDelete() {
-    //         this.showDeleteModal = false;
-    //         this.selectedUserId = null;
-    //     },
-
-    //     showAlert(message, type = 'success') {
-    //         this.alertMessage = message;
-    //         this.alertType = type;
-    //         setTimeout(() => {
-    //             this.alertMessage = '';
-    //         }, 3000);
-    //     }
-    // },
-
     methods: {
-        fetchUsers() {
-            fetch("http://localhost:8080/users")
-                .then(response => response.json())
-                .then(data => {
-                    this.users = data; // Pastikan 'users' ada di data() component ini
-                })
-                .catch(error => console.error("Error fetching users:", error));
-        },
-        deleteUser(userId) {
-            // Pastikan delete hanya dieksekusi jika user mengonfirmasi
-            if (confirm("Apakah Anda yakin ingin menghapus pengguna ini?")) {
-                fetch(`http://localhost:8080/user/delete?id=${userId}`, {
-                    method: 'DELETE'
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            this.fetchUsers(); // Refresh data setelah penghapusan
-                            alert("Pengguna berhasil dihapus.");
-                        } else {
-                            alert("Gagal menghapus pengguna.");
-                        }
-                    })
-                    .catch(error => console.error("Error deleting user:", error));
-            } else {
-                alert("Penghapusan dibatalkan."); // Tambahkan ini jika ingin melihat bahwa aksi dibatalkan
+        async fetchUsers() {
+            try {
+                const response = await fetch("http://localhost:8080/users");
+                if (!response.ok) {
+                    throw new Error('Failed to fetch users');
+                }
+                const data = await response.json();
+                this.users = data;
+            } catch (error) {
+                this.showAlert('Gagal mengambil data user', 'error');
+                console.error("Failed to fetch users:", error);
             }
+        },
+
+        confirmDeleteUser(id) {
+            this.selectedUserId = id;
+            this.showDeleteModal = true;
+        },
+
+        async confirmDelete() {
+            try {
+                const response = await fetch(`http://localhost:8080/user/delete?id=${this.selectedUserId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to delete user');
+                }
+
+                this.fetchUsers(); // Refresh data setelah delete berhasil
+                this.showAlert('User berhasil dihapus', 'success');
+            } catch (error) {
+                this.showAlert('Gagal menghapus user', 'error');
+                console.error("Failed to delete user:", error);
+            } finally {
+                this.showDeleteModal = false;
+                this.selectedUserId = null;
+            }
+        },
+
+        cancelDelete() {
+            this.showDeleteModal = false;
+            this.selectedUserId = null;
+        },
+
+        showAlert(message, type = 'success') {
+            this.alertMessage = message;
+            this.alertType = type;
+            setTimeout(() => {
+                this.alertMessage = '';
+            }, 3000);
         }
-    },
-    created() {
-        this.fetchUsers(); // Memanggil fungsi untuk mengambil data saat komponen dibuat
     },
 
     mounted() {
         this.fetchUsers();
-
+        
         // Inisialisasi ScrollReveal
         ScrollReveal({
             duration: 1000,
