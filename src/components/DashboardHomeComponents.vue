@@ -3,8 +3,7 @@
         <SidebarComponents />
 
         <div class="flex justify-center items-center md:h-[80vh] md:min-h-[80vh] min-h-screen h-full md:text-2xl text-xl text-justify overflow-hidden">
-            <div class="s-b flex justify-center items-center flex-col md:rounded-2xl md:w-[70%] md:h-[70%] h-full shadow-xl overflow-auto gap-5"
-                :style="bgStyle">
+            <div class="s-b flex justify-center items-center flex-col md:rounded-2xl md:w-[70%] md:h-[70%] h-full shadow-xl overflow-auto gap-5 bg-gray-800">
                 <div class="flex flex-col justify-center bg-[rgba(255, 255, 255, 0)] rounded-[16px] shadow-lg text-white p-10 h-full">
                     <div class="indent-20 overflow-hidden">
                         <p v-if="isExpanded" class="s-r">
@@ -32,7 +31,7 @@
 <script>
 import SidebarComponents from './SidebarComponents.vue'
 import ScrollReveal from 'scrollreveal';
-import backgroundImage from '../assets/homeDashboard.png' // Import gambar
+// import backgroundImage from '../assets/homeDashboard.png' // Import gambar
 
 export default {
     components: {
@@ -41,13 +40,13 @@ export default {
     data() {
         return {
             isExpanded: false, // Untuk mengontrol teks pendek/panjang
-            bgStyle: {
-                backgroundColor: "#352213",
-                backgroundImage: `url(${backgroundImage})`, // Path sesuai lokasi gambar Anda
-                backgroundSize: "cover", // Menyesuaikan ukuran gambar
-                backgroundRepeat: "no-repeat", // Agar gambar tidak diulang
-                backgroundPosition: "center" // Memposisikan gambar di tengah
-            }
+            // bgStyle: {
+            //     backgroundColor: "#352213",
+            //     backgroundImage: `url(${backgroundImage})`, // Path sesuai lokasi gambar Anda
+            //     backgroundSize: "cover", // Menyesuaikan ukuran gambar
+            //     backgroundRepeat: "no-repeat", // Agar gambar tidak diulang
+            //     backgroundPosition: "center" // Memposisikan gambar di tengah
+            // }
         }
     },
     mounted() {

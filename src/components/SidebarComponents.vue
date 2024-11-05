@@ -154,13 +154,13 @@ export default {
     left: 0;
     width: 100%;
     height: 0.15em;
-    background-color: orange;
+    background-color: #012c47;
     transform: scaleX(0);
     transition: transform 400ms;
 }
 
 .nav-link.active {
-    color: orange;
+    color: #0f3e5e;
 }
 
 .nav-link.active::after {
