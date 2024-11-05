@@ -25,6 +25,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 </template>
 
@@ -35,7 +36,7 @@ import ScrollReveal from 'scrollreveal';
 
 export default {
     components: {
-        SidebarComponents
+        SidebarComponents,
     },
     data() {
         return {
