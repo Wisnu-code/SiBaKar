@@ -11,12 +11,10 @@
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <RouterLink v-if="!isLoggedIn" to="/login">
                     <button type="button"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Masuk</button>
+                        class="rounded-md border border-[#1B78AF] py-2 px-4 text-center transition-all shadow-sm hover:shadow-lg text-[#1B78AF] hover:text-white hover:bg-[#1B78AF] hover:border-[#1B78AF] focus:text-white focus:bg-[#B4C6D0] focus:border-[#B4C6D0] active:border-[#1B78AF] active:text-white active:bg-[#1B78AF] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none text-xl font-medium">Masuk</button>
                 </RouterLink>
                 <button v-else @click="handleLogout"
-                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-lg px-4 py-2 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-                    Keluar
-                </button>
+                    class="rounded-md border border-[#C63501] py-2 px-4 text-center transition-all shadow-sm hover:shadow-lg text-[#C63501] hover:text-white hover:bg-[#C63501] hover:border-[#C63501] focus:text-white focus:bg-[#B4C6D0] focus:border-[#B4C6D0] active:border-[#C63501] active:text-white active:bg-[#C63501] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none text-xl font-medium">Keluar</button>
                 <button data-collapse-toggle="navbar-sticky" @click="toggleMenu" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-sticky" aria-expanded="false">
@@ -140,16 +138,16 @@ nav {
 }
 
 .active {
-    color: blue;
-    border-bottom: 3px solid blue;
-    border-radius: 0;
+    color: #1B78AF;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .from-left:after {
     display: block;
     content: '';
     width: inherit;
-    border-bottom: solid 3px blue;
+    border-bottom: solid 5px blue;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
 }
