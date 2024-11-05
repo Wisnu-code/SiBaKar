@@ -4,6 +4,9 @@ import AboutView from '../views/AboutView.vue'
 import LoginComponents from '@/components/LoginComponents.vue'
 import ServiceView from '../views/ServiceView.vue'
 import RegisterComponents from '@/components/RegisterComponents.vue'
+import DashboardUsersComponents from '@/components/DashboardUsersComponents.vue'
+import DashboardHomeComponents from '@/components/DashboardHomeComponents.vue'
+import DashboardChairComponents from '@/components/DashboardChairComponents.vue'
 // import FormBookComponents from '@/components/FormBookComponents.vue'
 
 const router = createRouter({
@@ -13,6 +16,21 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: DashboardHomeComponents
+    },
+    {
+      path: '/users',
+      name: 'users',
+      component: DashboardUsersComponents
+    },
+    {
+      path: '/chair',
+      name: 'chair',
+      component: DashboardChairComponents
     },
     {
       path: '/about',

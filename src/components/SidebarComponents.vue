@@ -6,10 +6,10 @@
             Loading.....
         </div>
 
-        <div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
+        <div class="flex antialiased text-gray-900 bg-gray-800 dark:bg-dark dark:text-light shadow-xl">
             <!-- Sidebar -->
             <transition name="sidebar">
-                <div v-show="isSidebarOpen" class="fixed inset-y-0 z-10 flex w-80">
+                <div v-show="isSidebarOpen" class="fixed inset-y-0 z-40 flex w-80">
                     <!-- Curvy shape -->
                     <svg class="absolute inset-0 w-full h-full text-white"
                         style="filter: drop-shadow(10px 0 10px #00000030)" preserveAspectRatio="none"
@@ -18,16 +18,11 @@
                             d="M268.487 0H0V800H247.32C207.957 725 207.975 492.294 268.487 367.647C329 243 314.906 53.4314 268.487 0Z" />
                     </svg>
                     <!-- Sidebar content -->
-                    <div class="z-10 flex flex-col flex-1">
+                    <div class="z-40 flex flex-col flex-1">
                         <div class="flex items-center justify-between flex-shrink-0 w-64 p-4">
                             <!-- Logo -->
                             <a href="#">
-                                <span class="sr-only">K-UI</span>
-                                <svg aria-hidden="true" class="w-16 h-auto text-blue-600" viewBox="0 0 96 53"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M7.69141 34.7031L13.9492 28.1992L32.0898 52H40.1758L18.4492 23.418L38.5938 0.8125H30.4375L7.69141 26.125V0.8125H0.941406V52H7.69141V34.7031ZM35.3008 26.9102H52.457V21.6016H35.3008V26.9102ZM89.1914 13V35.5117C89.1914 39.2148 88.1719 42.0859 86.1328 44.125C84.1172 46.1641 81.1992 47.1836 77.3789 47.1836C73.6055 47.1836 70.6992 46.1641 68.6602 44.125C66.6211 42.0625 65.6016 39.1797 65.6016 35.4766V0.8125H58.9219V35.6875C58.9688 40.9844 60.6562 45.1445 63.9844 48.168C67.3125 51.1914 71.7773 52.7031 77.3789 52.7031L79.1719 52.6328C84.3281 52.2578 88.4062 50.5352 91.4062 47.4648C94.4297 44.3945 95.9531 40.4453 95.9766 35.6172V13H89.1914ZM89 8H96V1H89V8Z" />
-                                </svg>
+                                <img :src="logo">
                             </a>
                             <!-- Close btn -->
                             <button @click="toggleSidebar" class="p-1 rounded-lg focus:outline-none focus:ring">
@@ -40,14 +35,41 @@
                             </button>
                         </div>
                         <nav class="flex flex-col flex-1 w-64 p-4 mt-4">
-                            <a href="#" class="flex items-center space-x-2">
+                            <RouterLink to="/dashboard" active-class="active" class="nav-link flex items-center space-x-2 text-2xl font-medium">
                                 <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                                 </svg>
                                 <span>Home</span>
-                            </a>
+                            </RouterLink>
+                            <RouterLink to="/users" active-class="active" class="nav-link mt-4 flex items-center space-x-2 text-2xl font-medium">
+                                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 40 40" stroke="currentColor">
+                                    <circle cx="20" cy="12" r="8" stroke-width="2"/>
+                                    <path d="M8 32c0-8 6-12 12-12s12 4 12 12" 
+                                        stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span>User</span>
+                            </RouterLink>
+                            <RouterLink to="/chair" active-class="active" class="nav-link mt-4 flex items-center space-x-2 text-2xl font-medium">
+                                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path d="M7 4C7 4 12 3 17 4C17 4 18 8 18 10C18 12 17 14 12 14C7 14 6 12 6 10C6 8 7 4 7 4Z" 
+                                        stroke-width="1.5" 
+                                        stroke-linecap="round" 
+                                        stroke-linejoin="round"/>
+                                    <path d="M6 10H18V12C18 12 18 14 12 14C6 14 6 12 6 12V10Z" 
+                                        stroke-width="1.5"
+                                        stroke-linecap="round" 
+                                        stroke-linejoin="round"/>
+                                    <path d="M8 14L6 20M16 14L18 20" 
+                                        stroke-width="1.5" 
+                                        stroke-linecap="round" 
+                                        stroke-linejoin="round"/>
+                                </svg>
+                                <span>Chair</span>
+                            </RouterLink>
                         </nav>
                         <div class="flex-shrink-0 p-4">
                             <button class="flex items-center space-x-2">
@@ -62,11 +84,10 @@
                     </div>
                 </div>
             </transition>
-
+            
             <!-- Main content -->
             <main class="flex flex-col items-center justify-center flex-1">
-                <!-- Page content -->
-                <button @click="toggleSidebar" class="fixed p-2 text-white bg-black rounded-lg top-5 left-5">
+                <button @click="toggleSidebar" class="fixed p-2 text-black bg-white rounded-lg top-5 left-5">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -75,25 +96,20 @@
                     <span class="sr-only">Open menu</span>
                 </button>
                 <h1 class="sr-only">Home</h1>
-                <a href="https://github.com/kamona-ui" target="_blank">
-                    <span class="sr-only">Kamona ui</span>
-                    <svg aria-hidden="true" class="w-20 h-auto text-blue-600" viewBox="0 0 96 53" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M7.69141 34.7031L13.9492 28.1992L32.0898 52H40.1758L18.4492 23.418L38.5938 0.8125H30.4375L7.69141 26.125V0.8125H0.941406V52H7.69141V34.7031ZM35.3008 26.9102H52.457V21.6016H35.3008V26.9102ZM89.1914 13V35.5117C89.1914 39.2148 88.1719 42.0859 86.1328 44.125C84.1172 46.1641 81.1992 47.1836 77.3789 47.1836C73.6055 47.1836 70.6992 46.1641 68.6602 44.125C66.6211 42.0625 65.6016 39.1797 65.6016 35.4766V0.8125H58.9219V35.6875C58.9688 40.9844 60.6562 45.1445 63.9844 48.168C67.3125 51.1914 71.7773 52.7031 77.3789 52.7031L79.1719 52.6328C84.3281 52.2578 88.4062 50.5352 91.4062 47.4648C94.4297 44.3945 95.9531 40.4453 95.9766 35.6172V13H89.1914ZM89 8H96V1H89V8Z" />
-                    </svg>
-                </a>
+                <div class="text-5xl font-semibold uppercase text-white m-10">dashboard</div>
             </main>
         </div>
     </div>
 </template>
 
 <script>
+import logo from '../assets/logo.jpg';
 export default {
     name: 'SidebarComponents',
     data() {
         return {
             isSidebarOpen: false,
+            logo: logo 
         };
     },
     mounted() {
@@ -108,16 +124,53 @@ export default {
 </script>
 
 <style scoped>
+@property --offset {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 0;
+}
+
 .sidebar-enter-active,
 .sidebar-leave-active {
     transition: transform 0.3s;
 }
 
-.sidebar-enter {
+.sidebar-enter,
+.sidebar-leave-to {
     transform: translateX(-100%);
 }
 
-.sidebar-leave-to {
-    transform: translateX(-100%);
+.nav-link {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    transition: color 400ms;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 0.15em;
+    background-color: orange;
+    transform: scaleX(0);
+    transition: transform 400ms;
+}
+
+.nav-link.active {
+    color: orange;
+}
+
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+@supports not (background: paint(something)) {
+    .nav-link.active::after {
+        transform: none;
+        opacity: 1;
+    }
 }
 </style>

@@ -29,7 +29,7 @@
                     class="w-full sm:w-auto text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 basis-1/2">
 
                     <div class="s-b w-full h-auto md:min-h-80">
-                        <img class="w-full h-full" :src="imgSatu">
+                        <img class="w-full h-full" :src="imgUn">
                     </div>
                 </div>
             </div>
@@ -127,10 +127,14 @@
     </div>
 </template>
 
+<script setup>
+import imgUn from '../assets/undraw_phone_call_re_hx6a1.png';
+</script>
+
 <script>
-import imgSatu from '../assets/undraw_phone_call_re_hx6a 1.png';
 // Import ScrollReveal
 import ScrollReveal from 'scrollreveal';
+
 export default {
     name: 'AboutComponents',
     mounted() {
