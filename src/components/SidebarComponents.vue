@@ -21,7 +21,7 @@
                     <div class="z-40 flex flex-col flex-1">
                         <div class="flex items-center justify-between flex-shrink-0 w-64 p-4">
                             <!-- Logo -->
-                            <a href="#">
+                            <a href="/dashboard">
                                 <img :src="logo">
                             </a>
                             <!-- Close btn -->
