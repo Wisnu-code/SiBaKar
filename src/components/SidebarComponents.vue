@@ -6,7 +6,7 @@
             Loading.....
         </div>
 
-        <div class="flex antialiased text-gray-900 bg-gray-800 dark:bg-dark dark:text-light shadow-xl">
+        <div class="relative flex antialiased text-gray-900 bg-gray-800 dark:bg-dark dark:text-light shadow-xl z-40">
             <!-- Sidebar -->
             <transition name="sidebar">
                 <div v-show="isSidebarOpen" class="fixed inset-y-0 z-40 flex w-80">
@@ -21,7 +21,7 @@
                     <div class="z-40 flex flex-col flex-1">
                         <div class="flex items-center justify-between flex-shrink-0 w-64 p-4">
                             <!-- Logo -->
-                            <a href="#">
+                            <a href="/dashboard">
                                 <img :src="logo">
                             </a>
                             <!-- Close btn -->
@@ -86,7 +86,7 @@
             </transition>
             
             <!-- Main content -->
-            <main class="flex flex-col items-center justify-center flex-1">
+            <main class="flex flex-col items-center justify-center flex-1 z-10">
                 <button @click="toggleSidebar" class="fixed p-2 text-black bg-white rounded-lg top-5 left-5">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -99,6 +99,7 @@
                 <div class="text-5xl font-semibold uppercase text-white m-10">dashboard</div>
             </main>
         </div>
+        
     </div>
 </template>
 
@@ -109,7 +110,7 @@ export default {
     data() {
         return {
             isSidebarOpen: false,
-            logo: logo 
+            logo: logo ,
         };
     },
     mounted() {
@@ -154,13 +155,13 @@ export default {
     left: 0;
     width: 100%;
     height: 0.15em;
-    background-color: orange;
+    background-color: #012c47;
     transform: scaleX(0);
     transition: transform 400ms;
 }
 
 .nav-link.active {
-    color: orange;
+    color: #0f3e5e;
 }
 
 .nav-link.active::after {
