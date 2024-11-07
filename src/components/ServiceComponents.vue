@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <div class="flex flex-col md:flex-row md:mx-0 mx-5 text-justify mt-24 overflow-hidden">
+    <div class="overflow-hidden">
+        <div class="flex flex-col md:flex-row md:mx-0 mx-5 text-justify mt-24">
 
             <div class="relative max-w-full h-full md:m-20 mb-0">
                 <div
-                    class="s-b shadow-lg md:ml-36 relative w-full md:w-72 md:h-80 h-64 bg-gray-200 rounded-lg overflow-hidden">
+                    class="s-b-4 shadow-lg md:ml-36 relative w-full md:w-72 md:h-80 h-64 bg-gray-200 rounded-lg overflow-hidden">
 
                     <div
                         class="absolute top-0 left-0 w-16 h-16 bg-white rounded-br-3xl flex items-center justify-center">
@@ -32,13 +32,13 @@
                 </div>
 
                 <!-- Teks Waktu Video -->
-                <div class="s-l absolute top-0 md:left-0 left-20 md:ml-5">
+                <div class="s-l-2 absolute top-0 md:left-0 left-20 md:ml-5">
                     <span class="text-xl font-medium text-gray-700">Lihat Video<br></span>
                 </div>
             </div>
 
             <div class="md:mt-20 mt-10 max-w-full md:w-2/4 md:mr-20">
-                <div class="s-t md:text-3xl w-full text-lg font-medium text-gray-600">Kami memahami bahwa setiap
+                <div class="s-t-5 md:text-3xl w-full text-lg font-medium text-gray-600">Kami memahami bahwa setiap
                     perusahaan memiliki
                     kebutuhan unik dalam menciptakan lingkungan kerja yang optimal. Oleh karena itu, kami menyediakan
                     berbagai layanan yang dirancang khusus untuk mendukung efisiensi, fleksibilitas, dan kenyamanan
@@ -59,7 +59,7 @@
 
         <!-- Alert Form -->
         <div v-if="showAlert"
-            class="fixed backdrop-blur-md inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+            class="s-b fixed backdrop-blur-md inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
             <div class="bg-white rounded-lg p-8 w-96 md:w-[40%]">
                 <h2 class="text-3xl md:text-5xl font-semibold mb-4 text-center">Booking Form</h2>
                 <form @submit.prevent="handleBooking">
@@ -85,7 +85,7 @@
                             class="block text-xl md:text-2xl py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                             required>
                             <option disabled value="" class="text-xl md:text-2xl">Silahkan pilih satu</option>
-                            <option v-for="seat in availableSeats" :key="seat.id" :value="seat.name">{{ seat.name }}
+                            <option v-for="seat in availableSeats" :key="seat.id" :value="seat.id">{{ seat.name }}
                             </option>
                         </select>
                     </div>
@@ -111,20 +111,20 @@
         </div>
 
         <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
-            <div class="intern flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-20">
-                <div class="sla zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+            <div class="in flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-20">
+                <div class="in-1 zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
                     500 +
-                    <div class="slb zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem,
+                    <div class="in-2 zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem,
                         ipsum.</div>
                 </div>
-                <div class="sla zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                <div class="in-1 zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
                     500 +
-                    <div class="slb zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem,
+                    <div class="in-2 zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem,
                         ipsum.</div>
                 </div>
-                <div class="sla zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
+                <div class="in-1 zoom zoomS mb-3 text-5xl md:text-8xl font-bold text-gray-800 dark:text-white">
                     500 +
-                    <div class="slb zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem,
+                    <div class="in-2 zoom zoomS md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Lorem,
                         ipsum.</div>
                 </div>
             </div>
@@ -134,14 +134,14 @@
             Cara Kerja
         </div>
 
-        <div class="zoom bg-white dark:bg-gray-800 flex justify-center items-center w-full h-full p-5">
+        <div class="s-t zoom bg-white dark:bg-gray-800 flex justify-center items-center w-full h-full p-5">
             <div class="border shadow-lg max-w-2xl p-6 rounded-lg dark:bg-gray-700 dark:text-gray-300">
                 <div class="w-full max-w-screen-xl px-10 mx-auto">
-                    <ul class="sla flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 text-2xl font-bold">
+                    <ul class="in flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 text-2xl font-bold">
 
                         <li>
                             <a href="#"
-                                class="slb zoom zoomS text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
+                                class="in-2 zoom zoomS text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
                                 @click.prevent="toggleMain">
                                 Utama
                             </a>
@@ -149,7 +149,7 @@
 
                         <li>
                             <a href="#"
-                                class="slb zoom zoomS text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
+                                class="in-2 zoom zoomS text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
                                 @click.prevent="toggleEvent">
                                 Event
                             </a>
@@ -160,7 +160,7 @@
             </div>
         </div>
 
-        <div class="w-full md:px-20 mt-10 text-center">
+        <div class="s-b-4 w-full md:px-20 mt-10 text-center">
 
             <!-- saat link utama ditekan akan muncul, namun akan hilang saat link event ditekan -->
             <div v-if="showMain" class="intern grid md:grid-cols-3 grid-rows-1 gap-14">
@@ -226,14 +226,15 @@ export default {
             reset: true,
         });
         ScrollReveal().reveal('.s-l', { delay: 100, origin: 'left' });
+        ScrollReveal().reveal('.s-l-2', { delay: 200, origin: 'left' });
         ScrollReveal().reveal('.s-r', { delay: 100, origin: 'right' });
+        ScrollReveal().reveal('.s-r-3', { delay: 300, origin: 'right' });
         ScrollReveal().reveal('.s-t', { delay: 100, origin: 'top' });
+        ScrollReveal().reveal('.s-t-5', { delay: 500, origin: 'top' });
         ScrollReveal().reveal('.s-b', { delay: 100, origin: 'bottom' });
-        ScrollReveal().reveal('.s-b-5', { delay: 500, origin: 'bottom' });
-        ScrollReveal().reveal('.s-b-6', { delay: 600, origin: 'bottom' });
-        ScrollReveal().reveal('.s-b-7', { delay: 700, origin: 'bottom' });
-        ScrollReveal().reveal('.intern .ox, .intern a, .inter a, .intern p, .intern .sla, .sla .slb', { delay: 50, origin: 'bottom', interval: 50 });
-        ScrollReveal().reveal('.r .r-delay', { delay: 300, origin: 'right', interval: 100 });
+        ScrollReveal().reveal('.s-b-4', { delay: 400, origin: 'bottom' });
+        ScrollReveal().reveal('.in .in-1', { delay: 300, origin: 'bottom', interval: 200 })
+        ScrollReveal().reveal('.in .in-2', { delay: 500, origin: 'right', interval: 200 })
     },
     data() {
         return {
@@ -247,7 +248,7 @@ export default {
             selectedSeat: '',
             availableSeats: Array.from({ length: 150 }, (v, i) => ({
                 id: i + 1,
-                name: `Bangku ${i + 1}`
+                name: ` ${i + 1}`
             })),
         };
     },

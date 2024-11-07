@@ -1,26 +1,26 @@
 <template>
     <!-- Foooter -->
-    <section class="bg-white text-xl">
+    <section class="s-b bg-white text-xl">
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-            <nav class="flex flex-wrap justify-center -mx-5 -my-2 intern">
-                <div class="px-5 py-2">
+            <nav class="flex flex-wrap justify-center -mx-5 -my-2 in">
+                <div class="in-1 px-5 py-2">
                     <a href="/about" class="text-xl hover:font-bold leading-6 text-gray-500 hover:text-yellow-300">
                         Tentang
                     </a>
                 </div>
-                <div class="px-5 py-2">
+                <div class="in-1 px-5 py-2">
                     <a href="#" class="text-xl hover:font-bold leading-6 text-gray-500 hover:text-yellow-300">
                         Tim
                     </a>
                 </div>
-                <div class="px-5 py-2">
+                <div class="in-1 px-5 py-2">
                     <a href="#contact" class="text-xl hover:font-bold leading-6 text-gray-500 hover:text-yellow-300">
                         Kontak
                     </a>
                 </div>
             </nav>
-            <div class="flex justify-center mt-8 h-10 space-x-6 inter">
-                <a href="#" class="text-gray-400 hover:text-blue-600">
+            <div class="flex justify-center mt-8 h-10 space-x-6 in">
+                <a href="#" class="in-1 text-gray-400 hover:text-blue-600">
                     <span class="sr-only">Facebook</span>
                     <svg class="w-6 h-6 hover:w-10 hover:h-10" aria-hidden="true" fill="currentColor"
                         viewBox="0 0 24 24">
@@ -29,7 +29,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-pink-800">
+                <a href="#" class="in-1 text-gray-400 hover:text-pink-800">
                     <span class="sr-only">Instagram</span>
                     <svg class="w-6 h-6 hover:w-10 hover:h-10" aria-hidden="true" fill="currentColor"
                         viewBox="0 0 24 24">
@@ -38,7 +38,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-blue-700">
+                <a href="#" class="in-1 text-gray-400 hover:text-blue-700">
                     <span class="sr-only">Twitter</span>
                     <svg class="w-6 h-6 hover:w-10 hover:h-10" aria-hidden="true" fill="currentColor"
                         viewBox="0 0 24 24">
@@ -47,7 +47,7 @@
                         </path>
                     </svg>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-gray-900">
+                <a href="#" class="in-1 text-gray-400 hover:text-gray-900">
                     <span class="sr-only">GitHub</span>
                     <svg class="w-6 h-6 hover:w-10 hover:h-10" aria-hidden="true" fill="currentColor"
                         viewBox="0 0 24 24">
@@ -56,7 +56,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-pink-600">
+                <a href="#" class="in-1 text-gray-400 hover:text-pink-600">
                     <span class="sr-only">Dribbble</span>
                     <svg class="w-6 h-6 hover:w-10 hover:h-10" aria-hidden="true" fill="currentColor"
                         viewBox="0 0 24 24">
@@ -66,7 +66,7 @@
                     </svg>
                 </a>
             </div>
-            <p class="mt-8 text-xl hover:font-bold leading-6 text-center text-gray-400">
+            <p class="s-t mt-8 text-xl hover:font-bold leading-6 text-center text-gray-400">
                 © 2024 SiBaKar, All rights reserved.
             </p>
         </div>
