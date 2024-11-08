@@ -87,7 +87,7 @@
                             class="block text-xl md:text-2xl py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                             required>
                             <option disabled value="" class="text-xl md:text-2xl">Silahkan pilih satu</option>
-                            <option v-for="seat in availableSeats" :key="seat.id" :value="seat.name">{{ seat.name }}
+                            <option v-for="seat in availableSeats" :key="seat.id" :value="seat.id">{{ seat.name }}
                             </option>
                         </select>
                     </div>
@@ -250,7 +250,7 @@ export default {
             selectedSeat: '',
             availableSeats: Array.from({ length: 150 }, (v, i) => ({
                 id: i + 1,
-                name: `Bangku ${i + 1}`
+                name: ` ${i + 1}`
             })),
         };
     },

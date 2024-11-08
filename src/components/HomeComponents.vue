@@ -45,7 +45,7 @@
 
         <!-- Tampilan Jumlah -->
         <div
-            class="s-l mt-20 md:mt-24 max-w-full h-auto p-4 text-center bg-secondary  border rounded-lg shadow sm:p-8 md:mx-20 in">
+            class="s-l mt-20 md:mt-24 max-w-full h-auto p-4 text-center bg-secondary border rounded-lg shadow sm:p-8 md:mx-20 in">
             <div class="flex items-center justify-evenly md:gap-10 md:flex-row flex-col">
                 <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 in-1">
                     150
