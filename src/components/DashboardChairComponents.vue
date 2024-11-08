@@ -54,9 +54,6 @@
                                             <tr>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
-                                                    ID</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Nama</th>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
@@ -65,28 +62,30 @@
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Bangku</th>
                                                 <th scope="col"
+                                                    class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
+                                                    status</th>
+                                                <th scope="col"
                                                     class="px-6 py-3 text-end font-medium text-gray-500 uppercase">
                                                     Action</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
-                                            <tr v-for="(booking, index) in filteredData" :key="booking.id">
-                                                <td 
-                                                    class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
-                                                    {{ index + 1 }}
-                                                </td>
+                                            <tr v-for="log in filteredData" :key="log.id">
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
-                                                    {{ booking.namalengkap }}</td>
+                                                    {{ log.namalengkap }}</td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
-                                                    {{ booking.namadivisi }}</td>
+                                                    {{ log.nama_divisi }}</td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
-                                                    {{ booking.selectedSeat }}</td>
+                                                    {{ log.selected_seat }}</td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
+                                                    {{ log.status }}</td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-end text-sm md:text-lg font-medium">
-                                                    <button type="button" @click="deleteBooking(booking.id)"
+                                                    <button type="button" @click="initiateDelete(log.id)"
                                                         class="inline-flex items-center gap-x-2 text-sm md:text-lg font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none">
                                                         Delete
                                                     </button>
@@ -114,8 +113,10 @@ export default {
     },
     data() {
         return {
-            bookings: [],
+            selectedLogId: null,
             searchQuery: '',
+            showDeleteModal: false,
+            logActivities: [],
             alertMessage: '',
             alertType: 'success',
         }
@@ -124,60 +125,64 @@ export default {
     computed: {
         filteredData() {
             const query = this.searchQuery.toLowerCase();
-            return this.bookings.filter(booking => {
+            return this.logActivities.filter(log => {
                 return (
-                    booking.namalengkap.toLowerCase().includes(query) ||
-                    booking.namadivisi.toLowerCase().includes(query) ||
-                    booking.selectedSeat.toLowerCase().includes(query)
+                    log.namalengkap.toLowerCase().includes(query) ||
+                    log.nama_divisi.toLowerCase().includes(query) ||
+                    log.selected_seat.toLowerCase().includes(query)
                 );
             });
         }
     },
 
     methods: {
-        async fetchBookings() {
-            try {
-                const response = await fetch("http://localhost:8080/bookings");
-                if (!response.ok) {
-                    throw new Error('Failed to fetch bookings');
-                }
-                const data = await response.json();
-                this.bookings = data;
-                console.log('Fetched bookings:', data); // Debugging
-            } catch (error) {
-                console.error("Failed to fetch bookings:", error);
-                this.showAlert('Gagal mengambil data booking', 'error');
-            }
+        fetchLogActivities() {
+            fetch("http://localhost:8080/logactivity")
+                .then(response => response.json())
+                .then(data => {
+                    this.logActivities = data;
+                })
+                .catch(error => console.error("Error fetching log activities:", error));
         },
 
-        async deleteBooking(id) {
-            if (!confirm('Apakah Anda yakin ingin menghapus booking ini?')) {
-                return;
-            }
+        initiateDelete(id) {
+            this.selectedLogId = id;
+            this.showDeleteModal = true;
+        },
 
-            try {
-                console.log('Deleting booking with ID:', id); // Debugging
-                const response = await fetch(`http://localhost:8080/booking/delete?id=${id}`, {
-                    method: 'DELETE',
+        cancelDelete() {
+            this.showDeleteModal = false;
+            this.selectedLogId = null;
+        },
+
+        confirmDelete() {
+            if (this.selectedLogId) {
+                fetch(`http://localhost:8080/logactivity/delete?id=${this.selectedLogId}`, {
+                    method: "DELETE",
                     headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-
-                if (!response.ok) {
-                    throw new Error('Failed to delete booking');
-                }
-
-                // Refresh data setelah delete berhasil
-                await this.fetchBookings();
-                this.showAlert('Booking berhasil dihapus', 'success');
-            } catch (error) {
-                console.error("Failed to delete booking:", error);
-                this.showAlert('Gagal menghapus booking', 'error');
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            this.fetchLogActivities(); // Refresh the list
+                            this.showAlert('Successfully deleted booking', 'success');
+                        } else {
+                            throw new Error('Failed to delete');
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error deleting log activity:", error);
+                        this.showAlert('Failed to delete booking', 'error');
+                    })
+                    .finally(() => {
+                        this.showDeleteModal = false;
+                        this.selectedLogId = null;
+                    });
             }
         },
 
-        showAlert(message, type = 'success') {
+        showAlert(message, type) {
             this.alertMessage = message;
             this.alertType = type;
             setTimeout(() => {
@@ -186,92 +191,8 @@ export default {
         }
     },
 
-    // methods: {
-    //     async fetchBookings() {
-    //         try {
-    //             const response = await fetch("http://localhost:8080/bookings");
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to fetch bookings');
-    //             }
-    //             this.bookings = await response.json();
-    //         } catch (error) {
-    //             this.showAlert('Gagal mengambil data booking', 'error');
-    //             console.error("Failed to fetch bookings:", error);
-    //         }
-    //     },
-
-    //     initiateDelete(booking) {
-    //         this.selectedBooking = booking;
-    //         this.showDeleteModal = true;
-    //     },
-
-    //     cancelDelete() {
-    //         this.showDeleteModal = false;
-    //         this.selectedBooking = null;
-    //     },
-
-    //     async confirmDelete() {
-    //         if (!this.selectedBooking) return;
-            
-    //         try {
-    //             this.isLoading = true;
-    //             const response = await fetch(`http://localhost:8080/booking/delete?id=${this.selectedBooking.id}`, {
-    //                 method: "DELETE",
-    //             });
-                
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to delete booking');
-    //             }
-
-    //             // Remove from local state
-    //             const index = this.bookings.findIndex(b => b.id === this.selectedBooking.id);
-    //             if (index > -1) {
-    //                 this.bookings.splice(index, 1);
-    //             }
-
-    //             this.showAlert('Booking berhasil dihapus', 'success');
-    //         } catch (error) {
-    //             this.showAlert('Gagal menghapus booking', 'error');
-    //             console.error("Failed to delete booking:", error);
-    //         } finally {
-    //             this.isLoading = false;
-    //             this.showDeleteModal = false;
-    //             this.selectedBooking = null;
-    //         }
-    //     },
-
-    //     showAlert(message, type = 'success') {
-    //         this.alertMessage = message;
-    //         this.alertType = type;
-    //         setTimeout(() => {
-    //             this.alertMessage = '';
-    //         }, 3000);
-    //     },
-
-    //     async deleteBooking(id) {
-    //         try {
-    //             const response = await fetch(`http://localhost:8080/booking/delete?id=${id}`, {
-    //                 method: "DELETE",
-    //             });
-    //             if (!response.ok) {
-    //                 throw new Error("Failed to delete booking");
-    //             }
-    //             this.fetchBookings(); // Refresh list after deletion
-    //         } catch (error) {
-    //             console.error("Failed to delete booking:", error);
-    //         }
-    //     },
-
-    //     deletePerson(person) {
-    //         const index = this.tableData.indexOf(person)
-    //         if (index > -1) {
-    //             this.tableData.splice(index, 1)
-    //         }
-    //     }
-    // },
-
     mounted() {
-        this.fetchBookings();
+        this.fetchLogActivities();
         // Inisialisasi ScrollReveal
         ScrollReveal({
             duration: 1000, // Durasi animasi dalam milidetik
