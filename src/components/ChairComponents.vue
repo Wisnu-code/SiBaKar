@@ -131,6 +131,12 @@ export default {
 
         // Mengonfirmasi pemesanan bangku yang dipilih
         async bookSeat(bangku) {
+            if (!localStorage.getItem('token')) {
+                alert('Anda harus login terlebih dahulu!');
+                this.$router.push('/login');  // Redirect ke halaman login
+                return;
+            }
+            
             if (bangku.status === 'occupied') {
                 alert('Bangku ini sudah terisi. Silakan pilih bangku lain.');
                 return;
@@ -144,11 +150,12 @@ export default {
                 return;
             }
 
+
             // Kirim data pemesanan ke server
             const bookingData = {
                 namalengkap,
                 nama_divisi : namadivisi,
-                selected_seat: bangku.id,
+                selected_seat: bangku.id.toString(),
                 status: 'occupied'  // Kirim status 'occupied' saat pemesanan
             };
 
@@ -157,7 +164,8 @@ export default {
                 const response = await fetch('http://localhost:8080/booking', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                       
                     },
                     body: JSON.stringify(bookingData)
                 });
@@ -167,7 +175,8 @@ export default {
                 }
 
                 const result = await response.json();
-                alert(`Pemesanan berhasil untuk ${result.namalengkap} dari ${result.namadivisi} untuk bangku ${result.selectedSeat}`);
+                console.log(result);
+                alert(`Pemesanan berhasil untuk ${result.namalengkap} dari ${result.nama_divisi} untuk bangku ${result.selected_seat}`);
 
                 // Update status bangku setelah pemesanan berhasil
                 bangku.status = 'occupied'; // Mengupdate status pada frontend juga
