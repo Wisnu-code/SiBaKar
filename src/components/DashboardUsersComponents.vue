@@ -2,30 +2,6 @@
     <div>
         <SidebarComponents />
 
-        <!-- Modal Konfirmasi Delete -->
-        <div v-if="showDeleteModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-lg font-semibold mb-4">Konfirmasi Hapus</h3>
-                <p>Apakah Anda yakin ingin menghapus user ini?</p>
-                <div class="mt-4 flex justify-end space-x-3">
-                    <button @click="cancelDelete" class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">
-                        Batal
-                    </button>
-                    <button @click="confirmDelete" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">
-                        Hapus
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Alert Message -->
-        <div v-if="alertMessage" :class="[
-            'fixed top-4 right-4 p-4 rounded-lg shadow-lg transition-opacity duration-500',
-            alertType === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
-        ]">
-            {{ alertMessage }}
-        </div>
-
         <div class="flex h-[80vh] justify-center items-center md:text-2xl text-xl">
             <div
                 class="flex flex-col items-center justify-center bg-gray-50 md:rounded-2xl rounded-xl md:w-[70%] md:h-[80%] h-[100%] shadow-lg overflow-hidden md:p-10 s-b">
@@ -54,6 +30,9 @@
                                             <tr>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
+                                                    ID</th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Username</th>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
@@ -67,6 +46,10 @@
                                             <tr v-for="user in users" :key="user.id">
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
+                                                    {{ user.id }}
+                                                </td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
                                                     {{ user.username }}
                                                 </td>
                                                 <td
@@ -75,7 +58,7 @@
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-end text-sm md:text-lg font-medium">
-                                                    <button type="button" @click="initiateDelete(user.id)"
+                                                    <button type="button" @click="deleteUser(user.id)"
                                                         class="inline-flex items-center gap-x-2 text-sm md:text-lg font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none">
                                                         Delete
                                                     </button>
@@ -105,10 +88,6 @@ export default {
         return {
             users: [],
             searchQuery: '',
-            alertMessage: '',
-            alertType: 'success',
-            showDeleteModal: false,
-            selectedUserId: null
         }
     },
 
@@ -136,50 +115,6 @@ export default {
                     this.showAlert('Error fetching data', 'error')
                 });
         },
-
-        initiateDelete(id) {
-            this.selectedUserId = id;
-            this.showDeleteModal = true;
-        },
-
-        cancelDelete() {
-            this.showDeleteModal = false;
-            this.selectedUserId = null;
-        },
-
-        confirmDelete() {
-            if (this.selectedUserId) {
-                fetch(`http://localhost:8080/users/delete?id=${this.selectedUserId}`, {
-                    method: "DELETE",
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            this.fetchUsers(); // Refresh the list
-                            this.showAlert('Successfully deleted user', 'success');
-                        } else {
-                            throw new Error('Failed to delete');
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Error deleting user:", error);
-                        this.showAlert('Failed to delete user', 'error');
-                    })
-                    .finally(() => {
-                        this.showDeleteModal = false;
-                        this.selectedUserId = null;
-                    });
-            }
-        },
-        showAlert(message, type) {
-            this.alertMessage = message;
-            this.alertType = type;
-            setTimeout(() => {
-                this.alertMessage = '';
-            }, 3000);
-        }
     },
 
     mounted() {
@@ -198,16 +133,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-/* Styles for modal and alert */
-.modal-enter-active,
-.modal-leave-active {
-    transition: opacity 0.3s ease;
-}
-
-.modal-enter-from,
-.modal-leave-to {
-    opacity: 0;
-}
-</style>

@@ -16,7 +16,7 @@
                         </p>
                         <p v-else class="s-r">
                             Website ini adalah platform pemesanan bangku yang dirancang khusus untuk karyawan guna memudahkan
-                            mereka dalam mengatur tempat duduk saat bekerja di kantor...
+                            mereka dalam mengatur tempat duduk saat bekerja di kantor... 
                         </p>
                         <button @click="isExpanded = !isExpanded" class="mt-4 text-gray-400 underline s-b-5">
                             {{ isExpanded ? 'Baca Lebih Sedikit' : 'Baca Selengkapnya' }}
