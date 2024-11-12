@@ -43,7 +43,7 @@
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
-                                            <tr v-for="user in users" :key="user.id">
+                                            <tr v-for="user in filteredUsers" :key="user.id">
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
                                                     {{ user.id }}
@@ -90,16 +90,15 @@ export default {
             searchQuery: '',
         }
     },
-
     computed: {
-        filteredData() {
-            const query = this.searchQuery.toLowerCase();
-            return this.users.filter(user => {
-                return (
-                    user.fullname.toLowerCase().includes(query) ||
-                    user.username.toLowerCase().includes(query)
-                );
-            });
+        filteredUsers() {
+            const query = this.searchQuery.toLowerCase().trim();
+            if (!query) return this.users;
+
+            return this.users.filter(user => 
+                user.username.toLowerCase().includes(query) ||
+                user.fullname.toLowerCase().includes(query)
+            );
         }
     },
 
