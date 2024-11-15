@@ -8,7 +8,8 @@
                 <div class="md:ml-12 max-w-full h-auto flex justify-between flex-col">
 
                     <!-- Text Content -->
-                    <h5 class="s-l-2 mb-2 text-4xl md:text-6xl text-justify font-extrabold tracking-tight text-white">Atur
+                    <h5 class="s-l-2 mb-2 text-4xl md:text-6xl text-justify font-extrabold tracking-tight text-white">
+                        Atur
                         dan pesan tempat kerja anda dengan mudah.</h5>
 
                     <!-- Button -->
@@ -49,15 +50,24 @@
             <div class="flex items-center justify-evenly md:gap-10 md:flex-row flex-col">
                 <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 in-1">
                     150
-                    <div class=" md:text-3xl text-2xl font-bold text-white in-2">Seat</div>
+                    <div class=" md:text-3xl text-2xl font-bold text-white in-2">Belum Terisi</div>
                 </div>
+                <form>
+                    <!-- Label yang berubah sesuai pilihan -->
+                    <label for="countries" class="block text-4xl md:text-6xl font-bold text-gray-50">
+                        {{ labelValue }}
+                    </label>
+
+                    <!-- Dropdown untuk memilih lantai -->
+                    <select id="countries" v-model="selectedOption" @change="updateLabel"
+                        class="bg-transparent md:text-3xl text-2xl font-bold text-white block w-full p-2.5 border-none rounded-lg focus:ring-gray-500 focus:border-gray-500">
+                        <option value="70" class="text-gray-900">Lantai 1</option>
+                        <option value="80" class="text-gray-900">Lantai 2</option>
+                    </select>
+                </form>
                 <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 in-1">
                     150
-                    <div class=" md:text-3xl text-2xl font-bold text-white in-2">Floor</div>
-                </div>
-                <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 in-1">
-                    150
-                    <div class=" md:text-3xl text-2xl font-bold text-white in-2">Person</div>
+                    <div class=" md:text-3xl text-2xl font-bold text-white in-2">Terisi</div>
                 </div>
             </div>
         </div>
@@ -76,14 +86,22 @@ export default {
     data() {
         return {
             isLoggedIn: !!localStorage.getItem('token'), // Status login
+            selectedOption: '70', // Nilai default
+            labelValue: '150', // Nilai awal label
         }
     },
     methods: {
         checkLoginStatus() {
             this.isLoggedIn = !!localStorage.getItem('token'); // Update login status
         },
+        updateLabel() {
+            this.labelValue = this.selectedOption; // Update label sesuai pilihan
+        }
     },
     mounted() {
+         // Memperbarui label ketika komponen pertama kali di-mount
+        this.updateLabel();
+
         window.addEventListener('storage', this.checkLoginStatus); // Pantau perubahan di localStorage
         // Inisialisasi ScrollReveal
         ScrollReveal({
