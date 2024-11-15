@@ -70,6 +70,24 @@
                                 </svg>
                                 <span>Chair</span>
                             </RouterLink>
+                            <RouterLink to="/report" active-class="active" class="nav-link mt-4 flex items-center space-x-2 text-2xl font-medium">
+                                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path d="M7 4C7 4 12 3 17 4C17 4 18 8 18 10C18 12 17 14 12 14C7 14 6 12 6 10C6 8 7 4 7 4Z" 
+                                        stroke-width="1.5" 
+                                        stroke-linecap="round" 
+                                        stroke-linejoin="round"/>
+                                    <path d="M6 10H18V12C18 12 18 14 12 14C6 14 6 12 6 12V10Z" 
+                                        stroke-width="1.5"
+                                        stroke-linecap="round" 
+                                        stroke-linejoin="round"/>
+                                    <path d="M8 14L6 20M16 14L18 20" 
+                                        stroke-width="1.5" 
+                                        stroke-linecap="round" 
+                                        stroke-linejoin="round"/>
+                                </svg>
+                                <span>Report</span>
+                            </RouterLink>
                         </nav>
                         <div class="flex-shrink-0 p-4">
                             <button @click="logout" class="flex items-center space-x-2">
