@@ -77,19 +77,19 @@
         </div>
 
         <!-- Section 3 -->
-        <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
-            <div class="in flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-20">
-                <div class="in-1 mb-3 text-5xl md:text-7xl font-bold text-gray-600 dark:text-white">
-                    Nama Event
-                    <div class="in-2 md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Detail Tgl/Waktu Event</div>
+        <div class="mt-20 max-w-full h-auto p-4 text-center sm:p-8">
+            <div class="in flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-12 bg-secondary py-14 px-7 rounded-xl">
+                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
+                    Morning Briefing
+                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Selasa & Jumat</div>
                 </div>
-                <div class="in-1 mb-3 text-5xl md:text-7xl font-bold text-gray-600 dark:text-white">
-                    Nama Event
-                    <div class="in-2 md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Detail Tgl/Waktu Event</div>
+                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
+                    Upacara
+                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Senin/2 bulan sekali</div>
                 </div>
-                <div class="in-1 mb-3 text-5xl md:text-7xl font-bold text-gray-600 dark:text-white">
-                    Nama Event
-                    <div class="in-2 md:text-3xl text-2xl font-bold text-gray-500 dark:text-white">Detail Tgl/Waktu Event</div>
+                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
+                    Lempar Balon Air
+                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Akhir Tahun</div>
                 </div>
             </div>
         </div>
