@@ -9,7 +9,7 @@
 
                 <!-- Search Input -->
                 <div class="mb-4 s-r">
-                    <div class="relative md:left-60 md:translate-x-[100%] left-16">
+                    <div class="relative md:left-44 md:translate-x-[100%] left-16">
                         <input type="text" v-model="searchQuery" placeholder="Search..."
                             class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-sm">
                         <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"

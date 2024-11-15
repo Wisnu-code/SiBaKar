@@ -21,17 +21,20 @@ const router = createRouter({
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: DashboardHomeComponents
+      component: DashboardHomeComponents,
+      meta: { requiresDashboardLogin: true }
     },
     {
       path: '/users',
       name: 'users',
-      component: DashboardUsersComponents
+      component: DashboardUsersComponents,
+      meta: { requiresDashboardLogin: true }
     },
     {
       path: '/chair',
       name: 'chair',
-      component: DashboardChairComponents
+      component: DashboardChairComponents,
+      meta: { requiresDashboardLogin: true }
     },
     {
       path: '/about',
@@ -41,7 +44,8 @@ const router = createRouter({
     {
       path: '/service',
       name: 'service',
-      component: ServiceView
+      component: ServiceView,
+      meta: { requiresLogin: true }
     },
     {
       path: '/about',
@@ -85,5 +89,26 @@ const router = createRouter({
     }
   }
 })
+
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('token');
+
+  if (to.matched.some(record => record.meta.requiresLogin)) {
+    if (!token) {
+      next({ name: 'login' });
+    }else {
+      next();
+    }
+  }
+  else if (to.matched.some(record => record.meta.requiresDashboardLogin)) {
+    if (!token) {
+      next({ name: 'dashlog' });
+    }else {
+      next();
+    }
+  }else {
+    next();
+  }
+});
 
 export default router

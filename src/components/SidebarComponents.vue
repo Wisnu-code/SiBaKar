@@ -72,7 +72,7 @@
                             </RouterLink>
                         </nav>
                         <div class="flex-shrink-0 p-4">
-                            <button class="flex items-center space-x-2">
+                            <button @click="logout" class="flex items-center space-x-2">
                                 <svg aria-hidden="true" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -120,6 +120,10 @@ export default {
         toggleSidebar() {
             this.isSidebarOpen = !this.isSidebarOpen;
         },
+        logout() {
+            localStorage.removeItem('token');
+            this.$router.push('/dashlog')
+        }
     },
 };
 </script>
