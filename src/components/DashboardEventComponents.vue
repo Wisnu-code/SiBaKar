@@ -100,10 +100,11 @@
                 <div class="mb-4">
                     <label for="eventTime" class="block mb-1">Event Time</label>
                     <input
-                        type="date"
+                        type="text"
                         id="eventTime"
                         v-model="newEvent.time"
                         class="border w-full px-3 py-2 rounded-lg"
+                        placeholder="Day/01-01-0001"
                         required
                     />
                 </div>
