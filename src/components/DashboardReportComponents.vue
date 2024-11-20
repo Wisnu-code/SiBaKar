@@ -34,14 +34,17 @@
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Fullname</th>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-end font-medium text-gray-500 uppercase">
+                                                    class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Email</th>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-end font-medium text-gray-500 uppercase">
+                                                    class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Handphone</th>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-end font-medium text-gray-500 uppercase">
+                                                    class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Messages</th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-end font-medium text-gray-500 uppercase">
+                                                    Action</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
@@ -65,6 +68,13 @@
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
                                                     {{ report.messages }}
+                                                </td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-end text-sm md:text-lg font-medium">
+                                                    <button type="button" 
+                                                        class="inline-flex items-center gap-x-2 text-sm md:text-lg font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none">
+                                                        Send Messages
+                                                    </button>
                                                 </td>
                                             </tr>
                                         </tbody>

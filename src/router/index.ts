@@ -9,6 +9,8 @@ import DashboardHomeComponents from '@/components/DashboardHomeComponents.vue'
 import DashboardChairComponents from '@/components/DashboardChairComponents.vue'
 import DashboardLoginComponents from '@/components/DashboardLoginComponents.vue'
 import DashboardReportComponents from '@/components/DashboardReportComponents.vue'
+import DashboardEventComponents from '@/components/DashboardEventComponents.vue'
+import TestTest from '@/components/TestTest.vue'
 // import FormBookComponents from '@/components/FormBookComponents.vue'
 
 const router = createRouter({
@@ -41,6 +43,18 @@ const router = createRouter({
       path: '/report',
       name: 'report',
       component: DashboardReportComponents,
+      meta: { requiresDashboardLogin: true }
+    },
+    {
+      path: '/event',
+      name: 'event',
+      component: DashboardEventComponents,
+      meta: { requiresDashboardLogin: true }
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: TestTest,
       meta: { requiresDashboardLogin: true }
     },
     {
