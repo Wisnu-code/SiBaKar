@@ -60,9 +60,9 @@
 
                     <!-- Dropdown untuk memilih lantai -->
                     <select id="countries" v-model="selectedOption" @change="updateLabel"
-                        class="bg-transparent md:text-3xl text-2xl font-bold text-white block w-full p-2.5 border-none rounded-lg focus:ring-gray-500 focus:border-gray-500">
-                        <option value="70" class="text-gray-900">Lantai 1</option>
-                        <option value="80" class="text-gray-900">Lantai 2</option>
+                        class="bg-transparent md:text-3xl text-2xl font-bold text-white block w-full p-2.5 border-none rounded-lg focus:ring-0 focus:border-none">
+                        <option value="70" class="text-gray-900 text-lg ">Lantai 1</option>
+                        <option value="80" class="text-gray-900 text-lg">Lantai 2</option>
                     </select>
                 </form>
                 <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 in-1">

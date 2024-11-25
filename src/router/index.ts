@@ -10,7 +10,6 @@ import DashboardChairComponents from '@/components/DashboardChairComponents.vue'
 import DashboardLoginComponents from '@/components/DashboardLoginComponents.vue'
 import DashboardReportComponents from '@/components/DashboardReportComponents.vue'
 import DashboardEventComponents from '@/components/DashboardEventComponents.vue'
-import TestTest from '@/components/TestTest.vue'
 // import FormBookComponents from '@/components/FormBookComponents.vue'
 
 const router = createRouter({
@@ -51,12 +50,7 @@ const router = createRouter({
       component: DashboardEventComponents,
       meta: { requiresDashboardLogin: true }
     },
-    {
-      path: '/test',
-      name: 'test',
-      component: TestTest,
-      meta: { requiresDashboardLogin: true }
-    },
+  
     {
       path: '/about',
       name: 'about',
