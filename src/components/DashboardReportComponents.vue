@@ -101,43 +101,7 @@ export default {
     data() {
         return {
             searchQuery: '',
-            reports: [
-                {
-                    id: 1,
-                    fullname: 'John Doe',
-                    email: 'john.doe@example.com',
-                    handphone: '081234567890',
-                    messages: 'Website mengalami error saat melakukan login.',
-                },
-                {
-                    id: 2,
-                    fullname: 'Jane Smith',
-                    email: 'jane.smith@example.com',
-                    handphone: '082345678901',
-                    messages: 'Tidak dapat mengakses halaman produk.',
-                },
-                {
-                    id: 3,
-                    fullname: 'Samuel Green',
-                    email: 'samuel.green@example.com',
-                    handphone: '083456789012',
-                    messages: 'Terdapat masalah pada fitur pencarian.',
-                },
-                {
-                    id: 4,
-                    fullname: 'Alice Johnson',
-                    email: 'alice.johnson@example.com',
-                    handphone: '084567890123',
-                    messages: 'Desain halaman kontak tidak responsif.',
-                },
-                {
-                    id: 5,
-                    fullname: 'Michael Brown',
-                    email: 'michael.brown@example.com',
-                    handphone: '085678901234',
-                    messages: 'Proses checkout tidak berfungsi dengan baik.',
-                },
-            ]
+            reports: []
         };
     },
     computed: {
@@ -163,6 +127,19 @@ export default {
         ScrollReveal().reveal('.s-l', { delay: 300, origin: 'left' });
         ScrollReveal().reveal('.s-r', { delay: 600, origin: 'right' });
         ScrollReveal().reveal('.s-b', { delay: 100, origin: 'bottom' });
+
+        this.fetchReports();
+    },
+    methods: {
+        async fetchReports() {
+            try {
+                const response = await fetch('http://localhost:8080/contacts');
+                const data = await response.json();
+                this.reports = data;
+            } catch (error) {
+                console.error('Error fetching reports:', error)
+            }
+        }
     }
 }
 </script>
