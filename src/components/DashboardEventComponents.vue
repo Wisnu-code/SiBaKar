@@ -144,92 +144,86 @@
 
 <script>
 import SidebarComponents from './SidebarComponents.vue';
-import ScrollReveal from 'scrollreveal';
+import axios from 'axios';  // Import axios
 
 export default {
-    components: {
-        SidebarComponents,
-    },
+  components: {
+    SidebarComponents,
+  },
 
-    data() {
-        return {
-            searchQuery: '',
-            isModalOpen: false,
-            events: [
-                {
-                    id: 1,
-                    anEvent: 'Morning Briefing',
-                    time: 'Senin/08:00 - Jumat/08:00',
-                    detail: 'Senam, Motivasi, Sharing, Doa',
-                },
-                {
-                    id: 2,
-                    anEvent: 'Upacara',
-                    time: 'Senin/1 bulan Sekali',
-                    detail: 'Melakukan Upacara',
-                },
-                {
-                    id: 3,
-                    anEvent: 'Lempar Balon Air',
-                    time: 'Akhir Tahun',
-                    detail: 'Acara mempererat ikatan',
-                },
-            ],
-            newEvent: {
-                name: '',
-                time: '',
-                detail: '',
-            },
-        };
-    },
-    computed: {
-        filteredEvents() {
-            if (this.searchQuery) {
-                return this.events.filter(event =>
-                    event.anEvent.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                    event.time.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                    event.detail.toLowerCase().includes(this.searchQuery.toLowerCase())
-                );
-            }
-            return this.events;
-        }
-    },
-    methods: {
-        openModal() {
-            this.isModalOpen = true;
-        },
-        closeModal() {
-            this.isModalOpen = false;
-        },
-        addEvent() {
-            const newId = this.events.length > 0 ? this.events[this.events.length - 1].id + 1 : 1;
-            this.events.push({
-                id: newId,
-                anEvent: this.newEvent.name,
-                time: this.newEvent.time,
-                detail: this.newEvent.detail,
-            });
+  data() {
+    return {
+      searchQuery: '',
+      isModalOpen: false,
+      events: [],  // Data event kosong, akan diambil dari API
+      newEvent: {
+        name: '',
+        time: '',
+        detail: '',
+      },
+    };
+  },
 
-            // Reset form
-            this.newEvent.name = '';
-            this.newEvent.time = '';
-            this.newEvent.detail = '';
-
-            // Close modal
-            this.closeModal();
-        },
-    },
-    mounted() {
-        // Inisialisasi ScrollReveal
-        ScrollReveal({
-            duration: 1000,
-            distance: '60px',
-            delay: 300,
-            reset: false,
-        });
-        ScrollReveal().reveal('.s-l', { delay: 300, origin: 'left' });
-        ScrollReveal().reveal('.s-r', { delay: 600, origin: 'right' });
-        ScrollReveal().reveal('.s-b', { delay: 100, origin: 'bottom' });
+  computed: {
+    filteredEvents() {
+      if (this.searchQuery) {
+        return this.events.filter(event =>
+          event.anEvent.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+          event.time.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+          event.detail.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
+      }
+      return this.events;
     }
-}
+  },
+
+  methods: {
+    openModal() {
+      this.isModalOpen = true;
+    },
+
+    closeModal() {
+      this.isModalOpen = false;
+    },
+
+    // Fetch events from API
+    async fetchEvents() {
+      try {
+        const response = await axios.get('http://localhost:8080/events'); // Ganti dengan URL backend Anda
+        this.events = response.data;
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      }
+    },
+
+    // Add event to API
+    async addEvent() {
+      try {
+        const response = await axios.post('http://localhost:8080/events', {
+          name: this.newEvent.name,
+          time: this.newEvent.time,
+          detail: this.newEvent.detail,
+        });
+
+        // After adding event, update the events list
+        this.events.push(response.data);
+
+        // Reset form
+        this.newEvent.name = '';
+        this.newEvent.time = '';
+        this.newEvent.detail = '';
+
+        // Close modal
+        this.closeModal();
+      } catch (error) {
+        console.error('Error adding event:', error);
+      }
+    },
+  },
+
+  mounted() {
+    // Get events on component mount
+    this.fetchEvents();
+  }
+};
 </script>
