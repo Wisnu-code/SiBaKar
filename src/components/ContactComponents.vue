@@ -21,35 +21,26 @@
 
             <!-- Form -->
             <div class="flex md:h-auto p-4 leading-normal w-full shadow bg-gray-50 rounded-lg">
-                <form class="w-full md:w-96 md:mr-44 mx-auto overflow-hidden">
+                <form @submit.prevent="submitForm" class="w-full md:w-96 md:mr-44 mx-auto overflow-hidden">
 
                     <div class="grid md:grid-cols-2 md:gap-6">
                         <div class="in relative z-0 w-full mb-5 group">
-                            <input type="text" name="floating_first_name" id="floating_first_name"
+                            <input v-model="contact.first_name" type="text" id="floating_first_name"
                                 class="in-1 block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder=" " required />
-                            <label for="floating_first_name"
-                                class="in-2 peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nama
-                                Pertama</label>
+                                placeholder="Nama Pertama" required />
                         </div>
 
                         <div class="in relative z-0 w-full mb-5 group">
-                            <input type="text" name="floating_last_name" id="floating_last_name"
+                            <input v-model="contact.last_name" type="text" id="floating_last_name"
                                 class="in-1 block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder=" " required />
-                            <label for="floating_last_name"
-                                class="in-2 peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nama
-                                Terakhir</label>
+                                placeholder="Nama Terakhir" required />
                         </div>
                     </div>
 
                     <div class="in relative z-0 w-full mb-5 group">
-                        <input type="email" name="floating_email" id="floating_email"
+                        <input v-model="contact.email" type="email" id="floating_email"
                             class="in-1 block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                            placeholder=" " required />
-                        <label for="floating_email"
-                            class="in-2 peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Alamat
-                            Email</label>
+                            placeholder="Email " required />
                     </div>
 
                     <div class="grid grid-cols-3 md:gap-6">
@@ -63,21 +54,15 @@
                         </div>
 
                         <div class="in relative z-0 w-full mb-5 group col-span-2">
-                            <input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" name="floating_phone"
+                            <input v-model="contact.phone" type="tel"
                                 id="floating_phone"
                                 class="in-1 block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder=" " required />
-                            <label for="floating_phone"
-                                class="in-2 peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nomor
-                                Handphone</label>
+                                placeholder="Nomor Hp " required />
                         </div>
                     </div>
 
                     <div class="in relative z-0 w-full mb-5 group">
-
-                        <label for="message" class="in-1 block mb-2 text-lg font-medium text-gray-400 dark:text-white">Pesan
-                            Kamu</label>
-                        <textarea id="message" rows="4"
+                        <textarea v-model="contact.message" id="message" rows="4"
                             class="in-2 block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Apa yang bisa kami bantu?"></textarea>
 
@@ -94,6 +79,49 @@
 
 <script>
 export default {
-    name: 'ContactComponents'
+    name: 'ContactComponents',
+    data() {
+        return {
+            contact: { 
+                first_name: '', 
+                last_name: '',
+                email: '',
+                phone: '',
+                message: ''
+            },
+            responseMessage: ''
+        };
+    },
+    methods: {
+        async submitForm() {
+            try {
+                const response = await fetch('http://localhost:8080/contact', {
+                    method: 'POST', 
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(this.contact)
+                });
+                const data = await response.json();
+                this.responseMessage = data.message;
+
+                if (response.ok) {
+                    alert('Pesan berhasil dikirim!');
+                    this.contact = {
+                        first_name: '', 
+                        last_name: '',
+                        email: '',
+                        phone: '',
+                        message: ''
+                    };
+                } else {
+                    alert('Gagal mengirim pesan. Silahkan coba lagi');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('terjadi kesalahan. Silahkan coba lagi.');
+            }
+        }
+    }
 }
 </script>

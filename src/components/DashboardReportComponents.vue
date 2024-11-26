@@ -27,12 +27,15 @@
                                     <table class="min-w-full divide-y divide-gray-200">
                                         <thead>
                                             <tr>
+                                                <!-- <th scope="col"
+                                                    class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
+                                                    ID</th> -->
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
-                                                    ID</th>
+                                                    FirtName</th>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
-                                                    Fullname</th>
+                                                    LastName</th>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Email</th>
@@ -42,20 +45,21 @@
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Messages</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-end font-medium text-gray-500 uppercase">
-                                                    Action</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
                                             <tr v-for="report in filteredReports" :key="report.id">
-                                                <td
+                                                <!-- <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg font-medium text-gray-800">
                                                     {{ report.id }}
+                                                </td> -->
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
+                                                    {{ report.first_name }}
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
-                                                    {{ report.fullname }}
+                                                    {{ report.last_name }}
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
@@ -63,11 +67,11 @@
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
-                                                    {{ report.handphone }}
+                                                    {{ report.phone }}
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
-                                                    {{ report.messages }}
+                                                    {{ report.message }}
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-end text-sm md:text-lg font-medium">
@@ -101,52 +105,18 @@ export default {
     data() {
         return {
             searchQuery: '',
-            reports: [
-                {
-                    id: 1,
-                    fullname: 'John Doe',
-                    email: 'john.doe@example.com',
-                    handphone: '081234567890',
-                    messages: 'Website mengalami error saat melakukan login.',
-                },
-                {
-                    id: 2,
-                    fullname: 'Jane Smith',
-                    email: 'jane.smith@example.com',
-                    handphone: '082345678901',
-                    messages: 'Tidak dapat mengakses halaman produk.',
-                },
-                {
-                    id: 3,
-                    fullname: 'Samuel Green',
-                    email: 'samuel.green@example.com',
-                    handphone: '083456789012',
-                    messages: 'Terdapat masalah pada fitur pencarian.',
-                },
-                {
-                    id: 4,
-                    fullname: 'Alice Johnson',
-                    email: 'alice.johnson@example.com',
-                    handphone: '084567890123',
-                    messages: 'Desain halaman kontak tidak responsif.',
-                },
-                {
-                    id: 5,
-                    fullname: 'Michael Brown',
-                    email: 'michael.brown@example.com',
-                    handphone: '085678901234',
-                    messages: 'Proses checkout tidak berfungsi dengan baik.',
-                },
-            ]
+            reports: []
         };
     },
     computed: {
         filteredReports() {
             if (this.searchQuery) {
                 return this.reports.filter(report => 
-                    report.fullname.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                    report.email.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                    report.messages.toLowerCase().includes(this.searchQuery.toLowerCase())
+                    report.namalengkap.toLowerCase().includes(query) ||
+                    // report.first_name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                    // report.last_name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                    report.email.toLowerCase().includes(query) ||
+                    report.messages.toLowerCase().includes(query)
                 );
             }
             return this.reports;
@@ -163,6 +133,19 @@ export default {
         ScrollReveal().reveal('.s-l', { delay: 300, origin: 'left' });
         ScrollReveal().reveal('.s-r', { delay: 600, origin: 'right' });
         ScrollReveal().reveal('.s-b', { delay: 100, origin: 'bottom' });
+
+        this.fetchReports();
+    },
+    methods: {
+        async fetchReports() {
+            try {
+                const response = await fetch('http://localhost:8080/api/contact');
+                const data = await response.json();
+                this.reports = data;
+            } catch (error) {
+                console.error('Error fetching reports:', error)
+            }
+        }
     }
 }
 </script>
