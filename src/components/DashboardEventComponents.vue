@@ -55,7 +55,7 @@
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
-                                                    {{ event.anEvent }}
+                                                    {{ event.name }}
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
@@ -66,7 +66,7 @@
                                                     {{ event.detail }}
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
-                                                    <button type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Delete</button>
+                                                    <button @click="deleteEvent(event.id)" type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Delete</button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -150,92 +150,105 @@
 
 <script>
 import SidebarComponents from './SidebarComponents.vue';
-import ScrollReveal from 'scrollreveal';
+import axios from 'axios';  // Import axios
 
 export default {
-    components: {
-        SidebarComponents,
+  components: {
+    SidebarComponents,
+  },
+
+  data() {
+    return {
+      searchQuery: '',
+      isModalOpen: false,
+      events: [],  // Data event kosong, akan diambil dari API
+      newEvent: {
+        name: '',
+        time: '',
+        detail: '',
+      },
+    };
+  },
+
+  computed: {
+    filteredEvents() {
+      if (this.searchQuery) {
+        return this.events.filter(event =>
+          event.anEvent.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+          event.time.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+          event.detail.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
+      }
+      return this.events;
+    }
+  },
+
+  methods: {
+    openModal() {
+      this.isModalOpen = true;
     },
 
-    data() {
-        return {
-            searchQuery: '',
-            isModalOpen: false,
-            events: [
-                {
-                    id: 1,
-                    anEvent: 'Morning Briefing',
-                    time: 'Senin/08:00 - Jumat/08:00',
-                    detail: 'Senam, Motivasi, Sharing, Doa',
-                },
-                {
-                    id: 2,
-                    anEvent: 'Upacara',
-                    time: 'Senin/1 bulan Sekali',
-                    detail: 'Melakukan Upacara',
-                },
-                {
-                    id: 3,
-                    anEvent: 'Lempar Balon Air',
-                    time: 'Akhir Tahun',
-                    detail: 'Acara mempererat ikatan',
-                },
-            ],
-            newEvent: {
-                name: '',
-                time: '',
-                detail: '',
-            },
-        };
+    closeModal() {
+      this.isModalOpen = false;
     },
-    computed: {
-        filteredEvents() {
-            if (this.searchQuery) {
-                return this.events.filter(event =>
-                    event.anEvent.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                    event.time.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                    event.detail.toLowerCase().includes(this.searchQuery.toLowerCase())
-                );
-            }
-            return this.events;
-        }
+
+    // Fetch events from API
+    async fetchEvents() {
+      try {
+        const response = await axios.get('http://localhost:8080/events'); // Ganti dengan URL backend Anda
+        this.events = response.data;
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      }
     },
-    methods: {
-        openModal() {
-            this.isModalOpen = true;
-        },
-        closeModal() {
-            this.isModalOpen = false;
-        },
-        addEvent() {
-            const newId = this.events.length > 0 ? this.events[this.events.length - 1].id + 1 : 1;
-            this.events.push({
-                id: newId,
-                anEvent: this.newEvent.name,
-                time: this.newEvent.time,
-                detail: this.newEvent.detail,
+
+    // Add event to API
+    async addEvent() {
+      try {
+        const response = await axios.post('http://localhost:8080/events', {
+          name: this.newEvent.name,
+          time: this.newEvent.time,
+          detail: this.newEvent.detail,
+        });
+
+        // After adding event, update the events list
+        this.events.push(response.data);
+
+        // Reset form
+        this.newEvent.name = '';
+        this.newEvent.time = '';
+        this.newEvent.detail = '';
+
+        // Close modal
+        this.closeModal();
+      } catch (error) {
+        console.error('Error adding event:', error);
+      }
+    },
+
+    async deleteEvent(id) {
+        try {
+            const response = await fetch(`http://localhost:8080/events/delete?id=${id}`, {
+                method: 'DELETE',
             });
 
-            // Reset form
-            this.newEvent.name = '';
-            this.newEvent.time = '';
-            this.newEvent.detail = '';
-
-            // Close modal
-            this.closeModal();
-        },
-    },
-    mounted() {
-        // Inisialisasi ScrollReveal
-        ScrollReveal({
-            duration: 1000,
-            distance: '60px',
-            delay: 300,
-            reset: false,
-        });
-        ScrollReveal().reveal('.s-l', { delay: 300, origin: 'left' });
-        ScrollReveal().reveal('.s-r', { delay: 600, origin: 'right' });
-        ScrollReveal().reveal('.s-b', { delay: 100, origin: 'bottom' });
+            if (response.ok) {
+                this.events = this.events.filter(event => event.id !== id);
+                alert('Event deleted successfully');
+            } else {
+                const errorMessage = await response.text();
+                alert('Error: ' + errorMessage)
+            }
+        } catch (error) {
+            console.error('Error deleting event:', error);
+            alert('An error occured while deleting the event')
+        }
     }
-}
+  },
+
+  mounted() {
+    // Get events on component mount
+    this.fetchEvents();
+  }
+};
 </script>
