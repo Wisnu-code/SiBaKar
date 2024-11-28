@@ -44,23 +44,6 @@
             </div>
         </div>
 
-        <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
-            <div class="in flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-12 bg-secondary py-14 px-7 rounded-xl">
-                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
-                    Morning Briefing
-                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Selasa & Jumat</div>
-                </div>
-                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
-                    Upacara
-                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Senin/2 bulan sekali</div>
-                </div>
-                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
-                    Lempar Balon Air
-                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Akhir Tahun</div>
-                </div>
-            </div>
-        </div>
-
         <!-- Tampilan Jumlah -->
         <div
             class="s-l mt-20 md:mt-24 max-w-full h-auto p-4 text-center bg-secondary border rounded-lg shadow sm:p-8 md:mx-20 in">
@@ -88,6 +71,25 @@
                 </div>
             </div>
         </div>
+
+        <ChairComponents />
+
+        <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
+            <div class="in flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-12 bg-secondary py-14 px-7 rounded-xl">
+                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
+                    Morning Briefing
+                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Selasa & Jumat</div>
+                </div>
+                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
+                    Upacara
+                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Senin/2 bulan sekali</div>
+                </div>
+                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
+                    Lempar Balon Air
+                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Akhir Tahun</div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -97,6 +99,7 @@ import { RouterLink } from 'vue-router';
 
 <script>
 import ScrollReveal from 'scrollreveal';
+import ChairComponents from './ChairComponents.vue';
 export default {
     name: 'HomeComponents',
     data() {

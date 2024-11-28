@@ -2,21 +2,38 @@
     <div class="overflow-hidden mt-32">
         <div class="overflow-hidden md:mx-20">
             <div
-                class="s-t w-full p-4 text-center bg-secondary border border-gray-200 rounded-2xl shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                class="s-t w-full p-4 text-justify bg-secondary border border-gray-200 rounded-2xl shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
 
                 <!-- Section 1 -->
-                <h5 class="s-l-2 mb-5 md:text-4xl text-2xl font-bold text-white dark:text-white max-w-full md:mx-20">
+                <h5 class="s-l-2 mb-5 md:text-2xl text-xl font-bold text-white dark:text-white max-w-full md:mx-20">
                     Mulailah sekarang dan
                     jadikan tempat kerja Anda lebih teratur, nyaman, dan produktif. Kami siap membantu Anda mewujudkan
                     lingkungan kerja yang mendukung kesuksesan!</h5>
-                <p class="s-r-3 mb-5 md:text-2xl text-white text-lg dark:text-gray-400 max-w-full md:mx-20">Kami percaya
+                <div class="relative">
+                    <!-- Desktop/tablet view - always show full text -->
+                    <p
+                        class="s-r-3 mb-5 md:text-2xl text-white text-lg dark:text-gray-400 max-w-full md:mx-20 hidden md:block">
+                        {{ fullText }}
+                    </p>
+
+                    <!-- Mobile view with toggle -->
+                    <div class="md:hidden">
+                        <p class="s-r-3 mb-2 text-lg text-white dark:text-gray-400">
+                            {{ isExpanded ? fullText : shortText }}
+                        </p>
+                        <button @click="toggleText" class="text-blue-500 hover:text-blue-600 font-medium">
+                            {{ isExpanded ? 'Baca Sedikit' : 'Baca Selengkapnya' }}
+                        </button>
+                    </div>
+                </div>
+                <!-- <p class="s-r-3 mb-5 md:text-xl text-white text-lg dark:text-gray-400 max-w-full md:mx-20">Kami percaya
                     bahwa
                     lingkungan kerja yang nyaman dan fleksibel adalah kunci untuk mencapai produktivitas maksimal. Kami
                     hadir untuk memberikan solusi modern dalam pengelolaan ruang kerja, dengan sistem booking kursi yang
                     dirancang untuk mendukung cara kerja dinamis di era digital. Mari ciptakan tempat kerja yang lebih
                     efisien, di mana Anda dapat fokus pada yang terpenting—mengejar tujuan dan meraih prestasi. Bersama
                     kami, Anda bisa mengatur ruang kerja sesuai kebutuhan, meningkatkan kolaborasi, dan memaksimalkan
-                    kreativitas setiap hari.</p>
+                    kreativitas setiap hari.</p> -->
                 <div
                     class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse w-full">
                     <div
@@ -41,7 +58,7 @@
         </div>
 
         <!-- Section 2 -->
-        <div class="mt-20 md:px-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
+        <div class="mt-20 md:px-20 max-w-full h-auto p-4 text-justify bg-white rounded-lg sm:p-8">
             <div
                 class="s-l mb-2 md:mb-5 text-2xl font-bold flex self-start text-gray-500 sm:text-lg dark:text-gray-400 md:ml-20 ml-8">
                 Our Mission</div>
@@ -78,25 +95,29 @@
 
         <!-- Section 3 -->
         <div class="mt-20 max-w-full h-auto p-4 text-center sm:p-8">
-            <div class="in flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-12 bg-secondary py-14 px-7 rounded-xl">
+            <div
+                class="in flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-12 bg-secondary py-14 px-7 rounded-xl">
                 <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
                     Morning Briefing
-                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Selasa & Jumat</div>
+                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Selasa &
+                        Jumat</div>
                 </div>
                 <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
                     Upacara
-                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Senin/2 bulan sekali</div>
+                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Senin/2 bulan
+                        sekali</div>
                 </div>
                 <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
                     Lempar Balon Air
-                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Akhir Tahun</div>
+                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Akhir Tahun
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Section 4 -->
         <div
-            class="s-r mt-20 w-full p-4 bg-primary text-white border border-gray-200 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            class="s-r mt-20 w-full p-4 text-justify bg-primary text-white border border-gray-200 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div class="flex flex-col md:flex-row items-stretch justify-center md:gap-10">
                 <div class="w-full h-auto flex flex-col items-start justify-center md:ml-20">
                     <div class="s-l mb-2 md:mb-3 text-2xl font-bold  sm:text-lg dark:text-gray-400">
@@ -113,7 +134,7 @@
                         mencapai tingkat produktivitas dan kreativitas tertinggi.</p>
                 </div>
 
-                <div class="s-r-3 w-full h-auto p-4 text-center bg-white border rounded-lg shadow sm:p-8">
+                <div class="s-r-3 w-full text-justify h-auto p-4 bg-white border rounded-lg shadow sm:p-8">
                     <div class="in flex justify-center md:gap-10 flex-col h-full intern">
                         <div class="in-2 my-3 flex md:text-2xl text-sm font-bold text-gray-500 dark:text-white">
                             <div class="in-1 mr-5 bg-button w-12 h-auto"></div>Membangun ruang kerja yang menginspirasi

@@ -2,7 +2,6 @@
 import HomeComponents from '../components/HomeComponents.vue'
 import NavbarComponents from '../components/NavbarComponents.vue'
 import ContactComponents from '../components/ContactComponents.vue';
-import ChairComponents from '../components/ChairComponents.vue';
 import FooterComponents from '@/components/FooterComponents.vue';
 import {onMounted, ref} from 'vue'
 
@@ -29,8 +28,6 @@ onMounted(() => {
     <NavbarComponents />
     
     <HomeComponents />
-
-    <ChairComponents />
 
     <ContactComponents />
 
