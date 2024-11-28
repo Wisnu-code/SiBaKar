@@ -45,14 +45,14 @@
                         berbagai layanan yang dirancang khusus untuk mendukung efisiensi, fleksibilitas, dan kenyamanan
                         dalam pengelolaan ruang kerja Anda.</div>
     
-                    <div class="s-r shadow-md bg-button max-w-full md:w-2/5 w-full rounded-xl pl-10 p-2 mt-5 md:mt-14">
+                    <!-- <div class="s-r shadow-md bg-button max-w-full md:w-2/5 w-full rounded-xl pl-10 p-2 mt-5 md:mt-14">
                         <button @click="showAlert = true" type="button" class="learn-more">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
                             </span>
                             <span class="button-text">Mulai Reservasi</span>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

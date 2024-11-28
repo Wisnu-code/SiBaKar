@@ -72,6 +72,83 @@
             </div>
         </div>
 
+        <div class="s-l zoom my-10 text-4xl md:text-5xl font-bold text-center text-gray-800">
+            Cara Kerja
+        </div>
+
+        <div class="s-t zoom bg-white dark:bg-gray-800 flex justify-center items-center w-full h-full p-5">
+            <div class="border shadow-lg max-w-2xl p-6 rounded-lg dark:bg-gray-700 dark:text-gray-300">
+                <div class="w-full max-w-screen-xl px-10 mx-auto">
+                    <ul class="in flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 text-2xl font-bold">
+
+                        <li>
+                            <a href="#"
+                                class="in-2 zoom zoomS text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
+                                @click.prevent="toggleMain">
+                                Utama
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="in-2 zoom zoomS text-gray-400 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-gray-700 dark:md:hover:text-blue-700"
+                                @click.prevent="toggleEvent">
+                                Event
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="s-b-4 w-full md:px-20 mt-10 text-center">
+
+            <!-- saat link utama ditekan akan muncul, namun akan hilang saat link event ditekan -->
+            <div v-if="showMain" class="intern grid md:grid-cols-3 grid-rows-1 gap-14">
+                <div class="sla zoom zoomS bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="slb zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur
+                        adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+                <div class="sla zoom zoomS bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="slb zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur
+                        adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+                <div class="sla zoom zoomS bg-gray-100 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="slb zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur
+                        adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+            </div>
+
+            <!-- saat link event ditekan akan muncul, namun akan hilang saat link utama ditekan -->
+            <div v-if="showEvent" class="intern grid md:grid-cols-3 grid-rows-1 gap-14">
+                <div class="sla zoom zoomS bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="slb zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur
+                        adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+                <div class="sla zoom zoomS bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="slb zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur
+                        adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+                <div class="sla zoom zoomS bg-gray-300 rounded-xl text-xl font-semibold text-left p-5">Lorem, ipsum.
+                    <div class="slb zoom zoomS text-lg font-light text-justify">Lorem ipsum dolor sit amet consectetur
+                        adipisicing
+                        elit. Ex repellendus inventore nulla repellat provident quisquam libero earum facilis quibusdam
+                        recusandae?</div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -88,6 +165,8 @@ export default {
             isLoggedIn: !!localStorage.getItem('token'), // Status login
             selectedOption: '70', // Nilai default
             labelValue: '150', // Nilai awal label
+            showMain: true,
+            showEvent: false,
         }
     },
     methods: {
@@ -96,7 +175,15 @@ export default {
         },
         updateLabel() {
             this.labelValue = this.selectedOption; // Update label sesuai pilihan
-        }
+        },
+        toggleMain() {
+            this.showMain = true;
+            this.showEvent = false;
+        },
+        toggleEvent() {
+            this.showMain = false;
+            this.showEvent = true;
+        },
     },
     mounted() {
          // Memperbarui label ketika komponen pertama kali di-mount

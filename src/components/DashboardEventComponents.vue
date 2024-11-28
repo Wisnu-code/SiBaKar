@@ -42,6 +42,9 @@
                                                 <th scope="col"
                                                     class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
                                                     Details</th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-start font-medium text-gray-500 uppercase">
+                                                    Action</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
@@ -52,7 +55,7 @@
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
-                                                    {{ event.anEvent }}
+                                                    {{ event.name }}
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
@@ -61,6 +64,9 @@
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
                                                     {{ event.detail }}
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm md:text-lg text-gray-800">
+                                                    <button @click="deleteEvent(event.id)" type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Delete</button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -219,6 +225,25 @@ export default {
         console.error('Error adding event:', error);
       }
     },
+
+    async deleteEvent(id) {
+        try {
+            const response = await fetch(`http://localhost:8080/events/delete?id=${id}`, {
+                method: 'DELETE',
+            });
+
+            if (response.ok) {
+                this.events = this.events.filter(event => event.id !== id);
+                alert('Event deleted successfully');
+            } else {
+                const errorMessage = await response.text();
+                alert('Error: ' + errorMessage)
+            }
+        } catch (error) {
+            console.error('Error deleting event:', error);
+            alert('An error occured while deleting the event')
+        }
+    }
   },
 
   mounted() {

@@ -112,11 +112,11 @@ export default {
         filteredReports() {
             if (this.searchQuery) {
                 return this.reports.filter(report => 
-                    report.namalengkap.toLowerCase().includes(query) ||
-                    // report.first_name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                    // report.last_name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                    report.email.toLowerCase().includes(query) ||
-                    report.messages.toLowerCase().includes(query)
+                    report.first_name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                    report.last_name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                    report.email.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                    report.phone.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                    report.message.toLowerCase().includes(this.searchQuery.toLowerCase())
                 );
             }
             return this.reports;
