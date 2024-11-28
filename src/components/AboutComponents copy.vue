@@ -71,27 +71,28 @@
                 </div>
                 <div class="in h-auto w-full">
                     <div class="relative">
-                        <p class="in-1 mb-5 md:text-xl text-gray-600 font-semibold text-lg dark:text-gray-400">Kami
-                        berkomitmen
-                        untuk menyediakan sistem manajemen ruang kerja yang intuitif dan efisien, memungkinkan
-                        perusahaan untuk mengoptimalkan penggunaan ruang kerja mereka. Dengan mengurangi ruang kosong
-                        yang tidak terpakai dan memberikan fleksibilitas kepada karyawan untuk memilih tempat kerja yang
-                        sesuai dengan kebutuhan mereka, kami berupaya membantu perusahaan mencapai efisiensi operasional
-                        yang lebih baik.</p>
-                    <p class="in-1 mb-5 text-lg text-gray-600 font-semibold md:text-xl dark:text-gray-400">Di era di
-                        mana
-                        pola kerja hybrid dan remote semakin meningkat, kami menyediakan platform yang memungkinkan
-                        karyawan untuk menyesuaikan ruang kerja mereka dengan fleksibilitas penuh. Dengan sistem booking
-                        yang mudah digunakan, karyawan dapat bekerja dari kursi mana pun yang mereka pilih, kapan pun
-                        mereka butuhkan, sehingga menciptakan keseimbangan antara produktivitas dan kenyamanan.</p>
-                    <p class="in-1 mb-5 text-lg text-gray-600 font-semibold md:text-xl dark:text-gray-400">Kami percaya
-                        bahwa
-                        karyawan yang puas adalah aset terbesar perusahaan. Dengan menyediakan ruang kerja yang nyaman,
-                        terorganisir, dan disesuaikan dengan kebutuhan individu, kami berupaya meningkatkan
-                        kesejahteraan karyawan, yang pada akhirnya berkontribusi pada peningkatan kepuasan kerja dan
-                        produktivitas yang lebih tinggi.</p>
+                        <p class="in-1 mb-5 md:text-xl text-gray-600 font-semibold text-lg dark:text-gray-400">{{ fullText1 }}</p>
+                        <div class="md:hidden">
+                            <p class="s-r-3 mb-2 text-lg text-white">{{ isExpanded ? fullText1 :shortText1 }}</p>
+                            <button @click="toggleText" class="text-blue-500 hover:text-blue-600 font-medium">
+                                {{ isExpanded ? 'Baca Sedikit' : 'Baca Selengkapnya' }}
+                            </button>
+                        </div>
+                        <p class="in-1 mb-5 text-lg text-gray-600 font-semibold md:text-xl dark:text-gray-400">{{ fullText2 }}</p>
+                        <div class="md:hidden">
+                            <p class="s-r-3 mb-2 text-lg text-white">{{ isExpanded ? fullText1 :shortText2 }}</p>
+                            <button @click="toggleText" class="text-blue-500 hover:text-blue-600 font-medium">
+                                {{ isExpanded ? 'Baca Sedikit' : 'Baca Selengkapnya' }}
+                            </button>
+                        </div>
+                        <p class="in-1 mb-5 text-lg text-gray-600 font-semibold md:text-xl dark:text-gray-400">{{ fullText3 }}</p>
+                        <div class="md:hidden">
+                            <p class="s-r-3 mb-2 text-lg text-white">{{ isExpanded ? fullText1 :shortText3 }}</p>
+                            <button @click="toggleText" class="text-blue-500 hover:text-blue-600 font-medium">
+                                {{ isExpanded ? 'Baca Sedikit' : 'Baca Selengkapnya' }}
+                            </button>
+                        </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -175,13 +176,25 @@ export default {
     data() {
         return {
             isExpanded: false,
-            fullText: 'Kami percaya bahwa lingkungan kerja yang nyaman dan fleksibel adalah kunci untuk mencapai produktivitas maksimal. Kami hadir untuk memberikan solusi modern dalam pengelolaan ruang kerja, dengan sistem booking kursi yang dirancang untuk mendukung cara kerja dinamis di era digital. Mari ciptakan tempat kerja yang lebih efisien, di mana Anda dapat fokus pada yang terpenting—mengejar tujuan dan meraih prestasi. Bersama kami, Anda bisa mengatur ruang kerja sesuai kebutuhan, meningkatkan kolaborasi, dan memaksimalkan kreativitas setiap hari.'
+            fullText: 'Kami percaya bahwa lingkungan kerja yang nyaman dan fleksibel adalah kunci untuk mencapai produktivitas maksimal. Kami hadir untuk memberikan solusi modern dalam pengelolaan ruang kerja, dengan sistem booking kursi yang dirancang untuk mendukung cara kerja dinamis di era digital. Mari ciptakan tempat kerja yang lebih efisien, di mana Anda dapat fokus pada yang terpenting—mengejar tujuan dan meraih prestasi. Bersama kami, Anda bisa mengatur ruang kerja sesuai kebutuhan, meningkatkan kolaborasi, dan memaksimalkan kreativitas setiap hari.',
+            fullText1: 'Kami berkomitmen untuk menyediakan sistem manajemen ruang kerja yang intuitif dan efisien, memungkinkan perusahaan untuk mengoptimalkan penggunaan ruang kerja mereka. Dengan mengurangi ruang kosong yang tidak terpakai dan memberikan fleksibilitas kepada karyawan untuk memilih tempat kerja yang sesuai dengan kebutuhan mereka, kami berupaya membantu perusahaan mencapai efisiensi operasionalyang lebih baik.',
+            fullText2: 'Di era dimana pola kerja hybrid dan remote semakin meningkat, kami menyediakan platform yang memungkinkan karyawan untuk menyesuaikan ruang kerja mereka dengan fleksibilitas penuh. Dengan sistem bookingyang mudah digunakan, karyawan dapat bekerja dari kursi mana pun yang mereka pilih, kapan pun mereka butuhkan, sehingga menciptakan keseimbangan antara produktivitas dan kenyamanan.',
+            fullText3: 'Kami percaya bahwa karyawan yang puas adalah aset terbesar perusahaan. Dengan menyediakan ruang kerja yang nyaman,terorganisir, dan disesuaikan dengan kebutuhan individu, kami berupaya meningkatkan kesejahteraan karyawan, yang pada akhirnya berkontribusi pada peningkatan kepuasan kerja dan produktivitas yang lebih tinggi.',
         }
     },
     computed: {
         shortText() {
             return `${this.fullText.slice(0, 150)}...`
-        }
+        },
+        shortText1() {
+            return `${this.fullText1.slice(0, 150)}...`
+        },
+        shortText2() {
+            return `${this.fullText2.slice(0, 150)}...`
+        },
+        shortText3() {
+            return `${this.fullText3.slice(0, 150)}...`
+        },
     },
     methods: {
         toggleText() {
