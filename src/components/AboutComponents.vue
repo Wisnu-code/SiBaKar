@@ -97,24 +97,22 @@
         </div>
 
         <!-- Section 3 -->
-        <div class="mt-20 max-w-full h-auto p-4 text-center sm:p-8">
-            <div
+        <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
+            <div v-if="events.length"
                 class="in flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-12 bg-secondary py-14 px-7 rounded-xl">
-                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
-                    Morning Briefing
-                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Selasa &
-                        Jumat</div>
-                </div>
-                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
-                    Upacara
-                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Senin/2 bulan
-                        sekali</div>
-                </div>
-                <div class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
-                    Lempar Balon Air
-                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">Akhir Tahun
+                <div v-for="event in events" :key="event.id"
+                    class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
+                    {{ event.name }}
+                    <div class="in-3 md:text-lg mt-3 text-sm text-gray-500 dark:text-white">
+                        {{ event.detail }}
+                    </div>
+                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">
+                        {{ event.time }}
                     </div>
                 </div>
+            </div>
+            <div v-else class="text-xl text-gray-500">
+                Tidak ada event yang tersedia.
             </div>
         </div>
 
@@ -164,6 +162,19 @@
 
 <script setup>
 import imgUn from '../assets/undraw_phone_call_re_hx6a1.png';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+
+const events = ref([]);
+
+onMounted(async () => {
+    try {
+        const response = await axios.get('http://localhost:8080/events');
+        events.value = response.data;
+    } catch (error) {
+        console.error('Error fetching events:', error);
+    }
+})
 </script>
 
 <script>
