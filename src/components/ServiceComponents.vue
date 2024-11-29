@@ -112,16 +112,18 @@
             </div>
         </div>
 
-        <div class="mt-20 max-w-full h-auto p-4 text-center bg-white rounded-lg sm:p-8">
+        <div class="mt-20 max-w-full p-4 text-center bg-white rounded-lg sm:p-8 overflow-auto h-96">
             <div v-if="events.length"
-                class="in flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-12 bg-secondary py-14 px-7 rounded-xl">
+                class="in flex items-center justify-between md:gap-10 md:flex-row flex-col md:mx-12 bg-secondary py-14 px-7 rounded-xl overflow-w-auto overflow-y-auto md:overflow-y-hidden h-full">
                 <div v-for="event in events" :key="event.id"
-                    class="in-1 mb-3 text-3xl md:text-5xl font-bold text-gray-100 dark:text-white">
-                    {{ event.name }}
-                    <div class="in-3 md:text-lg mt-3 text-sm text-gray-500 dark:text-white">
+                    class="in-1 mb-3 md:min-w-[30rem] min-w-72 min-h-52 flex flex-col justify-center items-center h-full text-3xl md:text-5xl text-justify font-bold text-gray-100 dark:text-white">
+                    <div class="in-3 mt-3 h-full">
+                        {{ event.name }}
+                    </div>
+                    <div class="in-3 md:text-lg mt-3 h-full text-sm text-gray-500 dark:text-white">
                         {{ event.detail }}
                     </div>
-                    <div class="in-2 md:text-2xl mt-3 text-xl font-semibold text-gray-500 dark:text-white">
+                    <div class="in-2 md:text-2xl mt-3 h-full text-xl font-semibold text-gray-500 dark:text-white">
                         {{ event.time }}
                     </div>
                 </div>
@@ -336,6 +338,15 @@ export default {
 </script>
 
 <style scoped>
+/* Sembunyikan scrollbar pada browser modern */
+.mt-20 .overflow-auto, .mt-20 .overflow-y-auto {
+    scrollbar-width: none; /* Untuk Firefox */
+}
+
+.mt-20 .overflow-auto::-webkit-scrollbar, .mt-20 .overflow-y-auto::-webkit-scrollbar {
+    display: none; /* Untuk Chrome, Safari, dan Edge */
+}
+
 button {
     position: relative;
     display: inline-block;
