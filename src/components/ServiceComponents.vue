@@ -39,7 +39,7 @@
                 </div>
     
                 <div class="md:mt-5 mt-10 max-w-full md:w-2/4 md:mr-20 flex flex-col justify-center items-center">
-                    <div class="s-t-5 md:text-3xl w-full text-lg font-medium text-gray-600">Kami memahami bahwa setiap
+                    <div class="s-t-5 md:text-xl w-full text-lg font-medium text-gray-600">Kami memahami bahwa setiap
                         perusahaan memiliki
                         kebutuhan unik dalam menciptakan lingkungan kerja yang optimal. Oleh karena itu, kami menyediakan
                         berbagai layanan yang dirancang khusus untuk mendukung efisiensi, fleksibilitas, dan kenyamanan

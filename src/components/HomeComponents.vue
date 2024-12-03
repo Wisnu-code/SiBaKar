@@ -1,21 +1,21 @@
 <template>
     <div class="0verflow-hidden mt-32">
         <div
-            class="s-t md:m-20 flex flex-col items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96 overflow-hidden">
+            class="s-t md:mx-20 flex flex-col justify-center items-center rounded-lg shadow bg-primary md:flex-row max-w-full md:min-h-96 overflow-hidden">
 
-            <div class="flex flex-col justify-between items-center md:h-auto p-4 leading-normal w-full">
+            <div class="flex flex-col justify-center items-center md:h-auto p-4 leading-normal w-full">
 
-                <div class="md:ml-12 max-w-full h-auto flex justify-between flex-col">
+                <div class="sm:hidden md:ml-12 max-w-full h-auto flex justify-between flex-col">
 
                     <!-- Text Content -->
-                    <h5 class="s-l-2 mb-2 text-4xl md:text-6xl text-justify font-extrabold tracking-tight text-white">
+                    <h5 class="s-l-2 mb-2 text-3xl md:text-6xl text-justify font-bold tracking-tight text-white">
                         Atur
                         dan pesan tempat kerja anda dengan mudah.</h5>
 
                     <!-- Button -->
                     <!-- Tombol Berdasarkan Status Login -->
                     <router-link v-if="isLoggedIn" to="/service"
-                        class="s-r-3 shadow-md bg-button max-w-full md:w-3/12 w-full rounded-xl pl-10 p-2 mt-14">
+                        class="s-r-3 shadow-md bg-button max-w-full sm:w-1/2 w-full rounded-xl pl-10 p-2 mt-14">
                         <button type="button" class="learn-more">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
@@ -24,7 +24,7 @@
                         </button>
                     </router-link>
                     <router-link v-else to="/login"
-                        class="s-r-3 shadow-md bg-button max-w-full md:w-3/12 w-full rounded-xl pl-10 p-2 mt-14">
+                        class="s-r-3 shadow-md bg-button max-w-full sm:w-1/2 w-full rounded-xl pl-10 p-2 mt-14">
                         <button type="button" class="learn-more">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
@@ -35,18 +35,54 @@
 
                 </div>
 
+                <!-- Img -->
+                <div class="sm:hidden s-b-4 flex max-h-full pr-10 mt-10">
+                    <img class="object-cover w-full h-56 rounded-t-lg md:mr-10 md:w-fit md:rounded-none md:rounded-s-lg"
+                        src="../assets/undraw_favourite_item_pcyo1.png" alt="">
+                </div>
+
+                <div class="hidden sm:flex flex-col justify-center items-center w-full">
+                    <!-- Text Content -->
+                    <h5 class="s-l-2 mb-2 sm:text-3xl lg:text-4xl xl:text-5xl text-justify font-bold tracking-tight text-white">
+                        Atur
+                        dan pesan tempat kerja anda dengan mudah.</h5>
+
+                    <div class="flex flex-row justify-center lg:w-5/6 lg:justify-between items-center">
+                        <!-- Button -->
+                        <!-- Tombol Berdasarkan Status Login -->
+                        <router-link v-if="isLoggedIn" to="/service"
+                            class="s-r-3 shadow-md bg-button max-w-full sm:w-1/2 lg:w-1/3 w-full rounded-xl pl-10 p-2 mt-14">
+                            <button type="button" class="learn-more">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">Layanan</span>
+                            </button>
+                        </router-link>
+                        <router-link v-else to="/login"
+                            class="s-r-3 shadow-md bg-button max-w-full sm:w-1/2 lg:w-1/3 w-full rounded-xl pl-10 p-2 mt-14">
+                            <button type="button" class="learn-more">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">Masuk</span>
+                            </button>
+                        </router-link>
+                        <!-- Img -->
+                        <div class="s-b-4 flex max-h-full pr-10 mt-10">
+                            <img class="object-cover w-full h-56 rounded-t-lg md:mr-10 md:w-fit md:rounded-none md:rounded-s-lg"
+                                src="../assets/undraw_favourite_item_pcyo1.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
-            <!-- Img -->
-            <div class="s-b-4 flex max-h-full pr-10 mt-10">
-                <img class="object-cover w-full h-auto rounded-t-lg md:mr-10 md:w-fit md:rounded-none md:rounded-s-lg"
-                    src="../assets/undraw_favourite_item_pcyo1.png" alt="">
-            </div>
         </div>
 
         <!-- Tampilan Jumlah -->
         <div
-            class="s-l mt-20 md:mt-24 max-w-full h-auto p-4 text-center bg-secondary border rounded-lg shadow sm:p-8 md:mx-20 in">
+            class="s-l mt-20 md:mt-24 max-w-full h-auto p-4 text-center bg-secondary border rounded-lg shadow sm:p-8 md:mx-20 sm:mx-10 in">
             <div class="flex items-center justify-evenly md:gap-10 md:flex-row flex-col">
                 <div class="mb-3 text-4xl md:text-6xl font-bold text-gray-50 in-1">
                     150
@@ -138,7 +174,7 @@ export default {
         },
     },
     mounted() {
-         // Memperbarui label ketika komponen pertama kali di-mount
+        // Memperbarui label ketika komponen pertama kali di-mount
         this.updateLabel();
 
         window.addEventListener('storage', this.checkLoginStatus); // Pantau perubahan di localStorage
@@ -261,11 +297,15 @@ body {
 }
 
 /* Sembunyikan scrollbar pada browser modern */
-.mt-20 .overflow-auto, .mt-20 .overflow-y-auto {
-    scrollbar-width: none; /* Untuk Firefox */
+.mt-20 .overflow-auto,
+.mt-20 .overflow-y-auto {
+    scrollbar-width: none;
+    /* Untuk Firefox */
 }
 
-.mt-20 .overflow-auto::-webkit-scrollbar, .mt-20 .overflow-y-auto::-webkit-scrollbar {
-    display: none; /* Untuk Chrome, Safari, dan Edge */
+.mt-20 .overflow-auto::-webkit-scrollbar,
+.mt-20 .overflow-y-auto::-webkit-scrollbar {
+    display: none;
+    /* Untuk Chrome, Safari, dan Edge */
 }
 </style>

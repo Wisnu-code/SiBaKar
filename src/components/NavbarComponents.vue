@@ -1,5 +1,5 @@
 <template>
-    <nav class="mt-0 dark:bg-gray-900 md:mx-20 fixed z-20 top-5 start-0 border-b border-gray-200 dark:border-gray-600">
+    <nav class="mt-0 dark:bg-gray-900 md:mx-20 fixed z-20 top-5 start-0 border-b border-gray-200">
         <div class="flex flex-wrap items-center justify-between p-4">
 
             <!-- Logo -->
