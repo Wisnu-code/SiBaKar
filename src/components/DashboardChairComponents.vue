@@ -62,7 +62,7 @@
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-end text-sm md:text-lg font-medium">
                                                     <button type="button" @click="deleteChair"
-                                                        class="inline-flex items-center gap-x-2 text-sm md:text-lg font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none">
+                                                        class="inline-flex items-center gap-x-2 text-sm md:text-lg font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 focus:outline-none focus:text-red-800 disabled:opacity-50 disabled:pointer-events-none">
                                                         Delete
                                                     </button>
                                                 </td>
