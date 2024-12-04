@@ -32,9 +32,9 @@
                 </div>
 
                 <!-- Lupa Password -->
-                <button class="fancy hover:text-white hover:bg-black mb-1 bg-transparent border border-black box-border text-[#fff] inline-block float-right font-semibold tracking-tighter m-0 outline-none overflow-visible py-5 px-8 relative text-center no-underline normal-case select-none text-[13px]">
+                <button class="fancy s-b hover:text-white hover:bg-black mb-1 bg-transparent border border-black box-border text-[#fff] inline-block float-right font-semibold tracking-tighter m-0 outline-none overflow-visible py-5 px-8 relative text-center no-underline normal-case select-none text-[13px]">
                     <span class="top-key h-[2px] w-6 -top-[2px] left-2 absolute bg-[#e8e8e8]"></span>
-                    <span class="text text-[1.125em] leading-[1.33333em] pr-[2em] block text-left uppercase no-underline text-black">Lupa Password</span>
+                    <span class="text text-[1.125em] leading-[1.33333em] block text-left uppercase no-underline text-black">Lupa Password</span>
                     <span class="bottom-key-1 h-[2px] w-6 right-7 -bottom-[2px] absolute bg-[#e8e8e8]"></span>
                     <span class="bottom-key-2 h-[2px] w-2 right-2 -bottom-[2px] absolute bg-[#e8e8e8]"></span>
                 </button>
@@ -133,18 +133,6 @@ export default {
 }
 .bottom-key-1, .bottom-key-2 {
     transition: width 0.5s ease-out, right 0.3s ease-out;
-}
-.fancy::before {
-    content: " ";
-    width: 1.5625rem;
-    height: 2px;
-    background: black;
-    top: 50%;
-    right: 1.5em;
-    position: absolute;
-    transform: translateY(-50%);
-    transform-origin: center;
-    transition: background 0.3s linear, width 0.3s linear;
 }
 .fancy:hover::before {
     width: 0.9375rem;
