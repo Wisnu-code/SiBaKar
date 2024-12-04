@@ -61,7 +61,7 @@
                                                     {{ log.status }}</td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-end text-sm md:text-lg font-medium">
-                                                    <button type="button" @click="deleteChair"
+                                                    <button type="button" @click="deleteChair(log.id)"
                                                         class="inline-flex items-center gap-x-2 text-sm md:text-lg font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 focus:outline-none focus:text-red-800 disabled:opacity-50 disabled:pointer-events-none">
                                                         Delete
                                                     </button>
@@ -116,6 +116,31 @@ export default {
                 })
                 .catch(error => console.error("Error fetching log activities:", error));
         },
+
+        deleteChair(id) {
+            const isConfirmed = window.confirm("Apakah anda yakin ingin menghapus?");
+
+            if (isConfirmed) {
+                fetch(`http://localhost:8080/logactivity/delete?id=${id}`, {
+                    method: 'DELETE'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        this.logActivities = this.logActivities.filter(log => log.id !== id);
+                        alert("Data berhasil dihapus.");
+                    } else {
+                        console.error('Gagal menghapus data');
+                        alert("Gagal menghapus data");
+                    }
+                })
+                .catch(error => {
+                    console.error('Terjadi kesalahan saat menghapus:', error);
+                    alert("Terjadi kesalahan saat menghapus")
+                });
+            } else {
+                alert("Penghapusan dibatalkan")
+            }
+        }
     },
 
     mounted() {
