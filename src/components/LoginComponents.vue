@@ -30,6 +30,15 @@
                         <i :class="isPasswordVisible ? 'fa fa-eye' : 'fa fa-eye-slash'"></i>
                     </span>
                 </div>
+
+                <!-- Lupa Password -->
+                <button class="fancy hover:text-white hover:bg-black mb-1 bg-transparent border border-black box-border text-[#fff] inline-block float-right font-semibold tracking-tighter m-0 outline-none overflow-visible py-5 px-8 relative text-center no-underline normal-case select-none text-[13px]">
+                    <span class="top-key h-[2px] w-6 -top-[2px] left-2 absolute bg-[#e8e8e8]"></span>
+                    <span class="text text-[1.125em] leading-[1.33333em] pr-[2em] block text-left uppercase no-underline text-black">Lupa Password</span>
+                    <span class="bottom-key-1 h-[2px] w-6 right-7 -bottom-[2px] absolute bg-[#e8e8e8]"></span>
+                    <span class="bottom-key-2 h-[2px] w-2 right-2 -bottom-[2px] absolute bg-[#e8e8e8]"></span>
+                </button>
+
                 <!-- Login Button -->
                 <button type="submit"
                     class="relative text-lg md:text-2xl md:font-bold font-semibold rounded-md h-[50px] w-full overflow-hidden bg-white text-green-900 hover:scale-105 hover:shadow-lg transition-all before:absolute before:left-0 before:right-0 before:top-0 before:h-0 before:w-full before:bg-green-900 before:duration-500 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0 after:w-full after:bg-green-900 after:duration-500 hover:text-white hover:shadow-green-900 hover:before:h-2/4 hover:after:h-2/4"><span
@@ -114,3 +123,44 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.fancy, .text {
+    transition: all 0.3s ease-in-out;
+}
+.top-key {
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+.bottom-key-1, .bottom-key-2 {
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+.fancy::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 2px;
+    background: black;
+    top: 50%;
+    right: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+}
+.fancy:hover::before {
+    width: 0.9375rem;
+    background: white;
+}
+.fancy:hover .text {
+    color: white;
+    padding-left: 1.5em;
+}
+.fancy:hover .top-key {
+    left: -2px;
+    width: 0px;
+}
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
+}
+</style>
