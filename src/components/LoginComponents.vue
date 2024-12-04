@@ -32,7 +32,7 @@
                 </div>
 
                 <!-- Lupa Password -->
-                <button class="fancy s-b hover:text-white hover:bg-black mb-1 bg-transparent border border-black box-border text-[#fff] inline-block float-right font-semibold tracking-tighter m-0 outline-none overflow-visible py-5 px-8 relative text-center no-underline normal-case select-none text-[13px]">
+                <button class="fancy s-b hover:text-white hover:bg-black hover:rounded-2xl mb-2 bg-transparent box-border text-[#fff] inline-block float-right font-semibold tracking-tighter m-0 outline-none overflow-visible py-5 px-8 relative text-center no-underline normal-case select-none text-[13px]">
                     <span class="top-key h-[2px] w-6 -top-[2px] left-2 absolute bg-[#e8e8e8]"></span>
                     <span class="text text-[1.125em] leading-[1.33333em] block text-left uppercase no-underline text-black">Lupa Password</span>
                     <span class="bottom-key-1 h-[2px] w-6 right-7 -bottom-[2px] absolute bg-[#e8e8e8]"></span>
