@@ -9,7 +9,7 @@
         <div
         class="s-b md:m-20 mt-20 flex flex-col items-center rounded-lg lg:flex-row max-w-full h-full dark:bg-gray-800 dark:hover:bg-gray-700 sm:px-10">
 
-            <div class="flex flex-col text-justify border lg:h-[28rem] justify-around items-center p-4 leading-normal w-full">
+            <div class="flex flex-col text-justify lg:h-[28rem] justify-around items-center p-4 leading-normal w-full">
 
                 <!-- Text Content -->
                 <h5 class="s-l-2 mb-2 text-xl md:text-3xl font-bold tracking-tight text-gray-600 dark:text-white">Ada
